@@ -23,30 +23,38 @@
 
     <title>Menu Online</title>
 </head>
-
 <body>
     <header id="header">
-        <div>
+        <div class="header__brand">
             <img src="assets/images/logo.png" alt="Company Logo">
         </div>
 
+        <div class="header__nav-container">
+            <nav>
+                <ul class="header__list">
+                    <li class="header__list-item">Reservas</li>
+                    <li class="header__list-item">Serviços</li>
+                    <li class="header__list-item">Cardápio</li>
+                    <li class="header__list-item">Depoimentos</li>
+                </ul>
+            </nav>
 
-        <nav>
-            <ul>
-                <li>Reservas</li>
-                <li>Serviços</li>
-                <li>Cardápio</li>
-                <li>Depoimentos</li>
-            </ul>
-        </nav>
-
-        <div>
-            <span>Meu Carrinho</span>
-            <div>
-                <img src="" alt="">
+            <div class="header__shopping-cart">
+                <span>Meu Carrinho</span>
+                <div>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
             </div>
+        </div>
+
+        <div class="header__btn-mobile">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="toggle">
+                <div class="bars" id="bar-one"></div>
+                <div class="bars" id="bar-two"></div>
+                <div class="bars" id="bar-three"></div>
+            </label>
         </div>
     </header>
 </body>
-
 </html>
