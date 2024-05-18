@@ -1,0 +1,89 @@
+@use '../abstract/colors' as color;
+@use '../abstract/breakpoints' as media;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4.5rem 2rem 2rem; 
+
+    &__brand {
+        width: 16rem;
+    }
+
+    &__nav-container {
+        display: none;
+
+        @include media.laptops {
+            display: block;
+        }
+    }
+
+    .header__btn-mobile {
+        @include media.laptops {
+            display: none;
+        }
+
+        #checkbox {
+            display: none;
+        }
+
+        .toggle {
+            position: relative;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition-duration: 0.5s;
+        }
+
+        .bars {
+            width: 100%;
+            height: 4px;
+            background-color: color.$black-primary;
+            border-radius: 4px;
+        }
+
+        #bar2 {
+            transition-duration: .8s;
+        }
+
+        #bar1,
+        #bar3 {
+            width: 70%;
+        }
+
+        #checkbox:checked+.toggle .bars {
+            position: absolute;
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked+.toggle #bar-two {
+            transform: scaleX(0);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked+.toggle #bar-one {
+            width: 100%;
+            transform: rotate(45deg);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked+.toggle #bar-three {
+            width: 100%;
+            transform: rotate(-45deg);
+            transition-duration: .5s;
+        }
+
+        #checkbox:checked+.toggle {
+            transition-duration: .5s;
+            transform: rotate(180deg);
+        }
+    }
+
+
+}
