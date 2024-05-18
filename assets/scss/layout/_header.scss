@@ -1,11 +1,15 @@
 @use '../abstract/colors' as color;
 @use '../abstract/breakpoints' as media;
+@use '../abstract/mixins' as mixin;
 
 .header {
-    display: flex;
+    @include mixin.alignment-flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4.5rem 2rem 2rem; 
+    padding: 2rem 4.5rem 2rem 2rem;
+
+    @include media.desktops {
+        padding: 3rem 0;
+    }
 
     &__brand {
         width: 16rem;
@@ -15,9 +19,59 @@
         display: none;
 
         @include media.laptops {
-            display: block;
+            @include mixin.alignment-flex;
+            gap: 6rem;
         }
     }
+
+    &__list {
+        display: flex;
+        gap: 5rem;
+    }
+
+    .header__list-item {
+        font-size: 1.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .2s;
+        position: relative;
+    }
+
+
+    &__shopping-cart {
+        @include mixin.alignment-flex;
+        gap: 2rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+        padding: 1.5rem 2.8rem;
+        border-radius: 2rem;
+        background-color: color.$white-primary;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transition: all .3s;
+
+        &:hover {
+            background-color: color.$primary-color;
+            color: color.$white-primary;
+        }
+
+        &:hover div {
+            background-color: color.$white-primary;
+        }
+
+        div {
+            background-color: color.$primary-color;
+            padding: .7rem 1.2rem;
+            border-radius: 1rem;
+
+            i {
+                color: color.$black-primary;
+                font-size: 2rem;
+            }
+        }
+    }
+
+
+    // ? Button Header Mobile
 
     .header__btn-mobile {
         @include media.laptops {
@@ -84,6 +138,4 @@
             transform: rotate(180deg);
         }
     }
-
-
 }

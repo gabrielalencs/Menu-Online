@@ -1,3 +1,5 @@
+@use '../abstract/colors' as color;
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +12,7 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: color.$body-color;
 }
 
 p {
@@ -20,6 +23,18 @@ img {
     width: 100%;
 }
 
+a,
+button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
 ul {
     list-style: none;
+}
+
+.limit-content {
+    max-width: 114rem;
+    margin: 0 auto;
 }
