@@ -214,4 +214,61 @@ ul {
   transform: rotate(180deg);
 }
 
+.hero {
+  margin-top: 2rem;
+  padding: 0 4rem;
+  margin-bottom: 10rem;
+}
+.hero__title {
+  font-size: 4.5rem;
+  line-height: 5rem;
+}
+.hero__title span {
+  color: #caa127;
+}
+.hero__description {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: #4f4f4f;
+}
+.hero__buttons-container {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 3rem;
+}
+.hero__btn-menu {
+  font-size: 2.2rem;
+  font-weight: 500;
+  padding: 1.5rem 2.8rem;
+  border-radius: 1.5rem;
+  background-color: #caa127;
+  color: #ffffff;
+  border: 0.2rem solid #caa127;
+  transition: all 0.3s;
+}
+.hero__btn-menu:hover {
+  background-color: transparent;
+  color: #caa127;
+}
+.hero__btn-tel {
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 2.8rem;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 2rem;
+}
+.hero__btn-tel div {
+  background-color: #caa127;
+  padding: 0.7rem 1rem;
+  border-radius: 1rem;
+  color: #ffffff;
+}
+.hero__image-container {
+  display: none;
+}
+
 /*# sourceMappingURL=app.css.map */
