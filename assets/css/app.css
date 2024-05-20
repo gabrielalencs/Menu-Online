@@ -45,7 +45,7 @@ ul {
   padding: 2rem 4.5rem 2rem 2rem;
   position: relative;
 }
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .header {
     padding: 3rem 0;
   }
@@ -249,7 +249,7 @@ ul {
     font-size: 5rem;
   }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .hero__title {
     font-size: 6.5rem;
   }
