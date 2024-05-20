@@ -33,6 +33,7 @@
         @include media.laptops {
             @include mixin.flex-horizontal;
             flex-direction: row;
+            padding: 2rem;
             gap: 5rem;
             position: static;
             width: max-content;
@@ -90,6 +91,7 @@
         }
     }
 
+    // ? Button Shopping Cart
 
     &__shopping-cart {
         @include mixin.flex-horizontal;
