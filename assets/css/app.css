@@ -45,7 +45,7 @@ ul {
   padding: 2rem 4.5rem 2rem 2rem;
   position: relative;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .header {
     padding: 3rem 0;
   }
@@ -238,10 +238,20 @@ ul {
   font-size: 4.5rem;
   line-height: 5rem;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .hero__title {
     font-size: 6.5rem;
     line-height: 7rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero__title {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 1100px) {
+  .hero__title {
+    font-size: 6.5rem;
   }
 }
 .hero__title span {
@@ -251,8 +261,9 @@ ul {
   margin-top: 2rem;
   font-size: 1.8rem;
   color: #4f4f4f;
+  max-width: 70rem;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .hero__description {
     font-size: 2rem;
   }

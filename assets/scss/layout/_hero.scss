@@ -21,9 +21,17 @@
         font-size: 4.5rem;
         line-height: 5rem;
 
-        @include media.laptops {
+        @include media.smallTablets {
             font-size: 6.5rem;
             line-height: 7rem;
+        }
+
+        @include media.laptops {
+            font-size: 5rem;
+        }
+
+        @include media.desktops {
+            font-size: 6.5rem;
         }
 
         span {
@@ -35,8 +43,9 @@
         margin-top: 2rem;
         font-size: 1.8rem;
         color: color.$gray-primary;
+        max-width: 70rem;
 
-        @include media.laptops {
+        @include media.smallTablets {
             font-size: 2rem;
         }
     }
