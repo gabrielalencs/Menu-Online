@@ -35,7 +35,8 @@ ul {
     list-style: none;
 }
 
-.limit-content {
+header,
+main {
     max-width: 125rem;
     margin: 0 auto;
 }

@@ -32,7 +32,8 @@ ul {
   list-style: none;
 }
 
-.limit-content {
+header,
+main {
   max-width: 125rem;
   margin: 0 auto;
 }
@@ -220,7 +221,6 @@ ul {
 .hero {
   margin-top: 2rem;
   padding: 0 4rem;
-  margin-bottom: 10rem;
 }
 @media (min-width: 992px) {
   .hero {

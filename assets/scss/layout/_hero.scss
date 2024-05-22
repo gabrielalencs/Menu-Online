@@ -5,7 +5,6 @@
 .hero {
     margin-top: 2rem;
     padding: 0 4rem;
-    margin-bottom: 10rem;
 
     @include media.laptops {
         @include mixin.flex-horizontal;
