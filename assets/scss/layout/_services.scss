@@ -5,6 +5,9 @@
 .services {
     margin-top: 10rem;
     padding: 0 4rem;
+    background-image: url(../images/bg-icons-2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 
     &__texts {
         text-align: center;
@@ -27,7 +30,7 @@
         margin-top: 7rem;
         display: flex;
         flex-direction: column;
-        gap: 8rem;
+        gap: 10rem;
 
         @include media.laptops {
             flex-direction: row;
@@ -44,7 +47,11 @@
     }
 
     &__img {
-        width: 20rem;
+        width: 25rem;
+    }
+
+    .img-request {
+        width: 15rem;
     }
 
     &__benefits-texts { 

@@ -3,7 +3,7 @@
 @use '../abstract/mixins' as mixin;
 
 .hero {
-    margin-top: 2rem;
+    margin-top: 8rem;
     padding: 0 4rem;
 
     @include media.laptops {
@@ -93,11 +93,40 @@
 
     &__image-container {
         display: none;
+        position: relative;
 
         @include media.laptops {
             display: flex;
             flex-direction: column;
             flex: 1;
+        }
+    }
+
+    &__img-background {
+        &::after {
+            content: '';
+            display: block;
+            height: 450px;
+            width: 450px;
+            border-radius: 170px;
+            background-color: #f4c949;
+            position: absolute;
+            top: -5rem;
+            right: -2rem;
+            z-index: -1;
+
+            @include media.laptops {
+                width: 400px;
+                height: 420px;
+                right: -4rem;
+            }
+
+            @include media.desktops {
+                height: 450px;
+                width: 450px;
+                right: -2rem;
+
+            }
         }
     }
 
@@ -112,7 +141,7 @@
         background-color: color.$white-primary;
         font-size: 1.5rem;
         position: relative;
-        
+
         &-description {
             line-height: 2rem;
             color: color.$gray-primary;
