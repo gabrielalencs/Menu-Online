@@ -1,0 +1,64 @@
+@use '../abstract/colors' as color;
+@use '../abstract/breakpoints' as media;
+@use '../abstract/mixins' as mixin;
+
+.services {
+    margin-top: 10rem;
+    padding: 0 4rem;
+
+    &__texts {
+        text-align: center;
+    }
+
+    &__title {
+        color: color.$primary-color;
+        text-transform: uppercase;
+        letter-spacing: .35rem;
+        font-size: 1.7rem;
+    }
+
+    &__subtitle {
+        margin-top: 1rem;
+        font-size: 3rem;
+        line-height: 3.5rem;
+    }
+
+    &__benefits-container {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: column;
+
+        @include media.laptops {
+            flex-direction: row;
+            align-items: end;
+        }
+    }
+
+    &__benefits {
+        text-align: center;
+        padding: 4rem 5rem;
+        border-radius: 2rem;
+    }
+
+    &__img {
+        width: 20rem;
+    }
+
+    &__benefits-texts { 
+        margin-top: 3.5rem;
+
+        h3 {
+            font-size: 2rem;
+
+            @include media.laptops {
+                font-size: 2.5rem;
+            }
+        }
+
+        p {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            color: color.$gray-secondary;
+        }
+    }
+}

@@ -347,4 +347,58 @@ main {
   right: 2rem;
 }
 
+.services {
+  margin-top: 10rem;
+  padding: 0 4rem;
+}
+.services__texts {
+  text-align: center;
+}
+.services__title {
+  color: #caa127;
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  font-size: 1.7rem;
+}
+.services__subtitle {
+  margin-top: 1rem;
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+.services__benefits-container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 992px) {
+  .services__benefits-container {
+    flex-direction: row;
+    align-items: end;
+  }
+}
+.services__benefits {
+  text-align: center;
+  padding: 4rem 5rem;
+  border-radius: 2rem;
+}
+.services__img {
+  width: 20rem;
+}
+.services__benefits-texts {
+  margin-top: 3.5rem;
+}
+.services__benefits-texts h3 {
+  font-size: 2rem;
+}
+@media (min-width: 992px) {
+  .services__benefits-texts h3 {
+    font-size: 2.5rem;
+  }
+}
+.services__benefits-texts p {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: #909097;
+}
+
 /*# sourceMappingURL=app.css.map */
