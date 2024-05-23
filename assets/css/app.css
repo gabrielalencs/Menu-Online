@@ -366,9 +366,10 @@ main {
   line-height: 3.5rem;
 }
 .services__benefits-container {
-  margin-top: 3rem;
+  margin-top: 7rem;
   display: flex;
   flex-direction: column;
+  gap: 8rem;
 }
 @media (min-width: 992px) {
   .services__benefits-container {
@@ -378,7 +379,6 @@ main {
 }
 .services__benefits {
   text-align: center;
-  padding: 4rem 5rem;
   border-radius: 2rem;
 }
 .services__img {
