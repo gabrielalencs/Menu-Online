@@ -24,7 +24,7 @@
     }
 
     &__benefits-container {
-        margin-top: 5rem;
+        margin-top: 3rem;
         display: flex;
         flex-direction: column;
 
@@ -35,9 +35,11 @@
     }
 
     &__benefits {
+        // background-color: color.$white-primary;
         text-align: center;
         padding: 4rem 5rem;
         border-radius: 2rem;
+        // box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
 
     &__img {
