@@ -326,8 +326,8 @@ main {
 .hero__img-background::after {
   content: "";
   display: block;
-  height: 450px;
-  width: 450px;
+  height: 45rem;
+  width: 45rem;
   border-radius: 170px;
   background-color: #f4c949;
   position: absolute;
@@ -337,15 +337,15 @@ main {
 }
 @media (min-width: 992px) {
   .hero__img-background::after {
-    width: 400px;
-    height: 420px;
+    width: 40rem;
+    height: 42rem;
     right: -4rem;
   }
 }
 @media (min-width: 1200px) {
   .hero__img-background::after {
-    height: 450px;
-    width: 450px;
+    height: 45rem;
+    width: 45rem;
     right: -2rem;
   }
 }
