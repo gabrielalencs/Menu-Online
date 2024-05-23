@@ -28,29 +28,29 @@ Features a serem desenvolvidas:
 	- Botão para fechar o carrinho
 	
 		1º Etapa:
-	        - Mostrar mensagem se o carrinho estiver vazio
-	            - Aparecer mensagem de erro caso eu tente prosseguir para próxima etapa
-	        - Mostrar todos itens adicionados
-	            - Botão para adicionar itens ou remover
-	            - Botão para remover o item do carrinho
-	        - Mostrar valor atual do carrinho
-	            - Alterar o valor a cada mudança no carrinho
+		        - Mostrar mensagem se o carrinho estiver vazio
+		            - Aparecer mensagem de erro caso eu tente prosseguir para próxima etapa
+		        - Mostrar todos itens adicionados
+		            - Botão para adicionar itens ou remover
+		            - Botão para remover o item do carrinho
+		        - Mostrar valor atual do carrinho
+		            - Alterar o valor a cada mudança no carrinho
 	        
 		2º Etapa:
-	        - Botão para voltar para etapa anterior
-	        - Botão para revisar pedido (avançar para ultima etapa)
-	        - Aparecer mensagem de erro caso tente prosseguir sem preencher o cep
-	        - Formulário para entrega
-	            - Botão para verificar cep
-	                - Preenchimento automático por meio do cep
-	                    - Liberar os campos caso tenha algum erro do preenchimento automático
+		        - Botão para voltar para etapa anterior
+		        - Botão para revisar pedido (avançar para ultima etapa)
+		        - Aparecer mensagem de erro caso tente prosseguir sem preencher o cep
+		        - Formulário para entrega
+		            - Botão para verificar cep
+		                - Preenchimento automático por meio do cep
+		                    - Liberar os campos caso tenha algum erro do preenchimento automático
 					
 		3º Etapa:
-	        - Botão para voltar para etapa anterior
-	        - Botão para enviar o pedido
-	            - Mostrar que o pedido foi enviado
-	        - Mosrar todos itens escolhidos com seu valor e quantidade
-	        - Mostrar local da entrega
-	        - Mostrar valor total
-        
+		        - Botão para voltar para etapa anterior
+		        - Botão para enviar o pedido
+		            - Mostrar que o pedido foi enviado
+		        - Mosrar todos itens escolhidos com seu valor e quantidade
+		        - Mostrar local da entrega
+		        - Mostrar valor total
+	        
 	
