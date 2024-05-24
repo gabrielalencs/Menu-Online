@@ -390,10 +390,20 @@ main {
   letter-spacing: 0.35rem;
   font-size: 1.7rem;
 }
+@media (min-width: 992px) {
+  .services__title {
+    font-size: 1.8rem;
+  }
+}
 .services__subtitle {
   margin-top: 1rem;
   font-size: 3rem;
   line-height: 3.5rem;
+}
+@media (min-width: 992px) {
+  .services__subtitle {
+    font-size: 4rem;
+  }
 }
 .services__benefits-container {
   margin-top: 7rem;

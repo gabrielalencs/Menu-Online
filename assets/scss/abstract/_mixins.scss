@@ -1,3 +1,6 @@
+@use 'colors' as color;
+@use 'breakpoints' as media;
+
 @mixin flex-horizontal {
     display: flex;
     flex-direction: row;
@@ -16,4 +19,25 @@
     justify-content: $justify;
     align-items: $aling;
     gap: $gap;
+}
+
+@mixin titleStyles {
+    color: color.$primary-color;
+    text-transform: uppercase;
+    letter-spacing: .35rem;
+    font-size: 1.7rem;
+
+    @include media.laptops {
+        font-size: 1.8rem;
+    }
+}
+
+@mixin subtitleStyles {
+    margin-top: 1rem;
+    font-size: 3rem;
+    line-height: 3.5rem;
+
+    @include media.laptops {
+        font-size: 4rem;
+    }
 }
