@@ -8,12 +8,17 @@
 
     @include media.laptops {
         @include mixin.flex-horizontal;
+        align-items: flex-start;
     }
 
     @include media.laptops {
         &__contents {
             flex: 1;
         }
+    }
+
+    &__contents {
+        margin-top: 5rem;
     }
 
     &__title {
