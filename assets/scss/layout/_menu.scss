@@ -2,7 +2,139 @@
 @use '../abstract/breakpoints' as media;
 @use '../abstract/mixins' as mixin;
 
-// .menu {
-//     margin-top: 10rem;
-//     padding: 0 4rem;
-// }
+.menu {
+    margin-top: 10rem;
+    padding: 0 4rem;
+
+    &__texts {
+        text-align: center;
+    }
+
+    &__title {
+        @include mixin.titleStyles;
+    }
+
+    &__subtitle {
+        @include mixin.subtitleStyles;
+    }
+
+    &__options {
+        margin-top: 7rem;
+    }
+
+    &__buttons-container {
+        @include mixin.flex-horizontal;
+        gap: 3rem;
+        overflow-x: scroll;
+        padding-bottom: 3rem;
+
+        &::-webkit-scrollbar {
+            background-color: color.$gray-terciary;
+            border-radius: 1.5rem;
+        }
+
+        &::-webkit-scrollbar-thumb   {
+            background-color: #e4e4e8;
+            height: 5px;
+            border-radius: 1.5rem;
+        }
+    }
+
+    &__button-food {
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        padding: 1.4rem 2.4rem;
+        font-size: 1.8rem;
+        @include mixin.flex-horizontal;
+        gap: 2rem;
+        border-radius: 1.5rem;
+    }
+
+    &__foods-container {
+        margin-top: 5rem;
+        display: grid;
+        gap: 3rem;
+    }
+
+    &__food {
+        @include mixin.flex-horizontal;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border-radius: 1.5rem;
+        padding: 1.5rem 2rem;
+        position: relative;
+        font-size: 2.1rem
+    }
+
+    &__food-main {
+        @include mixin.flex-horizontal;
+        gap: 2rem;
+    }
+
+    &__food-image img {
+        width: 8rem;
+        border-radius: 1rem;
+    }
+
+    &__food-texts p {
+        font-weight: 700;
+    }
+
+    &__food-texts span {
+        color: color.$primary-color;
+        font-weight: 700;
+    }
+
+    &__food-hover {
+        opacity: 0;
+        transition: all .2s;
+        position: absolute;
+        left: 12.5rem;
+    }
+
+    &__food:hover &__food-hover {
+        opacity: 100;
+    }
+
+    &__food:hover {
+        background-color: color.$primary-color;
+    }
+
+    &__food:hover &__food-texts {
+        opacity: 0;
+    }
+
+    &__hover-title {
+        font-weight: 600;
+    }
+
+    &__food-buttons {
+        margin-top: .5rem;
+        @include mixin.flex-horizontal;
+        gap: 2rem;
+    }
+
+    &__food-count-container {
+        border: 2px solid color.$black-primary;
+        padding: .5rem;
+        border-radius: 1rem;
+    }
+
+    &__food-count {
+        padding: 0 1.5rem;
+        border: 2px solid color.$black-primary;
+        border-top: none;
+        border-bottom: none;
+        font-size: 1.8rem;
+    }
+
+    &__food-icon {
+        padding: 0 .5rem;
+    }
+
+    &__food-shopping-cart {
+        background-color: color.$black-primary;
+        color: color.$white-primary;
+        padding: .8rem 1.5rem;
+        border-radius: 1rem;
+        font-size: 1.8rem;
+    }
+}

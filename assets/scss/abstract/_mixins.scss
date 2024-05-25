@@ -25,10 +25,10 @@
     color: color.$primary-color;
     text-transform: uppercase;
     letter-spacing: .35rem;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
 
     @include media.laptops {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 }
 
@@ -38,6 +38,6 @@
     line-height: 3.5rem;
 
     @include media.laptops {
-        font-size: 4rem;
+        font-size: 3.7rem;
     }
 }
