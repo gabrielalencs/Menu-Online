@@ -4,7 +4,7 @@
 
 .menu {
     margin-top: 10rem;
-    padding: 0 4rem;
+    padding: 0 3rem;
 
     @include media.laptops {
         background-image: url(../images/bg-icons-1.png);
@@ -34,15 +34,17 @@
         overflow-x: scroll;
         padding-bottom: 3rem;
 
-        &::-webkit-scrollbar {
-            background-color: color.$gray-terciary;
-            border-radius: 1.5rem;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: #e4e4e8;
-            height: 5px;
-            border-radius: 1.5rem;
+        @include media.extraSmallDevices {
+            &::-webkit-scrollbar {
+                background-color: color.$gray-terciary;
+                border-radius: 1.5rem;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                background-color: #e4e4e8;
+                height: 5px;
+                border-radius: 1.5rem;
+            }
         }
 
         @include media.laptopsLarge {

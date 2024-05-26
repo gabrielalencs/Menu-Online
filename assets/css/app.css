@@ -220,7 +220,7 @@ main {
 
 .hero {
   margin-top: 8rem;
-  padding: 0 4rem;
+  padding: 0 3rem;
 }
 @media (min-width: 992px) {
   .hero {
@@ -450,7 +450,7 @@ main {
 
 .menu {
   margin-top: 10rem;
-  padding: 0 4rem;
+  padding: 0 3rem;
 }
 @media (min-width: 992px) {
   .menu {
@@ -494,14 +494,16 @@ main {
   overflow-x: scroll;
   padding-bottom: 3rem;
 }
-.menu__buttons-container::-webkit-scrollbar {
-  background-color: #F3F4F6;
-  border-radius: 1.5rem;
-}
-.menu__buttons-container::-webkit-scrollbar-thumb {
-  background-color: #e4e4e8;
-  height: 5px;
-  border-radius: 1.5rem;
+@media (min-width: 481px) {
+  .menu__buttons-container::-webkit-scrollbar {
+    background-color: #F3F4F6;
+    border-radius: 1.5rem;
+  }
+  .menu__buttons-container::-webkit-scrollbar-thumb {
+    background-color: #e4e4e8;
+    height: 5px;
+    border-radius: 1.5rem;
+  }
 }
 @media (min-width: 1175px) {
   .menu__buttons-container {
