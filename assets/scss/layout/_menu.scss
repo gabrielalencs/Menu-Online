@@ -7,6 +7,8 @@
     padding: 0 4rem;
 
     @include media.laptops {
+        background-image: url(../images/bg-icons-1.png);
+        background-size: contain;
         margin-top: 15rem;
     }
 
@@ -37,7 +39,7 @@
             border-radius: 1.5rem;
         }
 
-        &::-webkit-scrollbar-thumb   {
+        &::-webkit-scrollbar-thumb {
             background-color: #e4e4e8;
             height: 5px;
             border-radius: 1.5rem;
@@ -55,6 +57,7 @@
         @include mixin.flex-horizontal;
         gap: 2rem;
         border-radius: 1.5rem;
+        background-color: color.$body-color;
     }
 
     &__foods-container {
@@ -86,6 +89,7 @@
         padding: 1.5rem 2rem;
         position: relative;
         font-size: 2.1rem;
+        background-color: color.$body-color;
 
         @include media.laptops {
             width: 25rem;
@@ -128,7 +132,7 @@
         left: 12.5rem;
 
         @include media.laptops {
-            left: 2.5rem;
+            left: 3.5rem;
             bottom: 3rem;
             text-align: center;
         }
@@ -148,6 +152,10 @@
 
     &__hover-title {
         font-weight: 600;
+
+        @include media.laptops {
+            font-size: 2.3rem;
+        }
     }
 
     &__food-buttons {
