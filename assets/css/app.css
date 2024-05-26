@@ -553,6 +553,7 @@ main {
   position: relative;
   font-size: 2.1rem;
   background-color: #fffdf7;
+  transition: all 0.3s;
 }
 @media (min-width: 992px) {
   .menu__food {
@@ -592,14 +593,14 @@ main {
 }
 .menu__food-hover {
   opacity: 0;
-  transition: all 0.2s;
+  transition: all 0.3s;
   position: absolute;
   left: 12.5rem;
 }
 @media (min-width: 992px) {
   .menu__food-hover {
     left: 3.6rem;
-    bottom: 3rem;
+    bottom: 2.8rem;
     text-align: center;
   }
 }
