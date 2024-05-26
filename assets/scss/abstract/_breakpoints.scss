@@ -22,6 +22,12 @@
     }
 }
 
+@mixin laptopsLarge {
+    @media (min-width: 1175px) {
+        @content
+    }
+}
+
 @mixin desktops {
     @media (min-width: 1200px) {
         @content

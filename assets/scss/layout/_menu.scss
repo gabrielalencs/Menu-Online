@@ -6,6 +6,10 @@
     margin-top: 10rem;
     padding: 0 4rem;
 
+    @include media.laptops {
+        margin-top: 15rem;
+    }
+
     &__texts {
         text-align: center;
     }
@@ -38,6 +42,10 @@
             height: 5px;
             border-radius: 1.5rem;
         }
+
+        @include media.laptopsLarge {
+            overflow-x: visible;
+        }
     }
 
     &__button-food {
@@ -53,6 +61,22 @@
         margin-top: 5rem;
         display: grid;
         gap: 3rem;
+
+        @include media.smallTablets {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+
+        @include media.laptops {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            place-items: center;
+        }
+
+        @include media.desktops {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
     }
 
     &__food {
@@ -61,17 +85,31 @@
         border-radius: 1.5rem;
         padding: 1.5rem 2rem;
         position: relative;
-        font-size: 2.1rem
+        font-size: 2.1rem;
+
+        @include media.laptops {
+            width: 25rem;
+            padding: 3rem 2.5rem;
+        }
     }
 
     &__food-main {
         @include mixin.flex-horizontal;
         gap: 2rem;
+
+        @include media.laptops {
+            @include mixin.flex-vertical;
+            text-align: center;
+        }
     }
 
     &__food-image img {
         width: 8rem;
         border-radius: 1rem;
+
+        @include media.laptops {
+            width: 100%;
+        }
     }
 
     &__food-texts p {
@@ -88,6 +126,12 @@
         transition: all .2s;
         position: absolute;
         left: 12.5rem;
+
+        @include media.laptops {
+            left: 2.5rem;
+            bottom: 3rem;
+            text-align: center;
+        }
     }
 
     &__food:hover &__food-hover {
