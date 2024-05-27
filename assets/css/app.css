@@ -241,7 +241,7 @@ main {
   margin-top: 5rem;
 }
 .hero__title {
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 5rem;
 }
 @media (min-width: 768px) {
@@ -664,6 +664,103 @@ main {
   padding: 0.8rem 1.5rem;
   border-radius: 1rem;
   font-size: 1.8rem;
+}
+
+.depositions {
+  margin-top: 10rem;
+  padding: 0 4rem;
+}
+.depositions__title {
+  color: #caa127;
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  font-size: 1.8rem;
+}
+@media (min-width: 992px) {
+  .depositions__title {
+    font-size: 2rem;
+  }
+}
+.depositions__subtitle {
+  margin-top: 1rem;
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+@media (min-width: 992px) {
+  .depositions__subtitle {
+    font-size: 3.7rem;
+  }
+}
+.depositions__comment-container {
+  margin-top: 6rem;
+}
+.depositions__profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+.depositions__image {
+  width: 6rem;
+}
+.depositions__image img {
+  border-radius: 50%;
+}
+.depositions__infos span {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.depositions__infos div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.depositions__infos i {
+  font-size: 1.5rem;
+  color: #caa127;
+  margin-right: 0.4rem;
+}
+.depositions__infos div > span {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-left: 0.4rem;
+}
+.depositions__paragraph-container {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+}
+.depositions__paragraph-container i {
+  font-size: 4rem;
+  color: #caa127;
+}
+.depositions__paragraph-container p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
+}
+.depositions__paragraph-container i:last-child {
+  align-self: flex-end;
+}
+.depositions__buttons-container {
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+.depositions__buttons-container button {
+  padding: 0.8rem 1.8rem;
+  border-radius: 1.5rem;
+  border: 0.2rem solid #caa127;
+  color: #caa127;
+  font-size: 1.7rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+.depositions__buttons-container button:hover {
+  background-color: #caa127;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=app.css.map */
