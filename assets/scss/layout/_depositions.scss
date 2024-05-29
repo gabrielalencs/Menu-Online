@@ -6,6 +6,19 @@
     margin-top: 10rem;
     padding: 0 4rem;
 
+    @include media.laptops {
+        margin-top: 15rem;
+        background-image: url(../images/bg-icons-1.png);
+        background-size: contain;
+        padding: 0;
+    }
+
+    @include media.laptops {
+        &__texts {
+            text-align: center
+        }
+    }
+
     &__title {
         @include mixin.titleStyles;
     }
@@ -14,8 +27,43 @@
         @include mixin.subtitleStyles;
     }
 
-    &__comment-container {
+    &__content {
         margin-top: 6rem;
+
+        @include media.laptops {
+            @include mixin.flex-horizontal;
+            gap: 7rem;
+            position: relative;
+        }
+    }
+
+    &__container-image {
+        display: none;
+
+        @include media.laptops {
+            display: block;
+            flex: 1.1;
+        }
+    }
+
+    @include media.laptops {
+
+        &__comment-container {
+            flex: 1;
+        }
+
+        &__container-image::after {
+            content: '';
+            display: block;
+            height: 40rem;
+            width: 45rem;
+            border-radius: 170px;
+            background-color: #fff2cc;
+            position: absolute;
+            top: 0;
+            left: 4rem;
+            z-index: -1;
+        }
     }
 
     &__profile {
@@ -57,16 +105,28 @@
         display: flex;
         gap: 2rem;
 
-
         i {
             font-size: 4rem;
             color: color.$primary-color;
+
+            @include media.laptops {
+                font-size: 5rem;
+            }
         }
 
         p {
             font-size: 1.3rem;
             line-height: 1.5;
-            text-align: center;
+
+            @include media.extraSmallDevices {
+                text-align: center;
+            }
+
+            @include media.smallTablets {
+                font-size: 1.7rem;
+                line-height: 1.6;
+                text-align: left;
+            }
         }
 
         & i:last-child {

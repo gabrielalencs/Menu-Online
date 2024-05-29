@@ -387,6 +387,11 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
 }
+@media (min-width: 992px) {
+  .services {
+    margin-top: 15rem;
+  }
+}
 .services__texts {
   text-align: center;
 }
@@ -670,6 +675,19 @@ main {
   margin-top: 10rem;
   padding: 0 4rem;
 }
+@media (min-width: 992px) {
+  .depositions {
+    margin-top: 15rem;
+    background-image: url(../images/bg-icons-1.png);
+    background-size: contain;
+    padding: 0;
+  }
+}
+@media (min-width: 992px) {
+  .depositions__texts {
+    text-align: center;
+  }
+}
 .depositions__title {
   color: #caa127;
   text-transform: uppercase;
@@ -691,8 +709,43 @@ main {
     font-size: 3.7rem;
   }
 }
-.depositions__comment-container {
+.depositions__content {
   margin-top: 6rem;
+}
+@media (min-width: 992px) {
+  .depositions__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7rem;
+    position: relative;
+  }
+}
+.depositions__container-image {
+  display: none;
+}
+@media (min-width: 992px) {
+  .depositions__container-image {
+    display: block;
+    flex: 1.1;
+  }
+}
+@media (min-width: 992px) {
+  .depositions__comment-container {
+    flex: 1;
+  }
+  .depositions__container-image::after {
+    content: "";
+    display: block;
+    height: 40rem;
+    width: 45rem;
+    border-radius: 170px;
+    background-color: #fff2cc;
+    position: absolute;
+    top: 0;
+    left: 4rem;
+    z-index: -1;
+  }
 }
 .depositions__profile {
   display: flex;
@@ -734,10 +787,26 @@ main {
   font-size: 4rem;
   color: #caa127;
 }
+@media (min-width: 992px) {
+  .depositions__paragraph-container i {
+    font-size: 5rem;
+  }
+}
 .depositions__paragraph-container p {
   font-size: 1.3rem;
   line-height: 1.5;
-  text-align: center;
+}
+@media (min-width: 481px) {
+  .depositions__paragraph-container p {
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .depositions__paragraph-container p {
+    font-size: 1.7rem;
+    line-height: 1.6;
+    text-align: left;
+  }
 }
 .depositions__paragraph-container i:last-child {
   align-self: flex-end;
