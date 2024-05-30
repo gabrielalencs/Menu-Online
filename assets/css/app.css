@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  outline: 1px solid red !important;
 }
 
 html {
@@ -333,21 +332,14 @@ main {
 .hero__img-background::after {
   content: "";
   display: block;
-  height: 45rem;
-  width: 45rem;
+  width: 38rem;
+  height: 42rem;
   border-radius: 170px;
   background-color: #f4c949;
   position: absolute;
   top: -5rem;
   right: -2rem;
   z-index: -1;
-}
-@media (min-width: 992px) {
-  .hero__img-background::after {
-    width: 40rem;
-    height: 42rem;
-    right: -4rem;
-  }
 }
 @media (min-width: 1200px) {
   .hero__img-background::after {

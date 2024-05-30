@@ -6,6 +6,7 @@
     margin-top: 8rem;
     padding: 0 3rem;
 
+
     @include media.laptops {
         @include mixin.flex-horizontal;
         align-items: flex-start;
@@ -98,8 +99,8 @@
     &__img-background::after {
         content: '';
         display: block;
-        height: 45rem;
-        width: 45rem;
+        width: 38rem;
+        height: 42rem;
         border-radius: 170px;
         background-color: #f4c949;
         position: absolute;
@@ -107,11 +108,7 @@
         right: -2rem;
         z-index: -1;
 
-        @include media.laptops {
-            width: 40rem;
-            height: 42rem;
-            right: -4rem;
-        }
+
 
         @include media.desktops {
             height: 45rem;
