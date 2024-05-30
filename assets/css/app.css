@@ -834,6 +834,18 @@ main {
   border-radius: 3rem;
   padding: 5rem;
 }
+@media (min-width: 992px) {
+  .booking__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7rem;
+    padding: 7rem;
+  }
+}
+.booking__texts {
+  flex: 1.2;
+}
 .booking__title {
   color: #caa127;
   text-transform: uppercase;
@@ -877,6 +889,12 @@ main {
 }
 .booking__container-image {
   display: none;
+}
+@media (min-width: 992px) {
+  .booking__container-image {
+    display: block;
+    flex: 1;
+  }
 }
 
 .footer {

@@ -10,6 +10,16 @@
         background-color: color.$secondary-color;
         border-radius: 3rem;
         padding: 5rem;
+
+        @include media.laptops {
+            @include mixin.flex-horizontal;
+            gap: 7rem;
+            padding: 7rem;
+        }
+    }
+
+    &__texts {
+        flex: 1.2;
     }
 
     &__title {
@@ -33,5 +43,10 @@
 
     &__container-image {
         display: none;
+
+        @include media.laptops {
+            display: block;
+            flex: 1;
+        }
     }
 }
