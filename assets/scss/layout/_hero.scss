@@ -65,19 +65,7 @@
     }
 
     &__btn-menu {
-        font-size: 2.2rem;
-        font-weight: 500;
-        padding: 1.5rem 2.8rem;
-        border-radius: 1.5rem;
-        background-color: color.$primary-color;
-        color: color.$white-primary;
-        border: .2rem solid color.$primary-color;
-        transition: all .3s;
-
-        &:hover {
-            background-color: transparent;
-            color: color.$primary-color;
-        }
+        @include mixin.button;
     }
 
     &__btn-tel {

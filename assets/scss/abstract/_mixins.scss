@@ -33,11 +33,27 @@
 }
 
 @mixin subtitleStyles {
-    margin-top: 1rem;
+    margin-top: .7rem;
     font-size: 3rem;
     line-height: 3.5rem;
 
     @include media.laptops {
         font-size: 3.7rem;
+    }
+}
+
+@mixin button {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1.3rem 2.3rem;
+    border-radius: 1.5rem;
+    background-color: color.$primary-color;
+    color: color.$white-primary;
+    border: .2rem solid color.$primary-color;
+    transition: all .3s;
+
+    &:hover {
+        background-color: transparent;
+        color: color.$primary-color;
     }
 }

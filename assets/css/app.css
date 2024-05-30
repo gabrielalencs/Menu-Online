@@ -289,9 +289,9 @@ main {
   }
 }
 .hero__btn-menu {
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 500;
-  padding: 1.5rem 2.8rem;
+  padding: 1.3rem 2.3rem;
   border-radius: 1.5rem;
   background-color: #caa127;
   color: #ffffff;
@@ -407,7 +407,7 @@ main {
   }
 }
 .services__subtitle {
-  margin-top: 1rem;
+  margin-top: 0.7rem;
   font-size: 3rem;
   line-height: 3.5rem;
 }
@@ -481,7 +481,7 @@ main {
   }
 }
 .menu__subtitle {
-  margin-top: 1rem;
+  margin-top: 0.7rem;
   font-size: 3rem;
   line-height: 3.5rem;
 }
@@ -700,7 +700,7 @@ main {
   }
 }
 .depositions__subtitle {
-  margin-top: 1rem;
+  margin-top: 0.7rem;
   font-size: 3rem;
   line-height: 3.5rem;
 }
@@ -830,6 +830,60 @@ main {
 .depositions__buttons-container button:hover {
   background-color: #caa127;
   color: #ffffff;
+}
+
+.booking {
+  margin-top: 10rem;
+  padding: 0 4rem;
+}
+.booking__container {
+  background-color: #fff2cc;
+  border-radius: 3rem;
+  padding: 5rem;
+}
+.booking__title {
+  color: #caa127;
+  text-transform: uppercase;
+  letter-spacing: 0.35rem;
+  font-size: 1.8rem;
+}
+@media (min-width: 992px) {
+  .booking__title {
+    font-size: 2rem;
+  }
+}
+.booking__subtitle {
+  margin-top: 0.7rem;
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+@media (min-width: 992px) {
+  .booking__subtitle {
+    font-size: 3.7rem;
+  }
+}
+.booking__description {
+  margin-top: 2.5rem;
+  font-size: 1.8rem;
+  color: #4f4f4f;
+}
+.booking__btn-reserve {
+  margin-top: 3rem;
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1.3rem 2.3rem;
+  border-radius: 1.5rem;
+  background-color: #caa127;
+  color: #ffffff;
+  border: 0.2rem solid #caa127;
+  transition: all 0.3s;
+}
+.booking__btn-reserve:hover {
+  background-color: transparent;
+  color: #caa127;
+}
+.booking__container-image {
+  display: none;
 }
 
 /*# sourceMappingURL=app.css.map */
