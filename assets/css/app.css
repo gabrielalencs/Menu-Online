@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  outline: 1px solid red !important;
 }
 
 html {
@@ -727,7 +728,7 @@ main {
 @media (min-width: 992px) {
   .depositions__container-image {
     display: block;
-    flex: 1.1;
+    flex: 1;
   }
 }
 @media (min-width: 992px) {
@@ -884,6 +885,34 @@ main {
 }
 .booking__container-image {
   display: none;
+}
+
+.footer {
+  margin-top: 10rem;
+  background-color: #fff2cc;
+  text-align: center;
+  padding: 2rem;
+}
+.footer__container-image {
+  width: 15rem;
+  margin: 0 auto;
+}
+@media (max-width: 481px) {
+  .footer__container-image {
+    width: 25rem;
+  }
+}
+.footer__copyright {
+  font-size: 1.6rem;
+}
+@media (max-width: 481px) {
+  .footer__copyright {
+    font-size: 1.8rem;
+  }
+}
+.footer__copyright span {
+  font-weight: 600;
+  color: #caa127;
 }
 
 /*# sourceMappingURL=app.css.map */
