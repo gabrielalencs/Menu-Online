@@ -6,22 +6,22 @@
     margin-top: 10rem;
     background-color: color.$secondary-color;
     text-align: center;
-    padding: 2rem;
+    padding: 2rem 0 5rem;
 
     &__container-image {
         width: 15rem;
         margin: 0 auto;
 
-        @include media.mobileDevices {
-            width: 25rem;
+        @include media.smallTablets {
+            width: 20rem;
         }
     }
 
     &__copyright {
         font-size: 1.6rem;
 
-        @include media.mobileDevices {
-            font-size: 1.8rem;
+        @include media.smallTablets {
+            font-size: 2rem;
         }
 
         span {

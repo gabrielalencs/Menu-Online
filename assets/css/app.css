@@ -883,23 +883,23 @@ main {
   margin-top: 10rem;
   background-color: #fff2cc;
   text-align: center;
-  padding: 2rem;
+  padding: 2rem 0 5rem;
 }
 .footer__container-image {
   width: 15rem;
   margin: 0 auto;
 }
-@media (max-width: 481px) {
+@media (min-width: 768px) {
   .footer__container-image {
-    width: 25rem;
+    width: 20rem;
   }
 }
 .footer__copyright {
   font-size: 1.6rem;
 }
-@media (max-width: 481px) {
+@media (min-width: 768px) {
   .footer__copyright {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 }
 .footer__copyright span {
