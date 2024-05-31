@@ -43,7 +43,11 @@
     width: 100%;
     height: 100%;
     z-index: 10;
-    padding: 5rem 10rem;
+    padding: 5rem 4rem;
+
+    @include media.smallTablets {
+        padding: 5rem 10rem;  
+    }
 }
 
 .cart__header {
@@ -73,6 +77,7 @@
             border-radius: 50%;
             @include mixin.alignment-horizontal-vertical(flex, row, center, center, .1rem);
             font-size: 1.5rem;
+            font-weight: 500;
             background-color: color.$white-primary;
         }
 
@@ -87,5 +92,10 @@
         border-radius: 1.5rem;
         box-shadow: 0 1rem 1.5rem -.3rem rgba(0, 0, 0, 0.1);
         font-size: 1.7rem;
+        transition: all .3s;
+
+        &:hover {
+            background-color: color.$primary-color;
+        }
     }
 }

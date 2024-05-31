@@ -960,7 +960,12 @@ main {
   width: 100%;
   height: 100%;
   z-index: 10;
-  padding: 5rem 10rem;
+  padding: 5rem 4rem;
+}
+@media (min-width: 768px) {
+  .cart {
+    padding: 5rem 10rem;
+  }
 }
 
 .cart__header {
@@ -993,6 +998,7 @@ main {
   align-items: center;
   gap: 0.1rem;
   font-size: 1.5rem;
+  font-weight: 500;
   background-color: #ffffff;
 }
 .cart__header .cart__phases-container .phase-marked {
@@ -1004,6 +1010,10 @@ main {
   border-radius: 1.5rem;
   box-shadow: 0 1rem 1.5rem -0.3rem rgba(0, 0, 0, 0.1);
   font-size: 1.7rem;
+  transition: all 0.3s;
+}
+.cart__header .cart__close-button:hover {
+  background-color: #caa127;
 }
 
 /*# sourceMappingURL=app.css.map */
