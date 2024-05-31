@@ -1,0 +1,42 @@
+@use '../abstract/colors' as color;
+@use '../abstract/breakpoints' as media;
+@use '../abstract/mixins' as mixin;
+
+// ? Button Shopping Cart
+
+.button-cart {
+    background-color: color.$primary-color;
+    width: 5rem;
+    height: 5rem;
+    @include mixin.flex-horizontal;
+    justify-content: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    
+    span {
+        // display: none;
+        position: relative;
+        bottom: 2.2rem;
+        left: 1.8rem;
+        background-color: color.$secondary-color;
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding: .2rem .8rem;
+        border-radius: 50%;
+    }
+
+    i {
+        font-size: 2.3rem;
+        position: absolute;
+    }
+}
+
+
+
+// ? Shopping Cart
+
+.cart {
+    display: none;
+}
