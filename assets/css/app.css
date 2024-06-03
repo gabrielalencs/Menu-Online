@@ -1016,4 +1016,107 @@ main {
   background-color: #caa127;
 }
 
+.cart__main-content {
+  margin-top: 4rem;
+}
+.cart__main-content h2 {
+  font-size: 2.3rem;
+}
+
+.cart__my-cart .my-cart__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5rem;
+}
+.cart__my-cart .my-cart__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+  flex: 1;
+}
+.cart__my-cart .my-cart-image {
+  width: 8rem;
+}
+@media (min-width: 768px) {
+  .cart__my-cart .my-cart-image {
+    width: 10rem;
+  }
+}
+.cart__my-cart .my-cart-image img {
+  border-radius: 1.5rem;
+}
+.cart__my-cart .my-cart__texts {
+  font-weight: 600;
+  font-size: 1.9rem;
+}
+@media (min-width: 768px) {
+  .cart__my-cart .my-cart__texts {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 481px) {
+  .cart__my-cart .my-cart__texts p {
+    line-height: 2.4rem;
+  }
+}
+.cart__my-cart .my-cart__texts span {
+  color: #caa127;
+  font-weight: 700;
+}
+.cart__my-cart .my-cart__buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+.cart__my-cart .my-cart__button-count {
+  border: 2px solid #212121;
+  border-radius: 0.8rem;
+  padding: 0.3rem 0.1rem;
+  font-size: 1.8rem;
+  flex: 2;
+}
+@media (min-width: 768px) {
+  .cart__my-cart .my-cart__button-count {
+    padding: 0.3rem 1rem;
+    font-size: 1.9rem;
+  }
+}
+.cart__my-cart .my-cart__food-icon {
+  padding: 0 0.5rem;
+}
+@media (min-width: 768px) {
+  .cart__my-cart .my-cart__food-icon {
+    padding: 0 0.5rem;
+  }
+}
+.cart__my-cart .my-cart__food-count {
+  border: 2px solid #212121;
+  border-top: none;
+  border-bottom: none;
+  font-size: 1.8rem;
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .cart__my-cart .my-cart__food-count {
+    padding: 0 1.5rem;
+    font-size: 1.8rem;
+  }
+}
+.cart__my-cart .my-cart__button-close {
+  background-color: #E74C3C;
+  font-size: 2rem;
+  padding: 0.3rem 1.2rem;
+  border-radius: 1rem;
+  color: #ffffff;
+  display: none;
+}
+@media (min-width: 768px) {
+  .cart__my-cart .my-cart__button-close {
+    display: block;
+  }
+}
+
 /*# sourceMappingURL=app.css.map */

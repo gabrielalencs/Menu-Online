@@ -14,7 +14,7 @@
     position: fixed;
     bottom: 3rem;
     right: 3rem;
-    
+
     span {
         // display: none;
         position: relative;
@@ -33,6 +33,7 @@
     }
 }
 
+
 // ? Shopping Cart
 
 .cart {
@@ -46,9 +47,13 @@
     padding: 5rem 4rem;
 
     @include media.smallTablets {
-        padding: 5rem 10rem;  
+        padding: 5rem 10rem;
     }
 }
+
+
+// * Cart Header
+
 
 .cart__header {
     display: flex;
@@ -96,6 +101,120 @@
 
         &:hover {
             background-color: color.$primary-color;
+        }
+    }
+}
+
+
+// * Main Cart Content
+
+.cart__main-content {
+    margin-top: 4rem;
+
+    h2 {
+        font-size: 2.3rem;
+    }
+}
+
+
+// ? "My Cart" Section
+
+.cart__my-cart {
+
+    .my-cart__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5rem;
+    }
+
+    .my-cart__content {
+        @include mixin.flex-horizontal;
+        gap: 2.5rem;
+        flex: 1;
+    }
+
+    .my-cart-image {
+        width: 8rem;
+
+        @include media.smallTablets {
+            width: 10rem;
+        }
+
+        img {
+            border-radius: 1.5rem;
+        }
+    }
+
+    .my-cart__texts {
+        font-weight: 600;
+        font-size: 1.9rem;
+
+        @include media.smallTablets {
+            font-size: 2.2rem;
+        }
+
+        @include media.mobileDevices {
+            p {
+                line-height: 2.4rem;
+            }
+        }
+
+        span {
+            color: color.$primary-color;
+            font-weight: 700;
+        }
+    }
+
+    .my-cart__buttons-container {
+        @include mixin.flex-horizontal;
+        gap: 2rem;
+    }
+    
+    .my-cart__button-count {
+        border: 2px solid color.$black-primary;
+        border-radius: .8rem;
+        padding: .3rem .1rem;
+        font-size: 1.8rem;
+        flex: 2;
+
+        @include media.smallTablets {
+            padding: .3rem 1rem;
+            font-size: 1.9rem;
+        }
+    }
+
+    .my-cart__food-icon {
+        padding: 0 .5rem;
+
+        @include media.smallTablets {
+            padding: 0 .5rem;
+        }
+    }
+
+    .my-cart__food-count {
+        border: 2px solid color.$black-primary;
+        border-top: none;
+        border-bottom: none;
+        font-size: 1.8rem;
+        padding: 0 1rem;
+
+        @include media.smallTablets {
+            padding: 0 1.5rem;
+            font-size: 1.8rem;
+        }
+    }
+
+    .my-cart__button-close {
+        background-color: color.$red-primary;
+        font-size: 2rem;
+        padding: .3rem 1.2rem;
+        border-radius: 1rem;
+        color: color.$white-primary;
+        display: none;
+
+        @include media.smallTablets {
+            display: block;
         }
     }
 }
