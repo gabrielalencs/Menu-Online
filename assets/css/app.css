@@ -1016,11 +1016,11 @@ main {
   background-color: #caa127;
 }
 
-.cart__main-content {
+.cart__body {
   max-width: 125rem;
   margin: 4rem auto 0;
 }
-.cart__main-content h2 {
+.cart__body h2 {
   font-size: 2.3rem;
 }
 
@@ -1130,21 +1130,11 @@ main {
 }
 
 .cart__footer {
-  background-color: #ffffff;
+  max-width: 125rem;
+  margin: 0 auto;
   border-top: 1px solid #909097;
-  position: absolute;
-  bottom: 5rem;
-  right: 4rem;
-  width: 85.1%;
-  display: flex;
-  justify-content: flex-end;
   padding-top: 2rem;
-  z-index: 99;
-}
-@media (min-width: 768px) {
-  .cart__footer {
-    right: 10rem;
-  }
+  z-index: 10;
 }
 .cart__footer .footer__content {
   text-align: right;

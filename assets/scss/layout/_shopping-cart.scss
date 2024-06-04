@@ -108,7 +108,7 @@
 
 // * Main Cart Content
 
-.cart__main-content {
+.cart__body {
     max-width: 125rem;
     margin: 4rem auto 0;
 
@@ -232,21 +232,14 @@
 // ? Footer Cart
 
 .cart__footer {
-    background-color: color.$white-primary;
+    max-width: 125rem;
+    margin: 0 auto;
+    // background-color: color.$white-primary;
     border-top: 1px solid color.$gray-secondary;
-    position: absolute;
-    bottom: 5rem;
-    right: 4rem;
-    width: 85.1%; 
-    display: flex;
-    justify-content: flex-end;
     padding-top: 2rem;
-    z-index: 99;
+    z-index: 10;
 
-    @include media.smallTablets {
-        right: 10rem;
-    }
-
+  
     .footer__content {
         text-align: right;
     }
