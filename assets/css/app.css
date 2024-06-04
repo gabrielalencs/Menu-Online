@@ -1017,7 +1017,8 @@ main {
 }
 
 .cart__main-content {
-  margin-top: 4rem;
+  max-width: 125rem;
+  margin: 4rem auto 0;
 }
 .cart__main-content h2 {
   font-size: 2.3rem;
