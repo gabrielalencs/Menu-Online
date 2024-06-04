@@ -111,8 +111,6 @@
 .cart__main-content {
     max-width: 125rem;
     margin: 4rem auto 0;
-    position: relative;
-    overflow-y: scroll;
 
     h2 {
         font-size: 2.3rem;
@@ -123,13 +121,20 @@
 // ? "My Cart" Section
 
 .cart__my-cart {
-    z-index: 5;
+    overflow-y: scroll;
+    height: 40vh;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     .my-cart__item {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 5rem;
+        margin-top: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 2px solid color.$gray-terciary;
     }
 
     .my-cart__content {
@@ -227,15 +232,16 @@
 // ? Footer Cart
 
 .cart__footer {
+    background-color: color.$white-primary;
     border-top: 1px solid color.$gray-secondary;
     position: absolute;
     bottom: 5rem;
     right: 4rem;
-    width: 85%; 
+    width: 85.1%; 
     display: flex;
     justify-content: flex-end;
     padding-top: 2rem;
-    z-index: 10;
+    z-index: 99;
 
     @include media.smallTablets {
         right: 10rem;
