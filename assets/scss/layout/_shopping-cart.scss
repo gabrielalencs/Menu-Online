@@ -111,6 +111,8 @@
 .cart__main-content {
     max-width: 125rem;
     margin: 4rem auto 0;
+    position: relative;
+    overflow-y: scroll;
 
     h2 {
         font-size: 2.3rem;
@@ -121,6 +123,7 @@
 // ? "My Cart" Section
 
 .cart__my-cart {
+    z-index: 5;
 
     .my-cart__item {
         display: flex;
@@ -217,5 +220,54 @@
         @include media.smallTablets {
             display: block;
         }
+    }
+}
+
+
+// ? Footer Cart
+
+.cart__footer {
+    border-top: 1px solid color.$gray-secondary;
+    position: absolute;
+    bottom: 5rem;
+    right: 4rem;
+    width: 85%; 
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2rem;
+    z-index: 10;
+
+    @include media.smallTablets {
+        right: 10rem;
+    }
+
+    .footer__content {
+        text-align: right;
+    }
+
+    .footer__subtotal {
+        font-size: 1.63rem;
+        line-height: 1.4;
+    }
+
+    .footer__delivery {
+        font-size: 1.6rem;
+        color: color.$gray-secondary;
+        opacity: .5;
+    }
+
+    .footer__total {
+        font-size: 2.4em;
+        font-weight: 600;
+
+        span {
+            font-weight: 700;
+            color: color.$primary-color;
+        }
+    }
+
+    .footer__btn-next {
+        margin-top: 3rem;
+        @include mixin.button;
     }
 }
