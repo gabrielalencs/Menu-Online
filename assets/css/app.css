@@ -1026,7 +1026,7 @@ main {
 
 .cart__my-cart {
   overflow-y: scroll;
-  height: 40vh;
+  height: 45vh;
 }
 .cart__my-cart::-webkit-scrollbar {
   display: none;
@@ -1035,8 +1035,8 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 3rem;
-  padding-bottom: 3rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
   border-bottom: 2px solid #F3F4F6;
 }
 .cart__my-cart .my-cart__content {
