@@ -1133,7 +1133,8 @@ main {
 .address__form {
   margin-top: 3rem;
   overflow-y: scroll;
-  height: 45vh;
+  height: 35vh;
+  padding-bottom: 3rem;
 }
 .address__form::-webkit-scrollbar {
   display: none;
@@ -1149,12 +1150,14 @@ main {
   margin-bottom: 1.5rem;
   display: inline-block;
 }
-.address__form .address__container-element input, .address__form .address__container-element select {
+.address__form .address__container-element input,
+.address__form .address__container-element select {
   border: none;
   width: 100%;
   font-size: 1.9rem;
 }
-.address__form .address__container-element input:focus, .address__form .address__container-element select:focus {
+.address__form .address__container-element input:focus,
+.address__form .address__container-element select:focus {
   outline: none;
 }
 .address__form .address__container-element div {
@@ -1162,18 +1165,28 @@ main {
   padding: 1rem 2rem;
   border-radius: 1.5rem;
 }
-.address__form .address__input-cep {
+.address__form .address-cep {
+  width: max-content;
+}
+.address__form .address-cep .address__input-cep {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
-.address__form .address__input-cep div {
+.address__form .address-cep .address__input-cep div {
   background-color: #caa127;
   color: #ffffff;
   padding: 1.5rem;
 }
-.address__form .address__input-cep div i {
+.address__form .address-cep .address__input-cep div i {
   font-size: 1.8rem;
+}
+@media (min-width: 768px) {
+  .address__form .address__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+  }
 }
 
 .cart__footer {

@@ -665,7 +665,7 @@
                 <h2>Endereço de entrega:</h2>
 
                 <form class="address__form">
-                    <div class="address__container-element">
+                    <div class="address__container-element address-cep">
                         <label for="cep">CEP:</label>
 
                         <div class="address__input-cep">
@@ -677,80 +677,84 @@
                         </div>
                     </div>
 
-                    <div class="address__container-element">
-                        <label for="address">Endereço:</label>
+                    <div class="address__row">
+                        <div class="address__container-element">
+                            <label for="address">Endereço:</label>
 
-                        <div>
-                            <input type="text" id="address">
+                            <div>
+                                <input type="text" id="address">
+                            </div>
+                        </div>
+
+                        <div class="address__container-element">
+                            <label for="neighborhood">Bairro:</label>
+
+                            <div>
+                                <input type="text" id="neighborhood">
+                            </div>
+                        </div>
+
+                        <div class="address__container-element">
+                            <label for="number">Número:</label>
+
+                            <div>
+                                <input type="number" id="number">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="address__container-element">
-                        <label for="neighborhood">Bairro:</label>
+                    <div class="address__row">
+                        <div class="address__container-element">
+                            <label for="city">Cidade:</label>
 
-                        <div>
-                            <input type="text" id="neighborhood">
+                            <div>
+                                <input type="text" id="city">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="address__container-element">
-                        <label for="number">Número:</label>
+                        <div class="address__container-element">
+                            <label for="complement">Complemento:</label>
 
-                        <div>
-                            <input type="number" id="number">
+                            <div>
+                                <input type="text" id="complement">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="address__container-element">
-                        <label for="city">Cidade:</label>
+                        <div class="address__container-element">
+                            <label for="complement">UF:</label>
 
-                        <div>
-                            <input type="text" id="city">
-                        </div>
-                    </div>
-
-                    <div class="address__container-element">
-                        <label for="complement">Complemento:</label>
-
-                        <div>
-                            <input type="text" id="complement">
-                        </div>
-                    </div>
-
-                    <div class="address__container-element">
-                        <label for="complement">UF:</label>
-
-                        <div>
-                            <select id="complement" class="form-control">
-                                <option value="-1">...</option>
-                                <option value="AC">Acre - AC</option>
-                                <option value="AL">Alagoas - AL</option>
-                                <option value="AP">Amapa - AP</option>
-                                <option value="AM">Amazonas - AM</option>
-                                <option value="BA">Bahia - BA</option>
-                                <option value="CE">Ceara - CE</option>
-                                <option value="DF">Distrito Federal - DF</option>
-                                <option value="ES">Espirito Santo - ES</option>
-                                <option value="GO">Goias - GO</option>
-                                <option value="MA">Maranhão - MA</option>
-                                <option value="MT">Mato Grosso - MT</option>
-                                <option value="MS">Mato Grosso Do Sul - MS</option>
-                                <option value="MG">Minas Gerais - MG</option>
-                                <option value="PA">Para - PA</option>
-                                <option value="PB">Paraiba - PB</option>
-                                <option value="PR">Parana - PR</option>
-                                <option value="PE">Pernambuco - PE</option>
-                                <option value="PI">Piaui - PI</option>
-                                <option value="RJ">Rio De Janeiro - RJ</option>
-                                <option value="RN">Rio Grande Do Norte - RN</option>
-                                <option value="RS">Rio Grande Do Sul - RS</option>
-                                <option value="RO">Rondonia - RO</option>
-                                <option value="RR">Roraima - RR</option>
-                                <option value="SC">Santa Catarina - SC</option>
-                                <option value="SP">São Paulo - SP</option>
-                                <option value="SE">Sergipe - SE</option>
-                                <option value="TO">Tocantins - TO</option>
-                            </select>
+                            <div>
+                                <select id="complement" class="form-control">
+                                    <option value="-1">...</option>
+                                    <option value="AC">Acre - AC</option>
+                                    <option value="AL">Alagoas - AL</option>
+                                    <option value="AP">Amapa - AP</option>
+                                    <option value="AM">Amazonas - AM</option>
+                                    <option value="BA">Bahia - BA</option>
+                                    <option value="CE">Ceara - CE</option>
+                                    <option value="DF">Distrito Federal - DF</option>
+                                    <option value="ES">Espirito Santo - ES</option>
+                                    <option value="GO">Goias - GO</option>
+                                    <option value="MA">Maranhão - MA</option>
+                                    <option value="MT">Mato Grosso - MT</option>
+                                    <option value="MS">Mato Grosso Do Sul - MS</option>
+                                    <option value="MG">Minas Gerais - MG</option>
+                                    <option value="PA">Para - PA</option>
+                                    <option value="PB">Paraiba - PB</option>
+                                    <option value="PR">Parana - PR</option>
+                                    <option value="PE">Pernambuco - PE</option>
+                                    <option value="PI">Piaui - PI</option>
+                                    <option value="RJ">Rio De Janeiro - RJ</option>
+                                    <option value="RN">Rio Grande Do Norte - RN</option>
+                                    <option value="RS">Rio Grande Do Sul - RS</option>
+                                    <option value="RO">Rondonia - RO</option>
+                                    <option value="RR">Roraima - RR</option>
+                                    <option value="SC">Santa Catarina - SC</option>
+                                    <option value="SP">São Paulo - SP</option>
+                                    <option value="SE">Sergipe - SE</option>
+                                    <option value="TO">Tocantins - TO</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </form>
