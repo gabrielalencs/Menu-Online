@@ -123,6 +123,7 @@
 .cart__my-cart {
     overflow-y: scroll;
     height: 45vh;
+    display: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -237,6 +238,7 @@
     border-top: 1px solid color.$gray-secondary;
     padding-top: 2rem;
     z-index: 10;
+    display: none;
 
   
     .footer__content {

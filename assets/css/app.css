@@ -1027,6 +1027,7 @@ main {
 .cart__my-cart {
   overflow-y: scroll;
   height: 45vh;
+  display: none;
 }
 .cart__my-cart::-webkit-scrollbar {
   display: none;
@@ -1135,6 +1136,7 @@ main {
   border-top: 1px solid #909097;
   padding-top: 2rem;
   z-index: 10;
+  display: none;
 }
 .cart__footer .footer__content {
   text-align: right;

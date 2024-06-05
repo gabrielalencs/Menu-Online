@@ -589,39 +589,7 @@
                                 <i class="fa-solid fa-plus"></i>
                             </span>
                         </button>
-                        
-                        <div class="my-cart__button-close">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="my-cart__item">
-                    <div class="my-cart__content">
-                        <div class="my-cart-image">
-                            <img src="assets/images/menu/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg"
-                                alt="icon">
-                        </div>
 
-                        <div class="my-cart__texts">
-                            <p>Gramercy Tavern</p>
-                            <span>R$ 99,00</span>
-                        </div>
-                    </div>
-
-                    <div class="my-cart__buttons-container">
-                        <button class="my-cart__button-count">
-                            <span class="my-cart__food-icon">
-                                <i class="fa-solid fa-minus"></i>
-                            </span>
-
-                            <span class="my-cart__food-count">0</span>
-
-                            <span class="my-cart__food-icon">
-                                <i class="fa-solid fa-plus"></i>
-                            </span>
-                        </button>
-                        
                         <div class="my-cart__button-close">
                             <i class="fa-solid fa-xmark"></i>
                         </div>
@@ -653,7 +621,39 @@
                                 <i class="fa-solid fa-plus"></i>
                             </span>
                         </button>
-                        
+
+                        <div class="my-cart__button-close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-cart__item">
+                    <div class="my-cart__content">
+                        <div class="my-cart-image">
+                            <img src="assets/images/menu/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg"
+                                alt="icon">
+                        </div>
+
+                        <div class="my-cart__texts">
+                            <p>Gramercy Tavern</p>
+                            <span>R$ 99,00</span>
+                        </div>
+                    </div>
+
+                    <div class="my-cart__buttons-container">
+                        <button class="my-cart__button-count">
+                            <span class="my-cart__food-icon">
+                                <i class="fa-solid fa-minus"></i>
+                            </span>
+
+                            <span class="my-cart__food-count">0</span>
+
+                            <span class="my-cart__food-icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </span>
+                        </button>
+
                         <div class="my-cart__button-close">
                             <i class="fa-solid fa-xmark"></i>
                         </div>
@@ -661,7 +661,100 @@
                 </div>
             </div>
 
-            <div class="cart__delivery-address"></div>
+            <div class="cart__delivery-address">
+                <h2>Endereço de entrega:</h2>
+
+                <form>
+                    <div class="address__container-element">
+                        <label for="cep">CEP:</label>
+
+                        <div>
+                            <input type="text" id="cep">
+
+                            <div>
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="address__container-element">
+                        <label for="address">Endereço:</label>
+
+                        <div>
+                            <input type="text" id="address">
+                        </div>
+                    </div>
+
+                    <div class="address__container-element">
+                        <label for="neighborhood">Bairro:</label>
+
+                        <div>
+                            <input type="text" id="neighborhood">
+                        </div>
+                    </div>
+
+                    <div class="address__container-element">
+                        <label for="number">Número:</label>
+
+                        <div>
+                            <input type="number" id="number">
+                        </div>
+                    </div>
+
+                    <div class="address__container-element">
+                        <label for="city">Cidade:</label>
+
+                        <div>
+                            <input type="text" id="city">
+                        </div>
+                    </div>
+
+                    <div class="address__container-element">
+                        <label for="complement">Complemento:</label>
+
+                        <div>
+                            <input type="text" id="complement">
+                        </div>
+                    </div>
+
+                    <div class="address__container-element">
+                        <label for="complement">UF:</label>
+
+                        <div>
+                            <select id="complement" class="form-control">
+                                <option value="-1">...</option>
+                                <option value="AC">Acre - AC</option>
+                                <option value="AL">Alagoas - AL</option>
+                                <option value="AP">Amapa - AP</option>
+                                <option value="AM">Amazonas - AM</option>
+                                <option value="BA">Bahia - BA</option>
+                                <option value="CE">Ceara - CE</option>
+                                <option value="DF">Distrito Federal - DF</option>
+                                <option value="ES">Espirito Santo - ES</option>
+                                <option value="GO">Goias - GO</option>
+                                <option value="MA">Maranhão - MA</option>
+                                <option value="MT">Mato Grosso - MT</option>
+                                <option value="MS">Mato Grosso Do Sul - MS</option>
+                                <option value="MG">Minas Gerais - MG</option>
+                                <option value="PA">Para - PA</option>
+                                <option value="PB">Paraiba - PB</option>
+                                <option value="PR">Parana - PR</option>
+                                <option value="PE">Pernambuco - PE</option>
+                                <option value="PI">Piaui - PI</option>
+                                <option value="RJ">Rio De Janeiro - RJ</option>
+                                <option value="RN">Rio Grande Do Norte - RN</option>
+                                <option value="RS">Rio Grande Do Sul - RS</option>
+                                <option value="RO">Rondonia - RO</option>
+                                <option value="RR">Roraima - RR</option>
+                                <option value="SC">Santa Catarina - SC</option>
+                                <option value="SP">São Paulo - SP</option>
+                                <option value="SE">Sergipe - SE</option>
+                                <option value="TO">Tocantins - TO</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
             <div class="cart__order-summary"></div>
         </div>
@@ -669,7 +762,7 @@
         <footer class="cart__footer">
             <div class="footer__content">
                 <p class="footer__subtotal">
-                    Subtotal: 
+                    Subtotal:
                     <span>R$ 150,00</span>
                 </p>
 
@@ -687,7 +780,7 @@
                     Continuar
                 </button>
             </div>
-        </footer> 
+        </footer>
     </div>
 
     <div class="button-cart">
