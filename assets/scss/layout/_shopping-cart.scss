@@ -230,82 +230,91 @@
 }
 
 
-// ? "Delivery Address" 
+// ? "Delivery Address" Section
 
-.address__form {
-    margin-top: 3rem;
-    overflow-y: scroll;
-    height: 35vh;
-    padding-bottom: 3rem;
+.cart__delivery-address {
+    display: none;
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-    .address__container-element {
-        border: none;
+    .address__form {
         margin-top: 3rem;
+        overflow-y: scroll;
+        height: 35vh;
+        padding-bottom: 3rem;
 
-        // ? general styles for form fields
 
-        label {
-            color: color.$gray-primary;
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            display: inline-block;
+        &::-webkit-scrollbar {
+            display: none;
         }
 
-        input,
-        select {
+        .address__container-element {
             border: none;
-            width: 100%;
-            font-size: 1.9rem;
+            margin-top: 3rem;
 
-            &:focus {
-                outline: none;
+            // ? general styles for form fields
+
+            label {
+                color: color.$gray-primary;
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 1.5rem;
+                display: inline-block;
+            }
+
+            input,
+            select {
+                border: none;
+                width: 100%;
+                font-size: 1.9rem;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            div {
+                box-shadow: 0px 1rem 1.5rem -.3rem rgba(0, 0, 0, 0.1);
+                padding: 1rem 2rem;
+                border-radius: 1.5rem;
             }
         }
 
-        div {
-            box-shadow: 0px 1rem 1.5rem -.3rem rgba(0, 0, 0, 0.1);
-            padding: 1rem 2rem;
-            border-radius: 1.5rem;
-        }
-    }
+        // ? cep container
 
-    // ? cep container
+        .address-cep {
+            width: max-content;
 
-    .address-cep {
-        width: max-content;
+            .address__input-cep {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
 
-        .address__input-cep {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-    
-            div {
-                background-color: color.$primary-color;
-                color: color.$white-primary;
-                padding: 1.5rem;
-    
-                i {
-                    font-size: 1.8rem;
+                div {
+                    background-color: color.$primary-color;
+                    color: color.$white-primary;
+                    padding: 1.5rem;
+
+                    i {
+                        font-size: 1.8rem;
+                    }
                 }
             }
         }
-    }
- 
 
-    @include media.smallTablets {
-        .address__row {
-            display: flex;
-            justify-content: space-between;
-            gap: 3rem;
+
+        @include media.smallTablets {
+            .address__row {
+                display: flex;
+                justify-content: space-between;
+                gap: 3rem;
+            }
         }
+
     }
-  
 }
+
+
+// ? "Order Summary" Section
+
 
 
 // ? Footer Cart
