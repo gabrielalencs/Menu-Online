@@ -962,6 +962,7 @@ main {
   z-index: 10;
   padding: 5rem 4rem;
   overflow: scroll;
+  display: none;
 }
 .cart::-webkit-scrollbar {
   display: none;
