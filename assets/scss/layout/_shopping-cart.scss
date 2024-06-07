@@ -133,7 +133,7 @@
 .cart__my-cart {
     overflow-y: scroll;
     height: 45vh;
-    display: none;
+    // display: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -327,7 +327,7 @@
 .cart__order-summary {
     overflow-y: scroll;
     height: 45vh;
-    // display: none;
+    display: none;
 
     &::-webkit-scrollbar {
         display: none;
