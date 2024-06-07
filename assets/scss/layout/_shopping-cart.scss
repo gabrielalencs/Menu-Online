@@ -47,6 +47,10 @@
     padding: 5rem 4rem;
 
     @include media.smallTablets {
+        padding: 5rem 6rem;
+    }
+
+    @include media.laptops {
         padding: 5rem 10rem;
     }
 }
@@ -314,6 +318,20 @@
 
 
 // ? "Order Summary" Section
+
+.cart__order-summary {
+    overflow-y: scroll;
+    height: 45vh;
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .order-summary__content {
+        margin-top: 3rem;
+    }
+}
 
 
 

@@ -964,6 +964,11 @@ main {
 }
 @media (min-width: 768px) {
   .cart {
+    padding: 5rem 6rem;
+  }
+}
+@media (min-width: 992px) {
+  .cart {
     padding: 5rem 10rem;
   }
 }
@@ -1190,6 +1195,18 @@ main {
     justify-content: space-between;
     gap: 3rem;
   }
+}
+
+.cart__order-summary {
+  overflow-y: scroll;
+  height: 45vh;
+}
+.cart__order-summary h3 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.cart__order-summary .order-summary__content {
+  margin-top: 3rem;
 }
 
 .cart__footer {
