@@ -1219,6 +1219,9 @@ main {
   align-items: center;
   gap: 3rem;
 }
+.cart__order-summary .order-summary__container-itens div:last-child {
+  border-bottom: none;
+}
 .cart__order-summary .order-summary-item {
   margin-top: 2rem;
   padding-bottom: 2rem;
@@ -1240,6 +1243,29 @@ main {
   font-size: 2rem;
   letter-spacing: 0.5rem;
   font-weight: 600;
+}
+.cart__order-summary .order-summary__location-container {
+  margin-top: 3rem;
+}
+.cart__order-summary .order-summary__location-container .location-info {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+.cart__order-summary .order-summary__location-container .location-icon {
+  background-color: #fff2cc;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+  font-size: 2rem;
+}
+.cart__order-summary .order-summary__location-container .location-texts {
+  font-size: 1.6rem;
+}
+.cart__order-summary .order-summary__location-container .location-address {
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 .cart__footer {
