@@ -46,6 +46,7 @@
     z-index: 10;
     padding: 5rem 4rem;
     overflow: scroll;
+    // display: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -326,6 +327,7 @@
 .cart__order-summary {
     overflow-y: scroll;
     height: 45vh;
+    // display: none;
 
     &::-webkit-scrollbar {
         display: none;
