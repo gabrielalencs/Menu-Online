@@ -1201,12 +1201,45 @@ main {
   overflow-y: scroll;
   height: 45vh;
 }
+.cart__order-summary::-webkit-scrollbar {
+  display: none;
+}
 .cart__order-summary h3 {
   font-size: 2rem;
   font-weight: 600;
 }
-.cart__order-summary .order-summary__content {
+.cart__order-summary .order-summary__content,
+.cart__order-summary .order-summary__container-itens {
   margin-top: 3rem;
+}
+.cart__order-summary .order-summary-item,
+.cart__order-summary .item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
+.cart__order-summary .order-summary-item {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #F3F4F6;
+  justify-content: space-between;
+}
+.cart__order-summary .item-image img {
+  width: 7rem;
+  border-radius: 1.5rem;
+}
+.cart__order-summary .item-texts {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.cart__order-summary .item-texts span {
+  color: #caa127;
+}
+.cart__order-summary .item-amount {
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  font-weight: 600;
 }
 
 .cart__footer {

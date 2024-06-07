@@ -245,7 +245,6 @@
         height: 35vh;
         padding-bottom: 3rem;
 
-
         &::-webkit-scrollbar {
             display: none;
         }
@@ -323,14 +322,53 @@
     overflow-y: scroll;
     height: 45vh;
 
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
     h3 {
         font-size: 2rem;
         font-weight: 600;
     }
 
-    .order-summary__content {
+    .order-summary__content,
+    .order-summary__container-itens {
         margin-top: 3rem;
     }
+
+    .order-summary-item,
+    .item-content {
+        @include mixin.flex-horizontal;
+        gap: 3rem;
+    }
+
+    .order-summary-item {
+        margin-top: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid color.$gray-terciary;
+        justify-content: space-between;
+    }
+
+    .item-image img {
+        width: 7rem;
+        border-radius: 1.5rem;
+    }
+
+    .item-texts {
+        font-size: 2rem;
+        font-weight: 700;
+
+        span {
+            color: color.$primary-color;
+        }
+    }
+
+    .item-amount {
+        font-size: 2rem;
+        letter-spacing: .5rem;
+        font-weight: 600;
+    }
+
 }
 
 
