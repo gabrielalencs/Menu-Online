@@ -961,6 +961,10 @@ main {
   height: 100%;
   z-index: 10;
   padding: 5rem 4rem;
+  overflow: scroll;
+}
+.cart::-webkit-scrollbar {
+  display: none;
 }
 @media (min-width: 768px) {
   .cart {
@@ -1293,6 +1297,25 @@ main {
 }
 .cart__footer .footer__total span {
   font-weight: 700;
+  color: #caa127;
+}
+.cart__footer .footer__btn-return {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1.3rem 2.3rem;
+  border-radius: 1.5rem;
+  background-color: #caa127;
+  color: #ffffff;
+  border: 0.2rem solid #caa127;
+  transition: all 0.3s;
+  background-color: #ffffff;
+  border: none;
+  color: #212121;
+  box-shadow: 0 1rem 1.5rem -0.3rem rgba(0, 0, 0, 0.1);
+  margin-right: 3rem;
+}
+.cart__footer .footer__btn-return:hover {
+  background-color: transparent;
   color: #caa127;
 }
 .cart__footer .footer__btn-next {

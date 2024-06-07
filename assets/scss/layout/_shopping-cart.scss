@@ -45,6 +45,11 @@
     height: 100%;
     z-index: 10;
     padding: 5rem 4rem;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     @include media.smallTablets {
         padding: 5rem 6rem;
@@ -402,7 +407,6 @@
 }
 
 
-
 // ? Footer Cart
 
 .cart__footer {
@@ -412,7 +416,6 @@
     padding-top: 2rem;
     z-index: 10;
     // display: none;
-
 
     .footer__content {
         text-align: right;
@@ -437,6 +440,15 @@
             font-weight: 700;
             color: color.$primary-color;
         }
+    }
+
+    .footer__btn-return {
+        @include mixin.button;
+        background-color: color.$white-primary;
+        border: none;
+        color: color.$black-primary;
+        box-shadow: 0 1rem 1.5rem -0.3rem rgba(0, 0, 0, 0.1);
+        margin-right: 3rem;
     }
 
     .footer__btn-next {
