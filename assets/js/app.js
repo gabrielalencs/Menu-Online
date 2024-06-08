@@ -1,9 +1,12 @@
 // * imports
 
+// ? header
+
 import { mobileMenuBtn, toggleMenuMobile } from './header/menuMobile.js';
 
-import markBtnClicked from './menu/foodButtons.js';
+// ? menu
 
+import markBtnClicked from './menu/foodButtons.js';
 
 
 // * functions
@@ -13,14 +16,8 @@ import markBtnClicked from './menu/foodButtons.js';
 markBtnClicked() 
 
 
-
 // * events
 
+// ? header
+
 mobileMenuBtn.addEventListener('change', toggleMenuMobile);
-
-
-
-
-
-
-
