@@ -2,7 +2,7 @@
 
 import { mobileMenuBtn, toggleMenuMobile } from './header/menuMobile.js';
 
-import { markBtnClicked } from './menu/foodButtons.js';
+import markBtnClicked from './menu/foodButtons.js';
 
 
 
