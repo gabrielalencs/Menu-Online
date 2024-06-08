@@ -319,6 +319,7 @@ main {
   color: #ffffff;
 }
 .hero__image-container {
+  display: none;
   position: relative;
 }
 @media (min-width: 992px) {

@@ -86,7 +86,7 @@
     }
 
     &__image-container {
-        // display: none;
+        display: none;
         position: relative;
 
         @include media.laptops {
