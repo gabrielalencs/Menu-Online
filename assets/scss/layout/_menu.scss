@@ -185,7 +185,7 @@
 
     &__food-count-container {
         border: 2px solid color.$black-primary;
-        padding: .5rem;
+        padding: .5rem .3rem;
         border-radius: 1rem;
     }
 
@@ -202,6 +202,7 @@
         padding: 0 .5rem;
         display: inline-block;
         font-size: 1.6rem;
+        // background-color: red;
     }
 
     &__food-shopping-cart {
