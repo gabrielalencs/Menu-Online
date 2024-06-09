@@ -39,7 +39,7 @@
                 background-color: color.$gray-terciary;
                 border-radius: 1.5rem;
             }
-    
+
             &::-webkit-scrollbar-thumb {
                 background-color: #e4e4e8;
                 height: 5px;
@@ -116,6 +116,7 @@
     &__food-main {
         @include mixin.flex-horizontal;
         gap: 2rem;
+        // opacity: 0;
 
         @include media.laptops {
             @include mixin.flex-vertical;
@@ -194,10 +195,13 @@
         border-top: none;
         border-bottom: none;
         font-size: 1.8rem;
+        font-weight: 600;
     }
 
     &__food-icon {
         padding: 0 .5rem;
+        display: inline-block;
+        font-size: 1.6rem;
     }
 
     &__food-shopping-cart {

@@ -652,9 +652,12 @@ main {
   border-top: none;
   border-bottom: none;
   font-size: 1.8rem;
+  font-weight: 600;
 }
 .menu__food-icon {
   padding: 0 0.5rem;
+  display: inline-block;
+  font-size: 1.6rem;
 }
 .menu__food-shopping-cart {
   background-color: #212121;
