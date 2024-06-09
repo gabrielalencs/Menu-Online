@@ -23,23 +23,25 @@ markBtnClicked()
 mobileMenuBtn.addEventListener('change', toggleMenuMobile);
 
 
-const btnMinus = document.querySelectorAll('.btn-menu-minus');
-const countEl = document.querySelectorAll('.menu__food-count');
-const btnPlus = document.querySelectorAll('.btn-menu-plus');
+const buttonsDecreaseItems = document.querySelectorAll('.btn-menu-minus');
+
+const itemCountersElement = document.querySelectorAll('.menu__food-count');
+
+const buttonsAddItems = document.querySelectorAll('.btn-menu-plus');
 
 
-let counts = Array(countEl.length).fill(0);
+let itemCountersArray = Array(itemCountersElement.length).fill(0);
 
 
-btnMinus.forEach((item, index) => {
+buttonsDecreaseItems.forEach((buttonMinus, currentIndex) => {
 
-    item.addEventListener('click', () => {
+    buttonMinus.addEventListener('click', () => {
 
-        if (counts[index] > 0) {
+        if (itemCountersArray[currentIndex] > 0) {
 
-            counts[index]--;
+            itemCountersArray[currentIndex]--;
 
-            countEl[index].textContent = counts[index];
+            itemCountersElement[currentIndex].textContent = itemCountersArray[currentIndex];
 
         }
 
@@ -48,17 +50,15 @@ btnMinus.forEach((item, index) => {
 });
 
 
-btnPlus.forEach((item, index) => {
+buttonsAddItems.forEach((buttonPlus, currentIndex) => {
 
-    item.addEventListener('click', () => {
+    buttonPlus.addEventListener('click', () => {
 
-        counts[index]++;
+        itemCountersArray[currentIndex]++;
 
-        countEl[index].textContent = counts[index];
-
+        itemCountersElement[currentIndex].textContent = itemCountersArray[currentIndex];
 
     });
-
 
 });
 
