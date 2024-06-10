@@ -88,7 +88,8 @@
         @include media.laptops {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
-            place-items: center;
+            place-items: stretch;
+            row-gap: 5rem;
         }
 
         @include media.desktops {
@@ -131,6 +132,11 @@
         @include media.laptops {
             width: 100%;
         }
+    }
+
+    &__food-texts {
+        width: 100%;
+        text-align: center;
     }
 
     &__food-texts p {

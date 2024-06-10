@@ -51,7 +51,7 @@ fetch('../../assets/data/foods.json').then(resolve => {
     burgues.forEach((element, index) => {
         menuFoodTitle[index].textContent = element.name;
 
-        menuFoodPrice[index].textContent = element.price;
+        menuFoodPrice[index].textContent = `R$ ${element.price}`;
 
         menuFoodImg[index].src = element.image;
     });

@@ -547,7 +547,8 @@ main {
   .menu__foods-container {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    place-items: center;
+    place-items: stretch;
+    row-gap: 5rem;
   }
 }
 @media (min-width: 1200px) {
@@ -596,6 +597,10 @@ main {
   .menu__food-image img {
     width: 100%;
   }
+}
+.menu__food-texts {
+  width: 100%;
+  text-align: center;
 }
 .menu__food-texts p {
   font-weight: 700;
