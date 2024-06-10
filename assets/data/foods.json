@@ -40,7 +40,7 @@
             "image": "../../assets/images/menu/burguers/usda-prime-burgers-pack-of-18-8oz-each.274c67f15aa1c0b210dbf51801706670.jpg",
             "name": "Peter Luger Steak House",
             "dsc": "USDA Prime Burgers - Pack of 18 (8oz each)",
-            "price": 175.95
+            "price": 175
         },
         {
             "id": "double-stack-burger-kit-for-4",
@@ -84,7 +84,7 @@
             "image": "../../assets/images/menu/pizzas/6-lou-malnatis-deep-dish-pizzas.f59993181da5d295668c8a6fb856055e.jpg",
             "name": "Lou Malnati's Pizza",
             "dsc": "6 Lou Malnati's Deep Dish Pizzas",
-            "price": 116.99
+            "price": 116
         },
         {
             "id": "wood-fired-pizzas-best-seller-4-pack",
@@ -121,7 +121,7 @@
             "image": "../../assets/images/menu/barbecue/joes-kc-ribs-brisket-and-burnt-ends.6710e994980e485e6441b794717ad6fb.jpg",
             "name": "Joe's KC BBQ",
             "dsc": "Joe's KC Ribs, Brisket & Burnt Ends",
-            "price": 110.99
+            "price": 110
         },
 
         {
@@ -216,7 +216,7 @@
             "image": "../../assets/images/menu/steaks/peter-luger-steak-pack-b.9feb0300e6be2dfecfa314f2006a2183.jpg",
             "name": "Peter Luger Steak House",
             "dsc": "Peter Luger Porterhouse Steaks",
-            "price": 215.95
+            "price": 215
         },
         {
             "id": "ribeye-prime-steak-gift-box",
@@ -297,7 +297,7 @@
             "image": "../../assets/images/menu/desserts/german-chocolate-killer-brownie-tin-pack.5ebc34160f28767a9d94c4da2e04c4b9.jpg",
             "name": "Killer Brownie®",
             "dsc": "German Chocolate Killer Brownie®",
-            "price": 39.99
+            "price": 39
         },
         {
             "id": "jacques-world-famous-chocolate-chip-cookies",
@@ -346,7 +346,7 @@
             "image": "../../assets/images/menu/desserts/jewish-classics-dessert-pack.7d4b76630f2fe75dcb7bbcf2501b7390.jpg",
             "name": "Ess-a-Bagel",
             "dsc": "Jewish Classics Dessert Pack",
-            "price": 89.95
+            "price": 89
         }
     ]
 }

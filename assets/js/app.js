@@ -45,13 +45,14 @@ fetch('../../assets/data/foods.json').then(resolve => {
 
     let burgues = arrayDados.burgers;
 
-    // let pizzas = arrayDados.pizzas;
-    // let barbecue = arrayDados.barbecue;
+    let pizzas = arrayDados.pizzas;
+    
+    let barbecue = arrayDados.barbecue;
 
     burgues.forEach((element, index) => {
         menuFoodTitle[index].textContent = element.name;
 
-        menuFoodPrice[index].textContent = `R$ ${element.price}`;
+        menuFoodPrice[index].textContent = `R$ ${element.price},00`;
 
         menuFoodImg[index].src = element.image;
     });
