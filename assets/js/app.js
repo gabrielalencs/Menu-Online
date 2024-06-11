@@ -4,20 +4,134 @@ import { mobileMenuBtn, toggleMenuMobile } from './header/menuMobile.js';
 
 import markBtnClicked from './menu/foodButtons.js';
 
-import addOrRemoveItems from './menu/addItemsToCart.js'
+// import addOrRemoveItems from './menu/addItemsToCart.js'
+
+
 
 
 // * functions
 
 markBtnClicked() // ? marks which food button the user clicked on
 
-addOrRemoveItems() // ? increment or decrement menu items before adding to cart
+const itemCountersElement = document.querySelectorAll('.menu__food-count');
+
+
+let itemCountersArray = Array(itemCountersElement.length).fill(0);
+
+
+
+const buttonsDecreaseItems = document.querySelectorAll('.btn-menu-minus');
+
+const buttonsAddItems = document.querySelectorAll('.btn-menu-plus');
+
+
+export const addOrRemoveItems = (arrayCounters) => {
+
+    buttonsDecreaseItems.forEach((buttonMinus, currentIndex) => {
+
+        buttonMinus.addEventListener('click', () => {
+    
+            if (arrayCounters[currentIndex] > 0) {
+    
+                arrayCounters[currentIndex]--;
+    
+                itemCountersElement[currentIndex].textContent = arrayCounters[currentIndex];
+    
+            }
+    
+        });
+    
+    });
+    
+    
+    buttonsAddItems.forEach((buttonPlus, currentIndex) => {
+    
+        buttonPlus.addEventListener('click', () => {
+    
+            arrayCounters[currentIndex]++;
+    
+            itemCountersElement[currentIndex].textContent = arrayCounters[currentIndex];
+    
+        });
+    
+    });
+
+}
+
+
+
+
+addOrRemoveItems(itemCountersArray, itemCountersElement) // ? increment or decrement menu items before adding to cart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 // * events
 
 mobileMenuBtn.addEventListener('change', toggleMenuMobile);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -82,22 +196,5 @@ fetch('../../assets/data/foods.json').then(resolve => {
     })
 
    
-
-
-
-
-    // let burgues = arrayDados.burgers;
-
-    // let pizzas = arrayDados.pizzas;
-
-    // let barbecue = arrayDados.barbecue;
-
-    // let steaks = arrayDados.steaks;
-
-    // let drinks = arrayDados.drinks;
-
-    // let desserts = arrayDados.desserts;
-
-    
 
 })

@@ -1,3 +1,7 @@
+
+
+
+
 const foodButtons = document.querySelectorAll('.menu__button-food');
 
 const markBtnClicked = () => {
