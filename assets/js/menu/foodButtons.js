@@ -1,10 +1,5 @@
 
 
-
-
-const itemCountersElement = document.querySelectorAll('.menu__food-count');
-
-
 const foodButtons = document.querySelectorAll('.menu__button-food');
 
 const markBtnClicked = () => {
@@ -17,9 +12,8 @@ const markBtnClicked = () => {
 
             button.classList.add('menu-btn-checked');
 
-            itemCountersElement.forEach(item => {
-                item.textContent = 0
-            })
+
+            
         });
 
     })

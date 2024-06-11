@@ -15,15 +15,15 @@ markBtnClicked() // ? marks which food button the user clicked on
 const itemCountersElement = document.querySelectorAll('.menu__food-count');
 
 
-let itemCountersArrayBurgers = Array(itemCountersElement.length).fill(0);
-let itemCountersArrayPizzas = Array(itemCountersElement.length).fill(0);
+export let itemCountersArrayBurgers = Array(itemCountersElement.length).fill(0);
+export let itemCountersArrayPizzas = Array(itemCountersElement.length).fill(0);
 let itemCountersArrayBarbecue = Array(itemCountersElement.length).fill(0);
 let itemCountersArraySteaks = Array(itemCountersElement.length).fill(0);
 let itemCountersArrayDrinks = Array(itemCountersElement.length).fill(0);
 let itemCountersArrayDesserts = Array(itemCountersElement.length).fill(0);
 
 
-let count = 0
+export let count = 0
 
 
 
