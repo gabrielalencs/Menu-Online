@@ -598,9 +598,11 @@ main {
     width: 100%;
   }
 }
-.menu__food-texts {
-  width: 100%;
-  text-align: center;
+@media (min-width: 992px) {
+  .menu__food-texts {
+    width: 100%;
+    text-align: center;
+  }
 }
 .menu__food-texts p {
   font-weight: 700;
@@ -618,7 +620,7 @@ main {
 @media (min-width: 992px) {
   .menu__food-hover {
     left: 3.6rem;
-    bottom: 2.8rem;
+    bottom: 3.8rem;
     text-align: center;
   }
 }

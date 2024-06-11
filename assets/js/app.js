@@ -23,9 +23,10 @@ mobileMenuBtn.addEventListener('change', toggleMenuMobile);
 
 const foodButtons = document.querySelectorAll('.menu__button-food');
 
-const menuFood = document.querySelectorAll('.menu__food');
 
 const menuFoodTitle = document.querySelectorAll('.menu__food .menu__food-title');
+
+const menuFoodPriceHover = document.querySelectorAll('.menu__food .menu__hover-title');
 
 const menuFoodPrice = document.querySelectorAll('.menu__food .menu__food-price');
 
@@ -45,8 +46,10 @@ fetch('../../assets/data/foods.json').then(resolve => {
 
         elementArr.forEach((element, index) => {
             menuFoodTitle[index].textContent = element.name;
-    
+
             menuFoodPrice[index].textContent = `R$ ${element.price},00`;
+
+            menuFoodPriceHover[index].textContent = `R$ ${element.price},00`;
     
             menuFoodImg[index].src = element.image;
         });

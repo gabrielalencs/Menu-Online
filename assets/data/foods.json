@@ -63,7 +63,7 @@
             "image": "../../assets/images/menu/pizzas/2-lou-malnatis-deep-dish-pizzas.bf0fe065d251a9cca3925b269d443a27.jpg",
             "name": "Lou Malnati's Pizza",
             "dsc": "2 Lou Malnati's Deep Dish Pizzas",
-            "price": 67.99
+            "price": 67
         },
         {
             "id": "23699-choose-your-own-thin-crust-pizza-4-pack",
@@ -304,7 +304,7 @@
             "image": "../../assets/images/menu/desserts/jacques-world-famous-chocolate-chip-cookies-6-pack.2217a14c443602493bba88aa9335319a.jpg",
             "name": "Jacques Torres Chocolate",
             "dsc": "Jacques' World Famous Chocolate Chip Cookies - 6 Pack",
-            "price": 39.95
+            "price": 39
         },
         {
             "id": "luigis-original-cannoli-pie",

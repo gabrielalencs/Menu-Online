@@ -134,9 +134,11 @@
         }
     }
 
-    &__food-texts {
-        width: 100%;
-        text-align: center;
+    @include media.laptops {
+        &__food-texts {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__food-texts p {
@@ -158,7 +160,7 @@
 
         @include media.laptops {
             left: 3.6rem;
-            bottom: 2.8rem;
+            bottom: 3.8rem;
             text-align: center;
         }
     }
