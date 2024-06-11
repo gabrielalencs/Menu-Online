@@ -7,16 +7,16 @@ import markBtnClicked from './menu/foodButtons.js';
 
 
 
-
 // * functions
 
 markBtnClicked() // ? marks which food button the user clicked on
 
+
 const itemCountersElement = document.querySelectorAll('.menu__food-count');
 
 
-export let itemCountersArrayBurgers = Array(itemCountersElement.length).fill(0);
-export let itemCountersArrayPizzas = Array(itemCountersElement.length).fill(0);
+let itemCountersArrayBurgers = Array(itemCountersElement.length).fill(0);
+let itemCountersArrayPizzas = Array(itemCountersElement.length).fill(0);
 let itemCountersArrayBarbecue = Array(itemCountersElement.length).fill(0);
 let itemCountersArraySteaks = Array(itemCountersElement.length).fill(0);
 let itemCountersArrayDrinks = Array(itemCountersElement.length).fill(0);
@@ -32,86 +32,38 @@ const buttonsDecreaseItems = document.querySelectorAll('.btn-menu-minus');
 const buttonsAddItems = document.querySelectorAll('.btn-menu-plus');
 
 
+
+
+
+let arrayFoodCounters = [
+    itemCountersArrayBurgers,
+    itemCountersArrayPizzas,
+    itemCountersArrayBarbecue,
+    itemCountersArraySteaks,
+    itemCountersArrayDrinks,
+    itemCountersArrayDesserts
+];
+
+
+
+
+
 export const addOrRemoveItems = () => {
 
     buttonsDecreaseItems.forEach((buttonMinus, currentIndex) => {
 
         buttonMinus.addEventListener('click', () => {
 
-            if (count == 0) {
 
-                if (itemCountersArrayBurgers[currentIndex] > 0) {
-
-                    itemCountersArrayBurgers[currentIndex]--;
-
-                    itemCountersElement[currentIndex].textContent = itemCountersArrayBurgers[currentIndex];
-
-                }
-
-            }
+            let selectedItemCountersArray = arrayFoodCounters[count];
 
 
-            if (count == 1) {
+            if (selectedItemCountersArray[currentIndex] > 0) {
 
-                if (itemCountersArrayPizzas[currentIndex] > 0) {
-
-                    itemCountersArrayPizzas[currentIndex]--;
-
-                    itemCountersElement[currentIndex].textContent = itemCountersArrayPizzas[currentIndex];
-
-                }
-
-            }
+                selectedItemCountersArray[currentIndex]--;
 
 
-            if (count == 2) {
-
-                if (itemCountersArrayBarbecue[currentIndex] > 0) {
-
-                    itemCountersArrayBarbecue[currentIndex]--;
-
-                    itemCountersElement[currentIndex].textContent = itemCountersArrayBarbecue[currentIndex];
-
-                }
-
-            }
-
-
-            if (count == 3) {
-
-                if (itemCountersArraySteaks[currentIndex] > 0) {
-
-                    itemCountersArraySteaks[currentIndex]--;
-
-                    itemCountersElement[currentIndex].textContent = itemCountersArraySteaks[currentIndex];
-
-                }
-
-            }
-
-
-            if (count == 4) {
-
-                if (itemCountersArrayDrinks[currentIndex] > 0) {
-
-                    itemCountersArrayDrinks[currentIndex]--;
-
-                    itemCountersElement[currentIndex].textContent = itemCountersArrayDrinks[currentIndex];
-
-                }
-
-            }
-
-
-            if (count == 5) {
-
-                if (itemCountersArrayDesserts[currentIndex] > 0) {
-
-                    itemCountersArrayDesserts[currentIndex]--;
-
-                    itemCountersElement[currentIndex].textContent = itemCountersArrayDesserts[currentIndex];
-
-                }
+                itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex]
 
             }
 
@@ -124,65 +76,13 @@ export const addOrRemoveItems = () => {
 
         buttonPlus.addEventListener('click', () => {
 
-            if (count == 0) {
+            let selectedItemCountersArray = arrayFoodCounters[count];
 
-                itemCountersArrayBurgers[currentIndex]++;
+            selectedItemCountersArray[currentIndex]++;
 
-                itemCountersElement[currentIndex].textContent = itemCountersArrayBurgers[currentIndex];
-
-            }
+            itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
 
 
-            if (count == 1) {
-
-                itemCountersArrayPizzas[currentIndex]++;
-
-                itemCountersElement[currentIndex].textContent = itemCountersArrayPizzas[currentIndex];
-
-
-            }
-
-
-            if (count == 2) {
-
-                itemCountersArrayBarbecue[currentIndex]++;
-
-                itemCountersElement[currentIndex].textContent = itemCountersArrayBarbecue[currentIndex];
-
-            }
-
-            if (count == 3) {
-
-                itemCountersArraySteaks[currentIndex]++;
-
-                itemCountersElement[currentIndex].textContent = itemCountersArraySteaks[currentIndex];
-
-            }
-
-            if (count == 4) {
-
-                itemCountersArrayDrinks[currentIndex]++;
-
-                itemCountersElement[currentIndex].textContent = itemCountersArrayDrinks[currentIndex];
-
-            }
-
-            if (count == 5) {
-
-                itemCountersArrayDesserts[currentIndex]++;
-
-                itemCountersElement[currentIndex].textContent = itemCountersArrayDesserts[currentIndex];
-
-            }
-
-            
-        
-            console.log(itemCountersArrayBurgers);
-            console.log(itemCountersArrayPizzas);
-            console.log(itemCountersArrayBarbecue);
-            console.log(itemCountersArraySteaks);
-            console.log(itemCountersArrayDrinks);
-            console.log(itemCountersArrayDesserts);
 
         });
 
@@ -259,23 +159,7 @@ mobileMenuBtn.addEventListener('change', toggleMenuMobile);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const foodButtons = document.querySelectorAll('.menu__button-food');
-
-const menuFoodContainer = document.querySelector('.menu__buttons-container');
 
 const menuFoodTitle = document.querySelectorAll('.menu__food .menu__food-title');
 
@@ -288,38 +172,48 @@ const menuFoodImg = document.querySelectorAll('.menu__food .menu__food-img');
 
 
 
-fetch('../../assets/data/foods.json').then(resolve => {
+export const fetchDatafoods = async () => {
+    const dadosFood = await fetch('../../assets/data/foods.json');
 
-    return resolve.json()
+    const responseDados = await dadosFood.json();
 
-}).then(body => {
+    return responseDados
 
-    function passarPelosDados(elementArr) {
+}
 
-        elementArr.forEach((element, index) => {
 
-            menuFoodTitle[index].textContent = element.name;
 
-            menuFoodPrice[index].textContent = `R$ ${element.price},00`;
+function passarPelosDados(foodArray) {
 
-            menuFoodPriceHover[index].textContent = `R$ ${element.price},00`;
+    foodArray.forEach((array, currentIndex) => {
 
-            menuFoodImg[index].src = element.image;
-        });
+        menuFoodTitle[currentIndex].textContent = array.name;
 
-    }
+        menuFoodPrice[currentIndex].textContent = `R$ ${array.price},00`;
 
-    let arrayDados = body;
+        menuFoodPriceHover[currentIndex].textContent = `R$ ${array.price},00`;
+
+        menuFoodImg[currentIndex].src = array.image;
+
+    });
+
+}
+
+
+const teste = async () => {
+
+    let responseFetch = await fetchDatafoods()
 
 
     let arrFood = [
-        arrayDados.burgers,
-        arrayDados.pizzas,
-        arrayDados.barbecue,
-        arrayDados.steaks,
-        arrayDados.drinks,
-        arrayDados.desserts
+        responseFetch.burgers,
+        responseFetch.pizzas,
+        responseFetch.barbecue,
+        responseFetch.steaks,
+        responseFetch.drinks,
+        responseFetch.desserts
     ];
+
 
 
 
@@ -328,9 +222,8 @@ fetch('../../assets/data/foods.json').then(resolve => {
 
         element.addEventListener('click', () => {
 
-            count = index
 
-            console.log(count);
+            count = index
 
 
             itemCountersElement.forEach(item => {
@@ -340,59 +233,19 @@ fetch('../../assets/data/foods.json').then(resolve => {
             })
 
 
-            if (count == 0) {
+            if (count >= 0 && count < arrFood.length) {
+
+                let selectedItemCountersArray = arrayFoodCounters[count]
+
+                console.log(selectedItemCountersArray);
 
                 itemCountersElement.forEach((itemCount, index) => {
-                    itemCount.textContent = itemCountersArrayBurgers[index];
-                })
+
+                    itemCount.textContent = selectedItemCountersArray[index];
+
+                });
 
             }
-
-
-            if (count == 1) {
-
-                itemCountersElement.forEach((itemCount, index) => {
-                    itemCount.textContent = itemCountersArrayPizzas[index];
-                })
-
-            }
-
-
-            if (count == 2) {
-
-                itemCountersElement.forEach((itemCount, index) => {
-                    itemCount.textContent = itemCountersArrayBarbecue[index];
-                })
-
-            }
-
-
-            if (count == 3) {
-
-                itemCountersElement.forEach((itemCount, index) => {
-                    itemCount.textContent = itemCountersArraySteaks[index];
-                })
-
-            }
-
-
-            if (count == 4) {
-
-                itemCountersElement.forEach((itemCount, index) => {
-                    itemCount.textContent = itemCountersArrayDrinks[index];
-                })
-
-            }
-
-
-            if (count == 5) {
-
-                itemCountersElement.forEach((itemCount, index) => {
-                    itemCount.textContent = itemCountersArrayDesserts[index];
-                })
-
-            }
-
 
 
 
@@ -405,4 +258,11 @@ fetch('../../assets/data/foods.json').then(resolve => {
 
 
 
-})
+
+}
+
+
+
+
+
+teste()
