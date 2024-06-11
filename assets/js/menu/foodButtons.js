@@ -12,7 +12,6 @@ const markBtnClicked = () => {
 
             button.classList.add('menu-btn-checked');
 
-
             
         });
 

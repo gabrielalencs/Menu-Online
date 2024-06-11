@@ -106,9 +106,9 @@ export const addOrRemoveItems = () => {
             }
 
 
-            console.log(itemCountersArrayBurgers);
+            // console.log(itemCountersArrayBurgers);
 
-            console.log(itemCountersArrayPizzas);
+            // console.log(itemCountersArrayPizzas);
 
             // itemCountersArray[currentIndex]++;
 
@@ -260,9 +260,39 @@ fetch('../../assets/data/foods.json').then(resolve => {
 
             count = index
 
+            console.log(count);
+
+
+            itemCountersElement.forEach(item => {
+
+                item.textContent = 0
+
+            })
+
+
+            if (count == 0) {
+
+                itemCountersElement.forEach((itemCount, index) => {
+                    itemCount.textContent = itemCountersArrayBurgers[index];
+                })
+
+            }
+
+            if (count == 1) {
+
+                itemCountersElement.forEach((itemCount, index) => {
+                    itemCount.textContent = itemCountersArrayPizzas[index];
+                })
+
+            }
+
+
+
+
             passarPelosDados(arrFood[index])
 
         })
+
 
     })
 
