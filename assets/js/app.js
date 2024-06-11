@@ -32,6 +32,7 @@ const menuFoodPrice = document.querySelectorAll('.menu__food .menu__food-price')
 const menuFoodImg = document.querySelectorAll('.menu__food .menu__food-img');
 
 
+
 let arr = []
 
 fetch('../../assets/data/foods.json').then(resolve => {
@@ -40,21 +41,60 @@ fetch('../../assets/data/foods.json').then(resolve => {
 
 }).then(body => {
 
+    function passarPelosDados(elementArr) {
+
+        elementArr.forEach((element, index) => {
+            menuFoodTitle[index].textContent = element.name;
+    
+            menuFoodPrice[index].textContent = `R$ ${element.price},00`;
+    
+            menuFoodImg[index].src = element.image;
+        });
+
+    }
+
     let arrayDados = body;
 
 
-    let burgues = arrayDados.burgers;
+    let arrFood = [
+        arrayDados.burgers,
+        arrayDados.pizzas,
+        arrayDados.barbecue,
+        arrayDados.steaks,
+        arrayDados.drinks,
+        arrayDados.desserts
+    ];
 
-    let pizzas = arrayDados.pizzas;
     
-    let barbecue = arrayDados.barbecue;
+    
 
-    burgues.forEach((element, index) => {
-        menuFoodTitle[index].textContent = element.name;
+    foodButtons.forEach((element, index) => {
+        
+        element.addEventListener('click', () => {
 
-        menuFoodPrice[index].textContent = `R$ ${element.price},00`;
+           passarPelosDados(arrFood[index])
 
-        menuFoodImg[index].src = element.image;
-    });
+        })
+
+    })
+
+   
+
+
+
+
+    // let burgues = arrayDados.burgers;
+
+    // let pizzas = arrayDados.pizzas;
+
+    // let barbecue = arrayDados.barbecue;
+
+    // let steaks = arrayDados.steaks;
+
+    // let drinks = arrayDados.drinks;
+
+    // let desserts = arrayDados.desserts;
+
+    
 
 })
