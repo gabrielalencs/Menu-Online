@@ -64,17 +64,56 @@ export const addOrRemoveItems = () => {
             }
 
 
+            if (count == 2) {
+
+                if (itemCountersArrayBarbecue[currentIndex] > 0) {
+
+                    itemCountersArrayBarbecue[currentIndex]--;
+
+                    itemCountersElement[currentIndex].textContent = itemCountersArrayBarbecue[currentIndex];
+
+                }
+
+            }
 
 
+            if (count == 3) {
+
+                if (itemCountersArraySteaks[currentIndex] > 0) {
+
+                    itemCountersArraySteaks[currentIndex]--;
+
+                    itemCountersElement[currentIndex].textContent = itemCountersArraySteaks[currentIndex];
+
+                }
+
+            }
 
 
-            // if (itemCountersArray[currentIndex] > 0) {
+            if (count == 4) {
 
-            //     itemCountersArray[currentIndex]--;
+                if (itemCountersArrayDrinks[currentIndex] > 0) {
 
-            //     itemCountersElement[currentIndex].textContent = itemCountersArray[currentIndex];
+                    itemCountersArrayDrinks[currentIndex]--;
 
-            // }
+                    itemCountersElement[currentIndex].textContent = itemCountersArrayDrinks[currentIndex];
+
+                }
+
+            }
+
+
+            if (count == 5) {
+
+                if (itemCountersArrayDesserts[currentIndex] > 0) {
+
+                    itemCountersArrayDesserts[currentIndex]--;
+
+                    itemCountersElement[currentIndex].textContent = itemCountersArrayDesserts[currentIndex];
+
+                }
+
+            }
 
         });
 
@@ -96,8 +135,6 @@ export const addOrRemoveItems = () => {
 
             if (count == 1) {
 
-
-
                 itemCountersArrayPizzas[currentIndex]++;
 
                 itemCountersElement[currentIndex].textContent = itemCountersArrayPizzas[currentIndex];
@@ -106,13 +143,46 @@ export const addOrRemoveItems = () => {
             }
 
 
-            // console.log(itemCountersArrayBurgers);
+            if (count == 2) {
 
-            // console.log(itemCountersArrayPizzas);
+                itemCountersArrayBarbecue[currentIndex]++;
 
-            // itemCountersArray[currentIndex]++;
+                itemCountersElement[currentIndex].textContent = itemCountersArrayBarbecue[currentIndex];
 
-            // itemCountersElement[currentIndex].textContent = itemCountersArray[currentIndex];
+            }
+
+            if (count == 3) {
+
+                itemCountersArraySteaks[currentIndex]++;
+
+                itemCountersElement[currentIndex].textContent = itemCountersArraySteaks[currentIndex];
+
+            }
+
+            if (count == 4) {
+
+                itemCountersArrayDrinks[currentIndex]++;
+
+                itemCountersElement[currentIndex].textContent = itemCountersArrayDrinks[currentIndex];
+
+            }
+
+            if (count == 5) {
+
+                itemCountersArrayDesserts[currentIndex]++;
+
+                itemCountersElement[currentIndex].textContent = itemCountersArrayDesserts[currentIndex];
+
+            }
+
+            
+        
+            console.log(itemCountersArrayBurgers);
+            console.log(itemCountersArrayPizzas);
+            console.log(itemCountersArrayBarbecue);
+            console.log(itemCountersArraySteaks);
+            console.log(itemCountersArrayDrinks);
+            console.log(itemCountersArrayDesserts);
 
         });
 
@@ -278,10 +348,47 @@ fetch('../../assets/data/foods.json').then(resolve => {
 
             }
 
+
             if (count == 1) {
 
                 itemCountersElement.forEach((itemCount, index) => {
                     itemCount.textContent = itemCountersArrayPizzas[index];
+                })
+
+            }
+
+
+            if (count == 2) {
+
+                itemCountersElement.forEach((itemCount, index) => {
+                    itemCount.textContent = itemCountersArrayBarbecue[index];
+                })
+
+            }
+
+
+            if (count == 3) {
+
+                itemCountersElement.forEach((itemCount, index) => {
+                    itemCount.textContent = itemCountersArraySteaks[index];
+                })
+
+            }
+
+
+            if (count == 4) {
+
+                itemCountersElement.forEach((itemCount, index) => {
+                    itemCount.textContent = itemCountersArrayDrinks[index];
+                })
+
+            }
+
+
+            if (count == 5) {
+
+                itemCountersElement.forEach((itemCount, index) => {
+                    itemCount.textContent = itemCountersArrayDesserts[index];
                 })
 
             }
