@@ -23,7 +23,7 @@ let itemCountersArrayDrinks = Array(itemCountersElement.length).fill(0);
 let itemCountersArrayDesserts = Array(itemCountersElement.length).fill(0);
 
 
-export let count = 0
+export let currentButtonIndex = 0
 
 
 
@@ -51,7 +51,7 @@ export const addOrRemoveItems = () => {
         buttonMinus.addEventListener('click', () => {
 
 
-            let selectedItemCountersArray = arrayFoodCounters[count];
+            let selectedItemCountersArray = arrayFoodCounters[currentButtonIndex];
 
 
             if (selectedItemCountersArray[currentIndex] > 0) {
@@ -72,7 +72,7 @@ export const addOrRemoveItems = () => {
 
         buttonPlus.addEventListener('click', () => {
 
-            let selectedItemCountersArray = arrayFoodCounters[count];
+            let selectedItemCountersArray = arrayFoodCounters[currentButtonIndex];
 
             selectedItemCountersArray[currentIndex]++;
 
@@ -171,8 +171,7 @@ export const fetchDatafoods = async () => {
 }
 
 
-
-function passarPelosDados(foodArray) {
+export const showFoodInformation = (foodArray) => {
 
     foodArray.forEach((array, currentIndex) => {
 
@@ -189,10 +188,35 @@ function passarPelosDados(foodArray) {
 }
 
 
-const teste = async () => {
+export const showQuantityEachItem = (currentIndex, array) => {
+
+    itemCountersElement.forEach(item => {
+
+        item.textContent = 0
+
+    })
+
+
+    if (currentIndex >= 0 && currentIndex < array.length) {
+
+        let selectedItemCountersArray = arrayFoodCounters[currentIndex]
+
+        itemCountersElement.forEach((itemCount, index) => {
+
+            itemCount.textContent = selectedItemCountersArray[index];
+
+        });
+
+    }
+
+
+}
+
+
+
+export const initializeFoodMenu = async () => {
 
     let responseFetch = await fetchDatafoods()
-
 
     let arrFood = [
         responseFetch.burgers,
@@ -204,54 +228,24 @@ const teste = async () => {
     ];
 
 
-
-
     foodButtons.forEach((element, index) => {
-
 
         element.addEventListener('click', () => {
 
-
-            count = index
-
-
-            itemCountersElement.forEach(item => {
-
-                item.textContent = 0
-
-            })
+            currentButtonIndex = index
 
 
-            if (count >= 0 && count < arrFood.length) {
-
-                let selectedItemCountersArray = arrayFoodCounters[count]
-
-                console.log(selectedItemCountersArray);
-
-                itemCountersElement.forEach((itemCount, index) => {
-
-                    itemCount.textContent = selectedItemCountersArray[index];
-
-                });
-
-            }
+            showQuantityEachItem(currentButtonIndex, arrFood);
 
 
-
-            passarPelosDados(arrFood[index])
+            showFoodInformation(arrFood[index])
 
         })
 
 
     })
 
-
-
-
 }
 
 
-
-
-
-teste()
+initializeFoodMenu()
