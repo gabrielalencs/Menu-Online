@@ -33,8 +33,6 @@ const buttonsAddItems = document.querySelectorAll('.btn-menu-plus');
 
 
 
-
-
 let arrayFoodCounters = [
     itemCountersArrayBurgers,
     itemCountersArrayPizzas,
@@ -43,8 +41,6 @@ let arrayFoodCounters = [
     itemCountersArrayDrinks,
     itemCountersArrayDesserts
 ];
-
-
 
 
 
@@ -83,16 +79,9 @@ export const addOrRemoveItems = () => {
             itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
 
 
-
         });
 
-
-
-
     });
-
-
-
 
 }
 
