@@ -10,11 +10,10 @@ import showFoodInformation from './showsFoodInformation.js'
 
 
 
-
 const itemCountersElement = document.querySelectorAll('.menu__food-count');
 
 
-// * arrays that will be used for the counts of the items in each section
+// ? arrays that will be used for the counts of the items in each section
 
 let itemCountersArrayBurgers = Array(itemCountersElement.length).fill(0);
 let itemCountersArrayPizzas = Array(itemCountersElement.length).fill(0);
@@ -43,7 +42,9 @@ export let arrayFoodCounters = [
 
 
 
-export const addOrRemoveItems = () => {
+// ? detects which food section we are in, and uses its specific array to count items
+
+const addOrRemoveItems = () => {
 
     buttonsDecreaseItems.forEach((buttonMinus, currentIndex) => {
 
@@ -78,13 +79,13 @@ export const addOrRemoveItems = () => {
 
     });
 
-}
+};
 
 
+// ? initializes the entire menu, calling all functions that need to be executed before some action
 
+const initializeFoodMenu = async () => {
 
-export const initializeFoodMenu = async () => {
-    
     let responseFetch = await fetchDatafoods()
 
     let arrFood = [
@@ -106,12 +107,16 @@ export const initializeFoodMenu = async () => {
 
             currentButtonIndex = index;
 
-            showQuantityEachItem(currentButtonIndex, arrFood);
+            showQuantityEachItem(currentButtonIndex, arrFood); // ? shows the number of items added to the array according to the section the user is in
 
-            showFoodInformation(arrFood[index])
+
+            showFoodInformation(arrFood[index]); // ? goes through the array of the clicked food section and shows its data on each card
 
         })
 
     });
 
 };
+
+
+export default initializeFoodMenu;

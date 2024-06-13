@@ -3,8 +3,7 @@ const fetchDatafoods = async () => {
 
     const responseDados = await dadosFood.json();
 
-    return responseDados
-
+    return responseDados;
 }
 
 export default fetchDatafoods;

@@ -4,6 +4,8 @@ const menuFoodPrice = document.querySelectorAll('.menu__food .menu__food-price')
 const menuFoodImg = document.querySelectorAll('.menu__food .menu__food-img');
 
 
+// ? goes through the array of the clicked food section and shows its data on each card
+
 const showFoodInformation = (foodArray) => {
 
     foodArray.forEach((array, currentIndex) => {

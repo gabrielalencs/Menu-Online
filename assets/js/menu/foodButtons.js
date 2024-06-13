@@ -20,4 +20,3 @@ const markBtnClicked = () => {
 
 
 export default markBtnClicked;
-

@@ -4,7 +4,7 @@ import { mobileMenuBtn, toggleMenuMobile } from './header/menuMobile.js';
 
 import markBtnClicked from './menu/foodButtons.js';
 
-import { initializeFoodMenu } from './menu/teste.js'
+import initializeFoodMenu from './menu/initializeFoodMenu.js'
 
 
 
@@ -14,46 +14,7 @@ import { initializeFoodMenu } from './menu/teste.js'
 
 markBtnClicked() // ? marks which food button the user clicked on
 
-
-
-
-initializeFoodMenu();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+initializeFoodMenu(); // ? initializes the menu logic, calling all functions for correct operation
 
 
 
@@ -62,11 +23,3 @@ initializeFoodMenu();
 // * events
 
 mobileMenuBtn.addEventListener('change', toggleMenuMobile);
-
-
-
-
-
-
-
-
