@@ -1,6 +1,5 @@
 
-
-const foodButtons = document.querySelectorAll('.menu__button-food');
+export const foodButtons = document.querySelectorAll('.menu__button-food');
 
 const markBtnClicked = () => {
 
@@ -17,9 +16,8 @@ const markBtnClicked = () => {
 
     })
 
-
-
-
 };
 
-export default markBtnClicked
+
+export default markBtnClicked;
+
