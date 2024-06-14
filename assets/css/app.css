@@ -973,7 +973,6 @@ main {
   z-index: 10;
   padding: 5rem 4rem;
   overflow: scroll;
-  display: none;
 }
 .cart::-webkit-scrollbar {
   display: none;
@@ -1048,6 +1047,7 @@ main {
 .cart__my-cart {
   overflow-y: scroll;
   height: 45vh;
+  display: none;
 }
 .cart__my-cart::-webkit-scrollbar {
   display: none;
@@ -1150,9 +1150,6 @@ main {
   }
 }
 
-.cart__delivery-address {
-  display: none;
-}
 .cart__delivery-address .address__form {
   margin-top: 3rem;
   overflow-y: scroll;
@@ -1190,25 +1187,35 @@ main {
 }
 .cart__delivery-address .address__form .address-cep {
   width: max-content;
+  opacity: 1;
 }
 .cart__delivery-address .address__form .address-cep .address__input-cep {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  background-color: transparent;
 }
 .cart__delivery-address .address__form .address-cep .address__input-cep div {
   background-color: #caa127;
   color: #ffffff;
   padding: 1.5rem;
+  cursor: pointer;
 }
 .cart__delivery-address .address__form .address-cep .address__input-cep div i {
   font-size: 1.8rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .cart__delivery-address .address__form .address__row {
     display: flex;
-    justify-content: space-between;
     gap: 3rem;
+  }
+  .cart__delivery-address .address__form .city-element,
+  .cart__delivery-address .address__form .address-element {
+    width: 45%;
+  }
+  .cart__delivery-address .address__form .complement-element,
+  .cart__delivery-address .address__form .neighborhood-element {
+    width: 30%;
   }
 }
 

@@ -46,7 +46,7 @@
     z-index: 10;
     padding: 5rem 4rem;
     overflow: scroll;
-    display: none;
+    // display: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -133,7 +133,7 @@
 .cart__my-cart {
     overflow-y: scroll;
     height: 45vh;
-    // display: none;
+    display: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -243,7 +243,7 @@
 // ? "Delivery Address" Section
 
 .cart__delivery-address {
-    display: none;
+    // display: none;
 
     .address__form {
         margin-top: 3rem;
@@ -258,7 +258,8 @@
         .address__container-element {
             border: none;
             margin-top: 3rem;
-
+            // opacity: .6;
+            
             // ? general styles for form fields
 
             label {
@@ -280,6 +281,7 @@
                 }
             }
 
+
             div {
                 box-shadow: 0px 1rem 1.5rem -.3rem rgba(0, 0, 0, 0.1);
                 padding: 1rem 2rem;
@@ -291,16 +293,19 @@
 
         .address-cep {
             width: max-content;
+            opacity: 1;
 
             .address__input-cep {
                 display: flex;
                 align-items: center;
                 justify-content: flex-end;
+                background-color: transparent;
 
                 div {
                     background-color: color.$primary-color;
                     color: color.$white-primary;
                     padding: 1.5rem;
+                    cursor: pointer;
 
                     i {
                         font-size: 1.8rem;
@@ -310,11 +315,21 @@
         }
 
 
-        @include media.smallTablets {
+        @include media.laptops {
             .address__row {
                 display: flex;
-                justify-content: space-between;
+                // justify-content: space-between;
                 gap: 3rem;
+            }
+
+            .city-element,
+            .address-element {
+                width: 45%;
+            }
+
+            .complement-element,
+            .neighborhood-element {
+                width: 30%;
             }
         }
 
