@@ -17,7 +17,7 @@ markBtnClicked(); // ? marks which food button the user clicked on
 
 initializeFoodMenu(); // ? initializes the menu logic, calling all functions for correct operation
 
-btnZipCodeSearch.addEventListener("click", fillInputFields); // ?calls the function to fill in the form based on the zip code
+btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the function to fill in the form based on the zip code
 
 
 
@@ -44,10 +44,13 @@ const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 buttonAddToCart.forEach(currentButton => {
 
     currentButton.addEventListener("click", () => {
-        const productImage = currentButton.parentNode.parentNode.parentNode.querySelector(".menu__food-img").src;
-        const productTitle = currentButton.parentNode.parentNode.parentNode.querySelector(".menu__food-title").textContent;
-        const productPrice = currentButton.parentNode.parentNode.parentNode.querySelector(".menu__food-price").textContent;
-        const quantityProductItems = currentButton.parentNode.parentNode.querySelector(".menu__food-count").textContent;
+        const productContainer = currentButton.closest('.menu__food'); 
+
+        const productImage = productContainer.querySelector(".menu__food-img").src; 
+        const productTitle = productContainer.querySelector(".menu__food-title").textContent;
+        const productPrice = productContainer.querySelector(".menu__food-price").textContent;
+        const quantityProductItems = productContainer.querySelector(".menu__food-count").textContent;
+
 
         const cartItems = containerOfCartItems.querySelectorAll(".my-cart__item");
 
