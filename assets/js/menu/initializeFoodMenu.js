@@ -40,8 +40,7 @@ export let arrayFoodCounters = [
 ];
 
 
-
-const buttonAdicionarAoCarrinho = document.querySelectorAll(".menu__food-shopping-cart");
+const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 
 
 
@@ -95,7 +94,7 @@ const addOrRemoveItems = () => {
 
     // * resets my element's counter and shows the reset value on the screen after adding the item to the cart
 
-    buttonAdicionarAoCarrinho.forEach((button, currentIndex) => {
+    buttonAddToCart.forEach((button, currentIndex) => {
 
         button.addEventListener('click', () => {
 
@@ -103,7 +102,7 @@ const addOrRemoveItems = () => {
 
             let selectedItemCountersArray = arrayFoodCounters[currentButtonIndex];
 
-            selectedItemCountersArray[currentIndex] = 0
+            selectedItemCountersArray[currentIndex] = 0;
 
             itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
 
@@ -141,7 +140,6 @@ const initializeFoodMenu = async () => {
             currentButtonIndex = index;
 
             showQuantityEachItem(currentButtonIndex, arrFood); // ? shows the number of items added to the array according to the section the user is in
-
 
             showFoodInformation(arrFood[index]); // ? goes through the array of the clicked food section and shows its data on each card
 

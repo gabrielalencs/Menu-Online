@@ -2,7 +2,6 @@ import { arrayFoodCounters } from './initializeFoodMenu.js';
 
 
 
-
 const itemCountersElement = document.querySelectorAll('.menu__food-count');
 
 

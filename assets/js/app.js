@@ -19,19 +19,12 @@ initializeFoodMenu(); // ? initializes the menu logic, calling all functions for
 
 btnZipCodeSearch.addEventListener("click", fillInputFields); // ?calls the function to fill in the form based on the zip code
 
+
+
 const buttonCart = document.getElementById("teste");
 
 const carrinho = document.querySelector(".cart");
 const butaoFecharCarrinho = document.querySelector(".cart__close-button");
-
-const containerDeItensDoCarrinho = document.querySelector(".cart__my-cart");
-
-
-const buttonAdicionarAoCarrinho = document.querySelectorAll(".menu__food-shopping-cart");
-
-
-
-
 
 buttonCart.addEventListener("click", () => {
     carrinho.classList.toggle("hidden");
@@ -42,49 +35,52 @@ butaoFecharCarrinho.addEventListener("click", () => {
 });
 
 
-buttonAdicionarAoCarrinho.forEach((item) => {
-    item.addEventListener("click", () => {
-
-        const imagemDoProduto = item.parentNode.parentNode.parentNode.querySelector(".menu__food-img").src;
-        const tituloDoProduto = item.parentNode.parentNode.parentNode.querySelector(".menu__food-title").textContent;
-        const precoDoProduto = item.parentNode.parentNode.parentNode.querySelector(".menu__food-price").textContent;
-        const valorDoContador = item.parentNode.parentNode.querySelector(".menu__food-count").textContent;
 
 
+const containerOfCartItems = document.querySelector(".cart__my-cart");
+const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 
-        // Verifica se o item já está no carrinho
-        let itemExistente = null;
 
-        const itensNoCarrinho = containerDeItensDoCarrinho.querySelectorAll(".my-cart__item");
+buttonAddToCart.forEach(currentButton => {
 
-        itensNoCarrinho.forEach((cartItem) => {
+    currentButton.addEventListener("click", () => {
+        const productImage = currentButton.parentNode.parentNode.parentNode.querySelector(".menu__food-img").src;
+        const productTitle = currentButton.parentNode.parentNode.parentNode.querySelector(".menu__food-title").textContent;
+        const productPrice = currentButton.parentNode.parentNode.parentNode.querySelector(".menu__food-price").textContent;
+        const quantityProductItems = currentButton.parentNode.parentNode.querySelector(".menu__food-count").textContent;
 
-            const tituloNoCarrinho = cartItem.querySelector(".my-cart__texts p").textContent;
+        const cartItems = containerOfCartItems.querySelectorAll(".my-cart__item");
 
-            if (tituloNoCarrinho === tituloDoProduto) {
+        let existingItem = null;
 
-                itemExistente = cartItem;
 
-            }
+        // ? checks whether or not the item exists in my cart, based on the titles of the items that are already in the cart
+
+        cartItems.forEach(currentcartItem => {
+            const cartItemTitles = currentcartItem.querySelector(".my-cart__texts p").textContent;
+
+            if (cartItemTitles === productTitle) existingItem = currentcartItem;
         });
 
 
-        if (itemExistente) {
-            // Atualiza o contador do item existente
-            const contadorExistente = itemExistente.querySelector(".my-cart__food-count");
+        // ? if the item I want to add to my cart is already in the cart, i add the number of items i want to add to the number of items previously added
+        // ? if the item I want to add doesn't exist, i create a new element with the item information
 
-            contadorExistente.textContent = parseInt(contadorExistente.textContent) + parseInt(valorDoContador);
+        if (existingItem) {
+            const counterExistingItem = existingItem.querySelector(".my-cart__food-count");
+
+            counterExistingItem.textContent = parseInt(counterExistingItem.textContent) + parseInt(quantityProductItems);
+
         } else {
-            // Cria um novo item no carrinho
-            const htmlDoItemAdicionado = `
+            const htmlDoItemAdded = `
                  <div class="my-cart__item">
                      <div class="my-cart__content">
                          <div class="my-cart-image">
-                             <img src="${imagemDoProduto}" alt="icon">
+                             <img src="${productImage}" alt="icon">
                          </div>
                          <div class="my-cart__texts">
-                             <p>${tituloDoProduto}</p>
-                             <span>${precoDoProduto}</span>
+                             <p>${productTitle}</p>
+                             <span>${productPrice}</span>
                          </div>
                      </div>
                      <div class="my-cart__buttons-container">
@@ -92,7 +88,7 @@ buttonAdicionarAoCarrinho.forEach((item) => {
                              <span class="my-cart__food-icon">
                                  <i class="fa-solid fa-minus"></i>
                              </span>
-                             <span class="my-cart__food-count">${valorDoContador}</span>
+                             <span class="my-cart__food-count">${quantityProductItems}</span>
                              <span class="my-cart__food-icon">
                                  <i class="fa-solid fa-plus"></i>
                              </span>
@@ -104,15 +100,13 @@ buttonAdicionarAoCarrinho.forEach((item) => {
                  </div>
              `;
 
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = htmlDoItemAdicionado;
+            const divTemporary = document.createElement('div');
+            divTemporary.innerHTML = htmlDoItemAdded;
 
-            containerDeItensDoCarrinho.appendChild(tempDiv.firstElementChild);
+            containerOfCartItems.appendChild(divTemporary);
         }
-
-        
-
     });
+
 });
 
 // * events
