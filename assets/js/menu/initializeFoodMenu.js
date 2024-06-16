@@ -74,10 +74,12 @@ const addOrRemoveItems = () => {
 
             itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
 
-
+            
         });
 
     });
+
+
 
 };
 

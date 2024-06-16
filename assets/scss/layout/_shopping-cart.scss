@@ -36,6 +36,10 @@
 
 // ? Shopping Cart
 
+.cart.hidden {
+    display: none;
+}
+
 .cart {
     position: fixed;
     top: 0;
@@ -46,7 +50,6 @@
     z-index: 10;
     padding: 5rem 4rem;
     overflow: scroll;
-    // display: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -133,7 +136,7 @@
 .cart__my-cart {
     overflow-y: scroll;
     height: 45vh;
-    display: none;
+    // display: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -147,6 +150,10 @@
         padding-bottom: 2rem;
         border-bottom: 2px solid color.$gray-terciary;
     }
+
+    // .my-cart__item.hidden {
+    //     display: none
+    // }
 
     .my-cart__content {
         @include mixin.flex-horizontal;
@@ -243,7 +250,7 @@
 // ? "Delivery Address" Section
 
 .cart__delivery-address {
-    // display: none;
+    display: none;
 
     .address__form {
         margin-top: 3rem;

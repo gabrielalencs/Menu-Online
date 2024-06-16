@@ -5,6 +5,7 @@
 .menu {
     margin-top: 10rem;
     padding: 0 3rem;
+    z-index: 20;
 
     @include media.laptops {
         background-image: url(../images/bg-icons-1.png);

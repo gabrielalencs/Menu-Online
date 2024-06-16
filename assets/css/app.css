@@ -451,6 +451,7 @@ main {
 .menu {
   margin-top: 10rem;
   padding: 0 3rem;
+  z-index: 20;
 }
 @media (min-width: 992px) {
   .menu {
@@ -963,6 +964,10 @@ main {
   position: absolute;
 }
 
+.cart.hidden {
+  display: none;
+}
+
 .cart {
   position: fixed;
   top: 0;
@@ -1047,7 +1052,6 @@ main {
 .cart__my-cart {
   overflow-y: scroll;
   height: 45vh;
-  display: none;
 }
 .cart__my-cart::-webkit-scrollbar {
   display: none;
@@ -1150,6 +1154,9 @@ main {
   }
 }
 
+.cart__delivery-address {
+  display: none;
+}
 .cart__delivery-address .address__form {
   margin-top: 3rem;
   overflow-y: scroll;
