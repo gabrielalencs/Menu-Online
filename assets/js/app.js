@@ -42,11 +42,7 @@ btnZipCodeSearch.addEventListener("click", fillInputFields);
 
 buttonAddToCart.forEach(currentButton => 
 
-    currentButton.addEventListener("click", () => {
-
-        addItemInCart(currentButton);
-
-    })
+    currentButton.addEventListener("click", () => addItemInCart(currentButton))
 
 );
 
