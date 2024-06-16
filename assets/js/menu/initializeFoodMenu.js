@@ -9,8 +9,8 @@ import showQuantityEachItem from './showsQuantityItemsChosen.js';
 import showFoodInformation from './showsFoodInformation.js'
 
 
-
 const itemCountersElement = document.querySelectorAll('.menu__food-count');
+
 
 
 // ? arrays that will be used for the counts of the items in each section
@@ -41,14 +41,21 @@ export let arrayFoodCounters = [
 
 
 
+const buttonAdicionarAoCarrinho = document.querySelectorAll(".menu__food-shopping-cart");
 
-// ? detects which food section we are in, and uses its specific array to count items
+
+
+// * detects which food section we are in and uses its specific array to count the items
 
 const addOrRemoveItems = () => {
+
+    // * decrements the counter of the item we want to add to the cart
 
     buttonsDecreaseItems.forEach((buttonMinus, currentIndex) => {
 
         buttonMinus.addEventListener('click', () => {
+
+            // ? selects the array corresponding to the current section based on the index of the button clicked
 
             let selectedItemCountersArray = arrayFoodCounters[currentButtonIndex];
 
@@ -64,27 +71,51 @@ const addOrRemoveItems = () => {
 
     });
 
+
+    // * increments the counter of the item we want to add to the cart
+
+
     buttonsAddItems.forEach((buttonPlus, currentIndex) => {
 
         buttonPlus.addEventListener('click', () => {
+
+            // ? selects the array corresponding to the current section based on the index of the button clicked
 
             let selectedItemCountersArray = arrayFoodCounters[currentButtonIndex];
 
             selectedItemCountersArray[currentIndex]++;
 
             itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
-
-            
+    
         });
 
     });
+    
 
+
+    // * resets my element's counter and shows the reset value on the screen after adding the item to the cart
+
+    buttonAdicionarAoCarrinho.forEach((button, currentIndex) => {
+
+        button.addEventListener('click', () => {
+
+            // ? selects the array corresponding to the current section based on the index of the button clicked
+
+            let selectedItemCountersArray = arrayFoodCounters[currentButtonIndex];
+
+            selectedItemCountersArray[currentIndex] = 0
+
+            itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
+
+        })
+
+    })
 
 
 };
 
 
-// ? initializes the entire menu, calling all functions that need to be executed before some action
+// * initializes the entire menu, calling all functions that need to be executed before some action
 
 const initializeFoodMenu = async () => {
 
@@ -100,7 +131,7 @@ const initializeFoodMenu = async () => {
     ];
 
 
-    addOrRemoveItems(itemCountersArrayBurgers, itemCountersElement)
+    addOrRemoveItems();
 
 
     foodButtons.forEach((element, index) => {
