@@ -1,8 +1,10 @@
 export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 
-const containerOfCartItems = document.querySelector(".cart__my-cart");
+export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
 let numberItemsAdded = 0;
+
+
 
 
 // ? function that displays my popup in the corner of the screen
@@ -27,6 +29,8 @@ function toastifyElement(textToastify) {
 
 
 export const addItemInCart = (currentButtonArg) => {
+
+
 
     const productContainer = currentButtonArg.closest('.menu__food');
     const productImage = productContainer.querySelector(".menu__food-img").src;
@@ -66,7 +70,6 @@ export const addItemInCart = (currentButtonArg) => {
         // ? if the item I want to add doesn't exist, i create a new element with the item information
 
         const htmlDoItemAdded = `
-             <div class="my-cart__item">
                  <div class="my-cart__content">
                      <div class="my-cart-image">
                          <img src="${productImage}" alt="icon">
@@ -90,10 +93,10 @@ export const addItemInCart = (currentButtonArg) => {
                          <i class="fa-solid fa-xmark"></i>
                      </div>
                  </div>
-             </div>
          `;
 
         const divTemporary = document.createElement('div');
+        divTemporary.classList.add('my-cart__item');
         divTemporary.innerHTML = htmlDoItemAdded;
 
         containerOfCartItems.appendChild(divTemporary);

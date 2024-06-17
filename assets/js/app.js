@@ -1,16 +1,11 @@
-// * imports
-
+// * header
 
 import { mobileMenuBtn, toggleMenuMobile } from "./header/menuMobile.js";
 
+
+// * menu
+
 import markBtnClicked from "./menu/foodButtons.js";
-
-import initializeFoodMenu from "./menu/initializeFoodMenu.js";
-
-import {
-    btnZipCodeSearch,
-    fillInputFields,
-} from "./shoppingCart/fillAddress.js";
 
 import {
     buttonAddToCart,
@@ -18,67 +13,56 @@ import {
 } from './menu/addItemsToCart.js';
 
 
+import initializeFoodMenu from "./menu/initializeFoodMenu.js";
 
 
-// * functions
+// * shopping cart
+
+import {
+    cartButtonHeader,
+    cartButtonMain,
+    buttonCloseCart,
+    toggleMenu
+} from './shoppingCart/cartOpen.js';
+
+import {
+    btnZipCodeSearch,
+    fillInputFields,
+} from "./shoppingCart/fillAddress.js";
 
 
-// ? marks which food button the user clicked on
 
-markBtnClicked();
+// * header
 
-
-// ? initializes the menu logic, calling all functions for correct operation
-
-initializeFoodMenu();
+mobileMenuBtn.addEventListener("change", toggleMenuMobile); // ? open or close mobile menu
 
 
-// ? calls the function to fill in the form based on the zip code
 
-btnZipCodeSearch.addEventListener("click", fillInputFields);
+// * menu
+
+markBtnClicked(); // ? marks which food button the user clicked on
 
 
 // ? add items to cart
 
-buttonAddToCart.forEach(currentButton =>
-
-    currentButton.addEventListener("click", () => addItemInCart(currentButton))
-
+buttonAddToCart.forEach(currentButton => 
+    currentButton.addEventListener("click", () => addItemInCart(currentButton)) 
 );
 
 
-// const teste = document.querySelector(".teste");
-
-// teste.addEventListener('click', () => {
+initializeFoodMenu(); // ? initializes the menu logic, calling all functions for correct operation
 
 
 
-// })
+// * shopping cart
+
+cartButtonHeader.addEventListener('click', toggleMenu); // ? opens the cart when the header button is clicked
 
 
-
-// * events
-
-
-mobileMenuBtn.addEventListener("change", toggleMenuMobile);
+cartButtonMain.addEventListener('click', toggleMenu); // ? opens the cart when the main button is clicked
 
 
+buttonCloseCart.addEventListener("click", toggleMenu); // ? closes the cart when the close cart button is clicked
 
 
-
-
-
-
-const buttonCart = document.getElementById("teste");
-
-const carrinho = document.querySelector(".cart");
-const butaoFecharCarrinho = document.querySelector(".cart__close-button");
-
-buttonCart.addEventListener("click", () => {
-    carrinho.classList.toggle("hidden");
-
-});
-
-butaoFecharCarrinho.addEventListener("click", () => {
-    carrinho.classList.toggle("hidden");
-});
+btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the function to fill in the form based on the zip code
