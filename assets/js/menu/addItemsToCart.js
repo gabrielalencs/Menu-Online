@@ -2,6 +2,7 @@ const containerOfCartItems = document.querySelector(".cart__my-cart");
 export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 
 
+
 export const addItemInCart = (currentButton) => {
         
     const productContainer = currentButton.closest('.menu__food'); 
@@ -33,6 +34,8 @@ export const addItemInCart = (currentButton) => {
         const counterExistingItem = existingItem.querySelector(".my-cart__food-count");
 
         counterExistingItem.textContent = parseInt(counterExistingItem.textContent) + parseInt(quantityProductItems);
+
+        alert('mais itens adicionados ao carrinho')
 
     } else {
         const htmlDoItemAdded = `
@@ -67,5 +70,8 @@ export const addItemInCart = (currentButton) => {
         divTemporary.innerHTML = htmlDoItemAdded;
 
         containerOfCartItems.appendChild(divTemporary);
+
+        alert('novo item adicionado ao carrinho')
     }
+
 }

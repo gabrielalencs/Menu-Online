@@ -948,6 +948,7 @@ main {
   position: fixed;
   bottom: 3rem;
   right: 3rem;
+  cursor: pointer;
 }
 .button-cart span {
   position: relative;
@@ -1052,8 +1053,26 @@ main {
 .cart__my-cart {
   overflow-y: scroll;
   height: 45vh;
+  position: relative;
 }
 .cart__my-cart::-webkit-scrollbar {
+  display: none;
+}
+.cart__my-cart .cart__empty-cart-message {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+.cart__my-cart .cart__empty-cart-message p {
+  font-size: 2rem;
+  color: #4f4f4f;
+}
+.cart__my-cart .cart__empty-cart-message.hidden {
   display: none;
 }
 .cart__my-cart .my-cart__item {
