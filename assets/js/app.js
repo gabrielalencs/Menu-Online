@@ -12,7 +12,7 @@ import {
     fillInputFields,
 } from "./shoppingCart/fillAddress.js";
 
-import { 
+import {
     buttonAddToCart,
     addItemInCart
 } from './menu/addItemsToCart.js';
@@ -30,26 +30,30 @@ markBtnClicked();
 
 // ? initializes the menu logic, calling all functions for correct operation
 
-initializeFoodMenu(); 
+initializeFoodMenu();
 
 
 // ? calls the function to fill in the form based on the zip code
 
-btnZipCodeSearch.addEventListener("click", fillInputFields); 
+btnZipCodeSearch.addEventListener("click", fillInputFields);
 
 
 // ? add items to cart
 
-buttonAddToCart.forEach(currentButton => 
+buttonAddToCart.forEach(currentButton =>
 
     currentButton.addEventListener("click", () => addItemInCart(currentButton))
 
 );
 
 
+// const teste = document.querySelector(".teste");
+
+// teste.addEventListener('click', () => {
 
 
 
+// })
 
 
 
@@ -72,6 +76,7 @@ const butaoFecharCarrinho = document.querySelector(".cart__close-button");
 
 buttonCart.addEventListener("click", () => {
     carrinho.classList.toggle("hidden");
+
 });
 
 butaoFecharCarrinho.addEventListener("click", () => {

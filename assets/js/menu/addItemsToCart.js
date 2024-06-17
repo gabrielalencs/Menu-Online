@@ -5,6 +5,28 @@ const containerOfCartItems = document.querySelector(".cart__my-cart");
 let numberItemsAdded = 0;
 
 
+// ? function that displays my popup in the corner of the screen
+
+function toastifyElement(textToastify) {
+    Toastify({
+        text: textToastify,
+        duration: 1000,
+        newWindow: false,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+            background: "#2ecc71",
+            fontSize: '1.8rem',
+            borderRadius: '1.5rem'
+
+        },
+    }).showToast();
+}
+
+
+
 export const addItemInCart = (currentButtonArg) => {
 
     const productContainer = currentButtonArg.closest('.menu__food');
@@ -13,8 +35,13 @@ export const addItemInCart = (currentButtonArg) => {
     const productPrice = productContainer.querySelector(".menu__food-price").textContent;
     const quantityProductItems = productContainer.querySelector(".menu__food-count").textContent;
 
-    const cartItems = containerOfCartItems.querySelectorAll(".my-cart__item");
 
+    // ? prevents us from sending a product without quantity to the cart
+
+    if (parseInt(quantityProductItems) <= 0) return;
+
+
+    const cartItems = containerOfCartItems.querySelectorAll(".my-cart__item");
     let existingItem = null;
 
 
@@ -27,7 +54,6 @@ export const addItemInCart = (currentButtonArg) => {
     });
 
 
-
     if (existingItem) {
 
         // ? if the item I want to add to my cart is already in the cart, i add the number of items i want to add to the number of items previously added
@@ -36,7 +62,7 @@ export const addItemInCart = (currentButtonArg) => {
 
         counterExistingItem.textContent = parseInt(counterExistingItem.textContent) + parseInt(quantityProductItems);
 
-        alert('mais itens adicionados ao carrinho')
+        toastifyElement('Mais itens adicionados desse alimento');
 
     } else {
 
@@ -75,7 +101,8 @@ export const addItemInCart = (currentButtonArg) => {
 
         containerOfCartItems.appendChild(divTemporary);
 
-        alert('novo item adicionado ao carrinho');
+
+        toastifyElement('Item adicionado ao carrinho');
 
     };
 

@@ -40,6 +40,10 @@ main {
   margin: 0 auto;
 }
 
+.toast-close {
+  display: none;
+}
+
 .header {
   display: flex;
   flex-direction: row;
