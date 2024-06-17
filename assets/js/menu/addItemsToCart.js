@@ -26,7 +26,6 @@ function toastifyElement(textToastify) {
 }
 
 
-
 export const addItemInCart = (currentButtonArg) => {
 
     const productContainer = currentButtonArg.closest('.menu__food');
@@ -35,8 +34,6 @@ export const addItemInCart = (currentButtonArg) => {
     const productPrice = productContainer.querySelector(".menu__food-price").textContent;
     const quantityProductItems = productContainer.querySelector(".menu__food-count").textContent;
 
-
-    // ? prevents us from sending a product without quantity to the cart
 
     if (parseInt(quantityProductItems) <= 0) return;
 
@@ -115,4 +112,4 @@ export const addItemInCart = (currentButtonArg) => {
 
     cartButtonValue.textContent = numberItemsAdded;
 
-}
+};
