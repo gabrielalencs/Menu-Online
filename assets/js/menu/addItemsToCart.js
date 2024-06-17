@@ -1,11 +1,12 @@
 const containerOfCartItems = document.querySelector(".cart__my-cart");
 export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 
+let numberItemsAdded = 0;
 
 
-export const addItemInCart = (currentButton) => {
+export const addItemInCart = (currentButtonArg) => {
         
-    const productContainer = currentButton.closest('.menu__food'); 
+    const productContainer = currentButtonArg.closest('.menu__food'); 
 
     const productImage = productContainer.querySelector(".menu__food-img").src; 
     const productTitle = productContainer.querySelector(".menu__food-title").textContent;
@@ -16,6 +17,8 @@ export const addItemInCart = (currentButton) => {
     const cartItems = containerOfCartItems.querySelectorAll(".my-cart__item");
 
     let existingItem = null;
+
+
 
 
     // ? checks whether or not the item exists in my cart, based on the titles of the items that are already in the cart
@@ -72,6 +75,17 @@ export const addItemInCart = (currentButton) => {
         containerOfCartItems.appendChild(divTemporary);
 
         alert('novo item adicionado ao carrinho')
-    }
+        
+    };
+
+
+    // ? shows the number of current items in the cart on the cart button in the corner of the screen
+
+    const cartButtonValue = document.querySelector('.button-cart span');
+
+    numberItemsAdded += Number(quantityProductItems);
+
+    cartButtonValue.textContent = numberItemsAdded;
+
 
 }
