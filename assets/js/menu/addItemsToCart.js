@@ -1,24 +1,21 @@
-const containerOfCartItems = document.querySelector(".cart__my-cart");
 export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
+
+const containerOfCartItems = document.querySelector(".cart__my-cart");
 
 let numberItemsAdded = 0;
 
 
 export const addItemInCart = (currentButtonArg) => {
-        
-    const productContainer = currentButtonArg.closest('.menu__food'); 
 
-    const productImage = productContainer.querySelector(".menu__food-img").src; 
+    const productContainer = currentButtonArg.closest('.menu__food');
+    const productImage = productContainer.querySelector(".menu__food-img").src;
     const productTitle = productContainer.querySelector(".menu__food-title").textContent;
     const productPrice = productContainer.querySelector(".menu__food-price").textContent;
     const quantityProductItems = productContainer.querySelector(".menu__food-count").textContent;
 
-
     const cartItems = containerOfCartItems.querySelectorAll(".my-cart__item");
 
     let existingItem = null;
-
-
 
 
     // ? checks whether or not the item exists in my cart, based on the titles of the items that are already in the cart
@@ -30,10 +27,11 @@ export const addItemInCart = (currentButtonArg) => {
     });
 
 
-    // ? if the item I want to add to my cart is already in the cart, i add the number of items i want to add to the number of items previously added
-    // ? if the item I want to add doesn't exist, i create a new element with the item information
 
     if (existingItem) {
+
+        // ? if the item I want to add to my cart is already in the cart, i add the number of items i want to add to the number of items previously added
+
         const counterExistingItem = existingItem.querySelector(".my-cart__food-count");
 
         counterExistingItem.textContent = parseInt(counterExistingItem.textContent) + parseInt(quantityProductItems);
@@ -41,6 +39,9 @@ export const addItemInCart = (currentButtonArg) => {
         alert('mais itens adicionados ao carrinho')
 
     } else {
+
+        // ? if the item I want to add doesn't exist, i create a new element with the item information
+
         const htmlDoItemAdded = `
              <div class="my-cart__item">
                  <div class="my-cart__content">
@@ -74,8 +75,8 @@ export const addItemInCart = (currentButtonArg) => {
 
         containerOfCartItems.appendChild(divTemporary);
 
-        alert('novo item adicionado ao carrinho')
-        
+        alert('novo item adicionado ao carrinho');
+
     };
 
 
@@ -86,6 +87,5 @@ export const addItemInCart = (currentButtonArg) => {
     numberItemsAdded += Number(quantityProductItems);
 
     cartButtonValue.textContent = numberItemsAdded;
-
 
 }
