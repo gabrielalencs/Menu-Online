@@ -2,37 +2,15 @@ export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-c
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
+
 let numberItemsAdded = 0;
+let totalPriceSum = 0;
 
 
 
+export const addItemInCart = (currentButtonArgument) => {
 
-// ? function that displays my popup in the corner of the screen
-
-function toastifyElement(textToastify) {
-    Toastify({
-        text: textToastify,
-        duration: 1000,
-        newWindow: false,
-        close: true,
-        gravity: "top",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-            background: "#2ecc71",
-            fontSize: '1.8rem',
-            borderRadius: '1.5rem'
-
-        },
-    }).showToast();
-}
-
-
-export const addItemInCart = (currentButtonArg) => {
-
-
-
-    const productContainer = currentButtonArg.closest('.menu__food');
+    const productContainer = currentButtonArgument.closest('.menu__food');
     const productImage = productContainer.querySelector(".menu__food-img").src;
     const productTitle = productContainer.querySelector(".menu__food-title").textContent;
     const productPrice = productContainer.querySelector(".menu__food-price").textContent;
@@ -107,12 +85,63 @@ export const addItemInCart = (currentButtonArg) => {
     };
 
 
-    // ? shows the number of current items in the cart on the cart button in the corner of the screen
+    addNumberItems(quantityProductItems);
+
+    sumValueItems(productPrice);
+
+};
+
+
+// ? shows the number of current items in the cart on the cart button in the corner of the screen
+
+function addNumberItems(quantityProductItemsArgument) {
 
     const cartButtonValue = document.querySelector('.button-cart span');
 
-    numberItemsAdded += Number(quantityProductItems);
+    numberItemsAdded += Number(quantityProductItemsArgument);
 
     cartButtonValue.textContent = numberItemsAdded;
 
-};
+}
+
+
+// ? adds up the value of the items and shows them in the first step of the cart
+
+function sumValueItems(productPriceArgument) {
+    
+    const purchaseValue = document.querySelector('.footer__subtotal span');
+    const TotalPurchaseValue = document.querySelector('.footer__total span span');
+
+    let priceWithoutR$ = productPriceArgument.replace('R$', '').trim();
+    let priceWithPoint = priceWithoutR$.replace(',', '.');
+    let priceNumber = Number(priceWithPoint);
+
+    totalPriceSum += priceNumber;
+
+    purchaseValue.textContent = totalPriceSum;
+
+    TotalPurchaseValue.textContent = totalPriceSum + 5;
+
+}
+
+
+// ? function that displays my popup in the corner of the screen
+
+function toastifyElement(textToastify) {
+    Toastify({
+        text: textToastify,
+        duration: 1000,
+        newWindow: false,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+            background: "#2ecc71",
+            fontSize: '1.8rem',
+            borderRadius: '1.5rem'
+
+        },
+    }).showToast();
+}
+

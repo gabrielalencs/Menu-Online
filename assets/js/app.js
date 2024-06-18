@@ -66,3 +66,6 @@ buttonCloseCart.addEventListener("click", toggleMenu); // ? closes the cart when
 
 
 btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the function to fill in the form based on the zip code
+
+
+
