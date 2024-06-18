@@ -1,0 +1,32 @@
+@use '../abstract/colors' as color;
+@use '../abstract/breakpoints' as media;
+@use '../abstract/mixins' as mixin;
+
+.footer {
+    margin-top: 10rem;
+    background-color: color.$secondary-color;
+    text-align: center;
+    padding: 2rem 0 5rem;
+
+    &__container-image {
+        width: 15rem;
+        margin: 0 auto;
+
+        @include media.smallTablets {
+            width: 20rem;
+        }
+    }
+
+    &__copyright {
+        font-size: 1.6rem;
+
+        @include media.smallTablets {
+            font-size: 2rem;
+        }
+
+        span {
+            font-weight: 600;
+            color: color.$primary-color;
+        }
+    }
+}

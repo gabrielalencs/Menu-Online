@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,769 @@
     <link rel="stylesheet" href="assets/css/app.css" />
     <!-- Scripts JS -->
     <script src="assets/js/app.js" type="module" defer></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Toastify JS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+
     <title>Menu Online</title>
 </head>
+
 <body>
-    
+    <header class="header">
+        <div class="header__brand">
+            <img src="assets/images/logo.png" alt="Company Logo">
+        </div>
+
+        <div class="header__nav-container" id="menu-container">
+            <nav>
+                <ul class="header__list">
+                    <li class="header__list-item">Reservas</li>
+                    <li class="header__list-item">Serviços</li>
+                    <li class="header__list-item">Cardápio</li>
+                    <li class="header__list-item">Depoimentos</li>
+                </ul>
+            </nav>
+
+            <button class="header__shopping-cart">
+                <span>Meu Carrinho</span>
+                <div>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+            </button>
+        </div>
+
+        <div class="header__btn-mobile" id="mobile-menu-btn">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox" class="toggle">
+                <div class="bars" id="bar-one"></div>
+                <div class="bars" id="bar-two"></div>
+                <div class="bars" id="bar-three"></div>
+            </label>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__contents">
+                <h1 class="hero__title">
+                    Escolha sua comida <span>favorita</span>.
+                </h1>
+                <p class="hero__description">
+                    Aproveite nosso cardápio! Escolha o que desejar e recebe em sua casa de forma rápida e segura.
+                </p>
+
+                <div class="hero__buttons-container">
+                    <button class="hero__btn-menu">Ver cardápio</button>
+                    <button class="hero__btn-tel">
+                        <div><i class="fa-solid fa-phone"></i></div>
+                        <span>(11) 91347-2137</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hero__image-container">
+                <div class="hero__img-background">
+                    <img src="assets/images/burguer.png" alt="image of a hamburger" class="hero__img">
+                </div>
+
+                <blockquote class="hero__quote">
+                    <p class="hero__quote-description">
+                        "Entrega rápida e funcionários simpáticos.
+                        A comida chegou quente e
+                        muito saborosa!"
+                    </p>
+                    <p class="hero__quote-name">Thiago Lopes</p>
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="services__texts">
+                <h2 class="services__title">Serviços</h2>
+                <h3 class="services__subtitle">Como são nossos serviços?</h3>
+            </div>
+
+            <div class="services__benefits-container">
+                <div class="services__benefits">
+                    <div class="services__benefits-image">
+                        <img src="assets/images/request-icon.svg" alt="image request" class="services__img img-request">
+                    </div>
+
+                    <div class="services__benefits-texts">
+                        <h3>Fácil de pedir</h3>
+                        <p>
+                            Você só precisa de alguns passos para pedir sua comida.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="services__benefits">
+                    <div class="services__benefits-image">
+                        <img src="assets/images/icon-delivery.svg" alt="image delivery" class="services__img">
+                    </div>
+
+                    <div class="services__benefits-texts">
+                        <h3>Entrega rápida</h3>
+                        <p>
+                            Nossa entrega é sempre pontual, rápida e segura.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="services__benefits">
+                    <div class="services__benefits-image">
+                        <img src="assets/images/icon-quality.svg" alt="image quality" class="services__img">
+                    </div>
+
+                    <div class="services__benefits-texts">
+                        <h3>Melhor qualidade</h3>
+                        <p>
+                            Não só a rapidez na entrega, a qualidade também é o nosso forte.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu">
+            <div class="menu__texts">
+                <h2 class="menu__title">Cardápio</h2>
+                <h3 class="menu__subtitle">Conheça o nosso cardápio</h3>
+            </div>
+
+            <div class="menu__options">
+                <div class="menu__buttons-container">
+                    <button class="menu__button-food menu-btn-checked">
+                        <i class="fa-solid fa-burger"></i>
+                        <span>Burgers</span>
+                    </button>
+
+                    <button class="menu__button-food">
+                        <i class="fa-solid fa-pizza-slice"></i>
+                        <span>Pizzas</span>
+                    </button>
+
+                    <button class="menu__button-food">
+                        <i class="fa-solid fa-drumstick-bite"></i>
+                        <span>Churrasco</span>
+                    </button>
+
+                    <button class="menu__button-food">
+                        <i class="fas fa-bacon"></i>
+                        <span>Steaks</span>
+                    </button>
+
+                    <button class="menu__button-food">
+                        <i class="fa-solid fa-martini-glass-citrus"></i>
+                        <span>Bebidas</span>
+                    </button>
+
+                    <button class="menu__button-food">
+                        <i class="fas fa-ice-cream"></i>
+                        <span>Sobremesa</span>
+                    </button>
+                </div>
+
+                <div class="menu__foods-container">
+                    <div class="menu__food">
+                        <div class="menu__food-main">
+                            <div class="menu__food-image">
+                                <img src="assets/images/menu/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg"
+                                    alt="Burger Image" class="menu__food-img">
+                            </div>
+
+                            <div class="menu__food-texts">
+                                <p class="menu__food-title">Gramercy Tavern</p>
+                                <span class="menu__food-price">R$ 99,00</span>
+                            </div>
+                        </div>
+
+                        <div class="menu__food-hover">
+                            <span class="menu__hover-title">R$ 99,00</span>
+
+                            <div class="menu__food-buttons">
+                                <button class="menu__food-count-container">
+                                    <span class="menu__food-icon btn-menu-minus">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+
+                                    <span class="menu__food-count">0</span>
+
+                                    <span class="menu__food-icon btn-menu-plus">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </button>
+
+                                <button class="menu__food-shopping-cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__food">
+                        <div class="menu__food-main">
+                            <div class="menu__food-image">
+                                <img src="assets/images/menu/burguers/shake-shack-shackburger-8-pack.973a5e26836ea86d7e86a327becea2b0.jpg"
+                                    alt="Burger Image" class="menu__food-img">
+                            </div>
+
+                            <div class="menu__food-texts">
+                                <p class="menu__food-title">Shake Shack</p>
+                                <span class="menu__food-price">R$ 49,00</span>
+                            </div>
+                        </div>
+
+                        <div class="menu__food-hover">
+                            <span class="menu__hover-title">R$ 99,00</span>
+
+                            <div class="menu__food-buttons">
+                                <button class="menu__food-count-container">
+                                    <span class="menu__food-icon btn-menu-minus">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+
+                                    <span class="menu__food-count">0</span>
+
+                                    <span class="menu__food-icon btn-menu-plus">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </button>
+
+                                <button class="menu__food-shopping-cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__food">
+                        <div class="menu__food-main">
+                            <div class="menu__food-image">
+                                <img src="assets/images/menu/burguers/gotts-complete-cheeseburger-kit-for-4.7bdc74104b193427b3fe6eae39e05b5e.jpg"
+                                    alt="Burger Image" class="menu__food-img">
+                            </div>
+
+                            <div class="menu__food-texts">
+                                <p class="menu__food-title">Gott's Roadside</p>
+                                <span class="menu__food-price">R$ 99,00</span>
+                            </div>
+                        </div>
+
+                        <div class="menu__food-hover">
+                            <span class="menu__hover-title">R$ 99,00</span>
+
+                            <div class="menu__food-buttons">
+                                <button class="menu__food-count-container">
+                                    <span class="menu__food-icon btn-menu-minus">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+
+                                    <span class="menu__food-count">0</span>
+
+                                    <span class="menu__food-icon btn-menu-plus">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </button>
+
+                                <button class="menu__food-shopping-cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__food">
+                        <div class="menu__food-main">
+                            <div class="menu__food-image">
+                                <img src="assets/images/menu/burguers/le-big-matt-kit-for-6.1ddae6e382bb3218eeb0fd5247de115a.jpg"
+                                    alt="Burger Image" class="menu__food-img">
+                            </div>
+
+                            <div class="menu__food-texts">
+                                <p class="menu__food-title">Emmy Squared</p>
+                                <span class="menu__food-price">R$ 99,00</span>
+                            </div>
+                        </div>
+
+                        <div class="menu__food-hover">
+                            <span class="menu__hover-title">R$ 99,00</span>
+
+                            <div class="menu__food-buttons">
+                                <button class="menu__food-count-container">
+                                    <span class="menu__food-icon btn-menu-minus">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+
+                                    <span class="menu__food-count">0</span>
+
+                                    <span class="menu__food-icon btn-menu-plus">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </button>
+
+                                <button class="menu__food-shopping-cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__food">
+                        <div class="menu__food-main">
+                            <div class="menu__food-image">
+                                <img src="assets/images/menu/burguers/le-big-matt-kit-for-6.1ddae6e382bb3218eeb0fd5247de115a.jpg"
+                                    alt="Burger Image" class="menu__food-img">
+                            </div>
+
+                            <div class="menu__food-texts">
+                                <p class="menu__food-title">Shake Shack</p>
+                                <span class="menu__food-price">R$ 89,00</span>
+                            </div>
+                        </div>
+
+                        <div class="menu__food-hover">
+                            <span class="menu__hover-title">R$ 99,00</span>
+
+                            <div class="menu__food-buttons">
+                                <button class="menu__food-count-container">
+                                    <span class="menu__food-icon btn-menu-minus">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+
+                                    <span class="menu__food-count">0</span>
+
+                                    <span class="menu__food-icon btn-menu-plus">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </button>
+
+                                <button class="menu__food-shopping-cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__food">
+                        <div class="menu__food-main">
+                            <div class="menu__food-image">
+                                <img src="assets/images/menu/burguers/usda-prime-burgers-pack-of-18-8oz-each.274c67f15aa1c0b210dbf51801706670.jpg"
+                                    alt="Burger Image" class="menu__food-img">
+                            </div>
+
+                            <div class="menu__food-texts">
+                                <p class="menu__food-title">Peter Luger Steak House</p>
+                                <span class="menu__food-price">R$ 175,00</span>
+                            </div>
+                        </div>
+
+                        <div class="menu__food-hover">
+                            <span class="menu__hover-title">R$ 175,00</span>
+
+                            <div class="menu__food-buttons">
+                                <button class="menu__food-count-container">
+                                    <span class="menu__food-icon btn-menu-minus">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+
+                                    <span class="menu__food-count">0</span>
+
+                                    <span class="menu__food-icon btn-menu-plus">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </button>
+
+                                <button class="menu__food-shopping-cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__food">
+                        <div class="menu__food-main">
+                            <div class="menu__food-image">
+                                <img src="assets/images/menu/burguers/handf-double-stack-burger-kit-for-4.4ee9f54b1d6087e9996335f07c13e5cd.jpg"
+                                    alt="Burger Image" class="menu__food-img">
+                            </div>
+
+                            <div class="menu__food-texts">
+                                <p class="menu__food-title">Holeman & Finch</p>
+                                <span class="menu__food-price">R$ 79,00</span>
+                            </div>
+                        </div>
+
+                        <div class="menu__food-hover">
+                            <span class="menu__hover-title">R$ 79,00</span>
+
+                            <div class="menu__food-buttons">
+                                <button class="menu__food-count-container">
+                                    <span class="menu__food-icon btn-menu-minus">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+
+                                    <span class="menu__food-count">0</span>
+
+                                    <span class="menu__food-icon btn-menu-plus">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </button>
+
+                                <button class="menu__food-shopping-cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu__food">
+                        <div class="menu__food-main">
+                            <div class="menu__food-image">
+                                <img src="assets/images/menu/burguers/the-burger-bash-package.bd9d12d031865940bbe5faf15f1a62f8.jpg"
+                                    alt="Burger Image" class="menu__food-img">
+                            </div>
+
+                            <div class="menu__food-texts">
+                                <p class="menu__food-title">Pat LaFrieda Meats</p>
+                                <span class="menu__food-price">R$ 109,00</span>
+                            </div>
+                        </div>
+
+                        <div class="menu__food-hover">
+                            <span class="menu__hover-title">R$ 99,00</span>
+
+                            <div class="menu__food-buttons">
+                                <button class="menu__food-count-container">
+                                    <span class="menu__food-icon btn-menu-minus">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+
+                                    <span class="menu__food-count">0</span>
+
+                                    <span class="menu__food-icon btn-menu-plus">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </button>
+
+                                <button class="menu__food-shopping-cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="depositions">
+            <div class="depositions__texts">
+                <h2 class="depositions__title">Depoimentos</h2>
+                <h3 class="depositions__subtitle">O que dizem sobre nós?</h3>
+            </div>
+
+            <div class="depositions__content">
+                <div class="depositions__container-image">
+                    <img src="assets/images/pizzas.png" alt="Images Pizzas">
+                </div>
+
+                <div class="depositions__comment-container">
+                    <div class="depositions__profile">
+                        <div class="depositions__image">
+                            <img src="assets/images/alex-image.jpg" alt="people image">
+                        </div>
+                        <div class="depositions__infos">
+                            <span>Alex Thelles</span>
+                            <div>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <blockquote class="depositions__paragraph-container">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p>
+                            Excelente experiência! A comida é preparada com maestria pelo chef, o atendimento é
+                            profissional e a comunicação com os clientes é perfeita. Recomendo fortemente!
+                        </p>
+                        <i class="fa-solid fa-quote-right"></i>
+                    </blockquote>
+
+                    <div class="depositions__buttons-container">
+                        <button class="depositions__button">1</button>
+                        <button class="depositions__button">2</button>
+                        <button class="depositions__button">3</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="booking">
+            <div class="booking__container">
+                <div class="booking__texts">
+                    <h2 class="booking__title">Reserva</h2>
+                    <h3 class="booking__subtitle">Quer reservar um horário?</h3>
+                    <p class="booking__description">
+                        Mande uma mensagem clicando no botão abaixo
+                        Reserve sua data e horário de forma simples e rápida.
+                    </p>
+                    <button class="booking__btn-reserve">
+                        Fazer Reserva
+                    </button>
+                </div>
+
+                <div class="booking__container-image">
+                    <img src="assets/images/icon-reservation.svg" alt="image reservation">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container-image">
+            <img src="assets/images/logo.png" alt="logo">
+        </div>
+
+        <div>
+            <p class="footer__copyright">
+                <span>Menu On-line</span> &copy; Todos os direitos reservados
+            </p>
+        </div>
+    </footer>
+
+    <div class="cart hidden">
+        <header class="cart__header">
+            <div class="cart__phases-container">
+                <div class="phase-marked">1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+
+            <button class="cart__close-button">
+                Fechar
+            </button>
+        </header>
+
+        <div class="cart__body">
+            
+            <div class="cart__my-cart">
+                <h2>Seu carrinho:</h2>
+
+                <div class="cart__empty-cart-message">
+                    <p>Seu carrinho está vazio.</p>
+                </div>
+
+                <div class="cart__container-my-itens"></div>
+            </div>
+
+            <div class="cart__delivery-address">
+                <h2>Endereço de entrega:</h2>
+
+                <form class="address__form">
+                    <div class="address__container-element address-cep">
+                        <label for="cep">CEP:</label>
+
+                        <div class="address__input-cep">
+                            <input type="text" id="cep">
+
+                            <div id="zip-code-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="address__row">
+                        <div class="address__container-element address-element">
+                            <label for="address">Endereço:</label>
+
+                            <div>
+                                <input type="text" id="address">
+                            </div>
+                        </div>
+
+                        <div class="address__container-element neighborhood-element">
+                            <label for="neighborhood">Bairro:</label>
+
+                            <div>
+                                <input type="text" id="neighborhood">
+                            </div>
+                        </div>
+
+                        <div class="address__container-element">
+                            <label for="number">Número:</label>
+
+                            <div>
+                                <input type="number" id="number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="address__row">
+                        <div class="address__container-element city-element">
+                            <label for="city">Cidade:</label>
+
+                            <div>
+                                <input type="text" id="city">
+                            </div>
+                        </div>
+
+                        <div class="address__container-element complement-element">
+                            <label for="complement">Complemento:</label>
+
+                            <div>
+                                <input type="text" id="complement">
+                            </div>
+                        </div>
+
+                        <div class="address__container-element">
+                            <label for="uf">UF:</label>
+
+                            <div>
+                                <select id="uf" class="form-control">
+                                    <option value="-1">...</option>
+                                    <option value="AC">Acre - AC</option>
+                                    <option value="AL">Alagoas - AL</option>
+                                    <option value="AP">Amapa - AP</option>
+                                    <option value="AM">Amazonas - AM</option>
+                                    <option value="BA">Bahia - BA</option>
+                                    <option value="CE">Ceara - CE</option>
+                                    <option value="DF">Distrito Federal - DF</option>
+                                    <option value="ES">Espirito Santo - ES</option>
+                                    <option value="GO">Goias - GO</option>
+                                    <option value="MA">Maranhão - MA</option>
+                                    <option value="MT">Mato Grosso - MT</option>
+                                    <option value="MS">Mato Grosso Do Sul - MS</option>
+                                    <option value="MG">Minas Gerais - MG</option>
+                                    <option value="PA">Para - PA</option>
+                                    <option value="PB">Paraiba - PB</option>
+                                    <option value="PR">Parana - PR</option>
+                                    <option value="PE">Pernambuco - PE</option>
+                                    <option value="PI">Piaui - PI</option>
+                                    <option value="RJ">Rio De Janeiro - RJ</option>
+                                    <option value="RN">Rio Grande Do Norte - RN</option>
+                                    <option value="RS">Rio Grande Do Sul - RS</option>
+                                    <option value="RO">Rondonia - RO</option>
+                                    <option value="RR">Roraima - RR</option>
+                                    <option value="SC">Santa Catarina - SC</option>
+                                    <option value="SP">São Paulo - SP</option>
+                                    <option value="SE">Sergipe - SE</option>
+                                    <option value="TO">Tocantins - TO</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="cart__order-summary">
+                <h2>Resumo do pedido:</h2>
+
+                <div class="order-summary__content">
+                    <h3>Itens do pedido:</h3>
+
+                    <div class="order-summary__container-itens">
+                        <div class="order-summary-item">
+                            <div class="item-content">
+                                <div class="item-image">
+                                    <img src="assets/images/menu/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg" alt="">
+                                </div>
+
+                                <div class="item-texts">
+                                    <p>Gramercy Tavern</p>
+                                    <span>R$ 99,00</span>
+                                </div>
+                            </div>
+
+                            <span class="item-amount">
+                                x3
+                            </span>
+                        </div>
+
+                        <div class="order-summary-item">
+                            <div class="item-content">
+                                <div class="item-image">
+                                    <img src="assets/images/menu/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg" alt="">
+                                </div>
+
+                                <div class="item-texts">
+                                    <p>Gramercy Tavern</p>
+                                    <span>R$ 99,00</span>
+                                </div>
+                            </div>
+
+                            <span class="item-amount">
+                                x3
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="order-summary__location-container">
+                        <h3>Local da entrega:</h3>
+
+                        <div class="location-info">
+                            <div class="location-icon">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+
+                            <div class="location-texts">
+                                <p class="location-address">
+                                    Rua Joaquim Guimarães, 41, Butantã
+                                </p>
+
+                                <p class="location-state">
+                                    São Paulo-SP / 05574010
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <footer class="cart__footer">
+            <div class="footer__content">
+                <p class="footer__subtotal">
+                    Subtotal:
+                    <span>R$ 150,00</span>
+                </p>
+
+                <p class="footer__delivery">
+                    <i class="fa-solid fa-motorcycle"></i>
+                    Entrega: + R$ 5,00
+                </p>
+
+                <p class="footer__total">
+                    Total:
+                    <span>R$ 155,00</span>
+                </p>
+
+                <button class="footer__btn-return">
+                    Voltar
+                </button>
+
+                <button class="footer__btn-next">
+                    Continuar
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <div class="button-cart">
+        <span>0</span>
+        <i class="fa-solid fa-bag-shopping"></i>
+    </div>
+
+    <!-- Toastify JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
+
 </html>

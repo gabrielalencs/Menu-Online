@@ -1,0 +1,158 @@
+@use '../abstract/colors' as color;
+@use '../abstract/breakpoints' as media;
+@use '../abstract/mixins' as mixin;
+
+.depositions {
+    margin-top: 10rem;
+    padding: 0 4rem;
+
+    @include media.laptops {
+        margin-top: 15rem;
+        background-image: url(../images/bg-icons-1.png);
+        background-size: contain;
+        padding: 0;
+    }
+
+    @include media.laptops {
+        &__texts {
+            text-align: center
+        }
+    }
+
+    &__title {
+        @include mixin.titleStyles;
+    }
+
+    &__subtitle {
+        @include mixin.subtitleStyles;
+    }
+
+    &__content {
+        margin-top: 6rem;
+
+        @include media.laptops {
+            @include mixin.flex-horizontal;
+            gap: 7rem;
+            position: relative;
+        }
+    }
+
+    &__container-image {
+        display: none;
+
+        @include media.laptops {
+            display: block;
+            flex: 1;
+        }
+    }
+
+    @include media.laptops {
+
+        &__comment-container {
+            flex: 1;
+        }
+
+        &__container-image::after {
+            content: '';
+            display: block;
+            height: 40rem;
+            width: 45rem;
+            border-radius: 170px;
+            background-color: #fff2cc;
+            position: absolute;
+            top: 0;
+            left: 4rem;
+            z-index: -1;
+        }
+    }
+
+    &__profile {
+        @include mixin.flex-horizontal;
+        gap: 1.5rem;
+    }
+
+    &__image {
+        width: 6rem;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    &__infos span {
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+
+    &__infos div {
+        @include mixin.flex-horizontal;
+    }
+
+    &__infos i {
+        font-size: 1.5rem;
+        color: color.$primary-color;
+        margin-right: .4rem;
+    }
+
+    &__infos div>span {
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin-left: .4rem;
+    }
+
+    &__paragraph-container {
+        margin-top: 3rem;
+        display: flex;
+        gap: 2rem;
+
+        i {
+            font-size: 4rem;
+            color: color.$primary-color;
+
+            @include media.laptops {
+                font-size: 5rem;
+            }
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 1.5;
+
+            @include media.extraSmallDevices {
+                text-align: center;
+            }
+
+            @include media.smallTablets {
+                font-size: 1.7rem;
+                line-height: 1.6;
+                text-align: left;
+            }
+        }
+
+        & i:last-child {
+            align-self: flex-end;
+        }
+    }
+
+    &__buttons-container {
+        margin: 4rem 0;
+        @include mixin.flex-horizontal;
+        gap: 2rem;
+
+        button {
+            padding: .8rem 1.8rem;
+            border-radius: 1.5rem;
+            // box-shadow: 0 1rem 1.5rem -.3rem rgba(0, 0, 0, 0.1);
+            border: .2rem solid color.$primary-color;
+            color: color.$primary-color;
+            font-size: 1.7rem;
+            font-weight: 600;
+            transition: all .3s;
+
+            &:hover {
+                background-color: color.$primary-color;
+                color: color.$white-primary;
+            }
+        }
+    }
+}

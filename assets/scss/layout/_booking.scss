@@ -1,0 +1,52 @@
+@use '../abstract/colors' as color;
+@use '../abstract/breakpoints' as media;
+@use '../abstract/mixins' as mixin;
+
+.booking {
+    margin-top: 10rem;
+    padding: 0 4rem;
+
+    &__container {
+        background-color: color.$secondary-color;
+        border-radius: 3rem;
+        padding: 5rem;
+
+        @include media.laptops {
+            @include mixin.flex-horizontal;
+            gap: 7rem;
+            padding: 7rem;
+        }
+    }
+
+    &__texts {
+        flex: 1.2;
+    }
+
+    &__title {
+        @include mixin.titleStyles;
+    }
+
+    &__subtitle {
+        @include mixin.subtitleStyles;
+    }
+
+    &__description {
+        margin-top: 2.5rem;
+        font-size: 1.8rem;
+        color: color.$gray-primary;
+    }
+
+    &__btn-reserve {
+        margin-top: 3rem;
+        @include mixin.button;
+    }
+
+    &__container-image {
+        display: none;
+
+        @include media.laptops {
+            display: block;
+            flex: 1;
+        }
+    }
+}

@@ -1,0 +1,147 @@
+@use '../abstract/colors' as color;
+@use '../abstract/breakpoints' as media;
+@use '../abstract/mixins' as mixin;
+
+.hero {
+    margin-top: 8rem;
+    padding: 0 3rem;
+
+
+    @include media.laptops {
+        @include mixin.flex-horizontal;
+        align-items: flex-start;
+    }
+
+    @include media.laptops {
+        &__contents {
+            flex: 1;
+        }
+    }
+
+    &__contents {
+        margin-top: 5rem;
+    }
+
+    &__title {
+        font-size: 3.5rem;
+        line-height: 5rem;
+
+        @include media.smallTablets {
+            font-size: 6.5rem;
+            line-height: 7rem;
+        }
+
+        @include media.laptops {
+            font-size: 5rem;
+        }
+
+        @include media.desktops {
+            font-size: 6.5rem;
+        }
+
+        span {
+            color: color.$primary-color;
+        }
+    }
+
+    &__description {
+        margin-top: 2rem;
+        font-size: 1.8rem;
+        color: color.$gray-primary;
+        max-width: 70rem;
+
+        @include media.smallTablets {
+            font-size: 2rem;
+        }
+    }
+
+    &__buttons-container {
+        margin-top: 3rem;
+        @include mixin.flex-vertical;
+        gap: 3rem;
+
+        @include media.laptops {
+            @include mixin.flex-horizontal;
+        }
+    }
+
+    &__btn-menu {
+        @include mixin.button;
+    }
+
+    &__btn-tel {
+        box-shadow: 0 1rem 1.5rem -.3rem rgba(0, 0, 0, 0.1);
+        padding: 1.5rem 2.8rem;
+        border-radius: 1.5rem;
+        @include mixin.flex-horizontal;
+        gap: 2rem;
+        font-size: 2rem;
+
+        div {
+            background-color: color.$primary-color;
+            padding: .7rem 1rem;
+            border-radius: 1rem;
+            color: color.$white-primary;
+        }
+    }
+
+    &__image-container {
+        display: none;
+        position: relative;
+
+        @include media.laptops {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+    }
+
+    &__img-background::after {
+        content: '';
+        display: block;
+        width: 38rem;
+        height: 42rem;
+        border-radius: 170px;
+        background-color: #f4c949;
+        position: absolute;
+        top: -5rem;
+        right: -2rem;
+        z-index: -1;
+
+
+
+        @include media.desktops {
+            height: 45rem;
+            width: 45rem;
+            right: -2rem;
+        }
+    }
+
+
+    &__quote {
+        box-shadow: 0 1rem 1.5rem -.3rem rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        border-radius: 1.5rem;
+        width: 35rem;
+        align-self: flex-end;
+        position: relative;
+        bottom: 5rem;
+        background-color: color.$white-primary;
+        font-size: 1.5rem;
+        position: relative;
+
+        &-description {
+            line-height: 2rem;
+            color: color.$gray-primary;
+            width: 32rem;
+        }
+
+        &-name {
+            position: absolute;
+            color: color.$primary-color;
+            font-weight: 600;
+            bottom: .6rem;
+            right: 2rem;
+        }
+    }
+}

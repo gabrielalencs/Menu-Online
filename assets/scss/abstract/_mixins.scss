@@ -1,0 +1,59 @@
+@use 'colors' as color;
+@use 'breakpoints' as media;
+
+@mixin flex-horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin flex-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+@mixin alignment-horizontal-vertical($type, $direction, $justify, $aling, $gap) {
+    display: $type;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $aling;
+    gap: $gap;
+}
+
+@mixin titleStyles {
+    color: color.$primary-color;
+    text-transform: uppercase;
+    letter-spacing: .35rem;
+    font-size: 1.8rem;
+
+    @include media.laptops {
+        font-size: 2rem;
+    }
+}
+
+@mixin subtitleStyles {
+    margin-top: .7rem;
+    font-size: 3rem;
+    line-height: 3.5rem;
+
+    @include media.laptops {
+        font-size: 3.7rem;
+    }
+}
+
+@mixin button {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1.3rem 2.3rem;
+    border-radius: 1.5rem;
+    background-color: color.$primary-color;
+    color: color.$white-primary;
+    border: .2rem solid color.$primary-color;
+    transition: all .3s;
+
+    &:hover {
+        background-color: transparent;
+        color: color.$primary-color;
+    }
+}
