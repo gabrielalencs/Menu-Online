@@ -1170,6 +1170,7 @@ main {
   border-radius: 1rem;
   color: #ffffff;
   display: none;
+  cursor: pointer;
 }
 @media (min-width: 768px) {
   .cart__my-cart .my-cart__button-close {

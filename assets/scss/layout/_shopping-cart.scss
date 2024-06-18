@@ -257,6 +257,8 @@
         border-radius: 1rem;
         color: color.$white-primary;
         display: none;
+        cursor: pointer;
+
 
         @include media.smallTablets {
             display: block;

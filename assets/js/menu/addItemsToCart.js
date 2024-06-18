@@ -2,6 +2,9 @@ export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-c
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
+import {teste} from '../app.js';
+
+
 
 let numberItemsAdded = 0;
 let totalPriceSum = 0;

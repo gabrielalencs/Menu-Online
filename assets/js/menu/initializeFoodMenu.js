@@ -13,6 +13,7 @@ const itemCountersElement = document.querySelectorAll('.menu__food-count');
 
 
 
+
 // ? arrays that will be used for the counts of the items in each section
 
 let itemCountersArrayBurgers = Array(itemCountersElement.length).fill(0);

@@ -69,59 +69,61 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 
 
-const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
-const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
+export function teste() {
+    const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
+    const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
 
-const buttonExcluirItem = document.querySelectorAll('.my-cart__button-close');
-
-
-
-buttonsDecreaseItems.forEach(button => {
-
-    button.addEventListener('click', ({target}) => {
-        
-        const valorDoContainerClicado = target.parentNode.parentNode.querySelector('.my-cart__food-count');
-
-        let contador = Number(valorDoContainerClicado.textContent);
-
-        if (contador > 0) contador--;
-
-        valorDoContainerClicado.textContent = contador;
-
-    })
-
-})
+    const buttonExcluirItem = document.querySelectorAll('.my-cart__button-close');
 
 
-buttonsAddItems.forEach(button => {
+    buttonsDecreaseItems.forEach(button => {
 
-    button.addEventListener('click', ({target}) => {
-        
-        const valorDoContainerClicado = target.parentNode.parentNode.querySelector('.my-cart__food-count');
+        button.addEventListener('click', ({target}) => {
+            
+            const valorDoContainerClicado = target.parentNode.parentNode.querySelector('.my-cart__food-count');
 
-        let contador = Number(valorDoContainerClicado.textContent);
+            let contador = Number(valorDoContainerClicado.textContent);
 
-        contador++
+            if (contador > 0) contador--;
 
-        valorDoContainerClicado.textContent = contador;
+            valorDoContainerClicado.textContent = contador;
+
+        })
 
     })
 
-})
 
+    buttonsAddItems.forEach(button => {
 
+        button.addEventListener('click', ({target}) => {
+            
+            const valorDoContainerClicado = target.parentNode.parentNode.querySelector('.my-cart__food-count');
 
-buttonExcluirItem.forEach(button => {
+            let contador = Number(valorDoContainerClicado.textContent);
 
-    button.addEventListener('click', ({target}) => {
+            contador++
 
-        let elementoPai = target.parentNode.parentNode.parentNode;
+            valorDoContainerClicado.textContent = contador;
 
-        elementoPai.remove()
+        })
 
     })
 
-})
+
+
+    buttonExcluirItem.forEach(button => {
+
+        button.addEventListener('click', ({target}) => {
+
+            let elementoPai = target.parentNode.parentNode.parentNode;
+
+            elementoPai.remove()
+
+        })
+
+    })
+}
+
 
 
 // buttonsDecreaseItems.addEventListener('click', () => {
