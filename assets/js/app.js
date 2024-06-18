@@ -45,8 +45,8 @@ markBtnClicked(); // ? marks which food button the user clicked on
 
 // ? add items to cart
 
-buttonAddToCart.forEach(currentButton => 
-    currentButton.addEventListener("click", () => addItemInCart(currentButton)) 
+buttonAddToCart.forEach(currentButton =>
+    currentButton.addEventListener("click", () => addItemInCart(currentButton))
 );
 
 
@@ -69,3 +69,81 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 
 
+const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
+const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
+
+const buttonExcluirItem = document.querySelectorAll('.my-cart__button-close');
+
+
+
+buttonsDecreaseItems.forEach(button => {
+
+    button.addEventListener('click', ({target}) => {
+        
+        const valorDoContainerClicado = target.parentNode.parentNode.querySelector('.my-cart__food-count');
+
+        let contador = Number(valorDoContainerClicado.textContent);
+
+        if (contador > 0) contador--;
+
+        valorDoContainerClicado.textContent = contador;
+
+    })
+
+})
+
+
+buttonsAddItems.forEach(button => {
+
+    button.addEventListener('click', ({target}) => {
+        
+        const valorDoContainerClicado = target.parentNode.parentNode.querySelector('.my-cart__food-count');
+
+        let contador = Number(valorDoContainerClicado.textContent);
+
+        contador++
+
+        valorDoContainerClicado.textContent = contador;
+
+    })
+
+})
+
+
+
+buttonExcluirItem.forEach(button => {
+
+    button.addEventListener('click', ({target}) => {
+
+        let elementoPai = target.parentNode.parentNode.parentNode;
+
+        elementoPai.remove()
+
+    })
+
+})
+
+
+// buttonsDecreaseItems.addEventListener('click', () => {
+
+//     let valorNum = Number(valor.textContent);
+    
+
+//     if (valorNum > 0) valorNum--;
+    
+    
+//     valor.textContent = valorNum;
+
+// })
+
+// buttonsAddItems.addEventListener('click', () => {
+
+//     let valorNum = Number(valor.textContent);
+    
+
+//     valorNum++
+
+    
+//     valor.textContent = valorNum;
+
+// })

@@ -52,21 +52,26 @@ export const addItemInCart = (currentButtonArgument) => {
                      <div class="my-cart-image">
                          <img src="${productImage}" alt="icon">
                      </div>
+
                      <div class="my-cart__texts">
                          <p>${productTitle}</p>
                          <span>${productPrice}</span>
                      </div>
                  </div>
+
                  <div class="my-cart__buttons-container">
                      <button class="my-cart__button-count">
-                         <span class="my-cart__food-icon">
+                         <span class="my-cart__food-icon my-cart-btn-minus">
                              <i class="fa-solid fa-minus"></i>
                          </span>
+
                          <span class="my-cart__food-count">${quantityProductItems}</span>
-                         <span class="my-cart__food-icon">
+
+                         <span class="my-cart__food-icon my-cart-btn-plus">
                              <i class="fa-solid fa-plus"></i>
                          </span>
                      </button>
+                     
                      <div class="my-cart__button-close">
                          <i class="fa-solid fa-xmark"></i>
                      </div>
