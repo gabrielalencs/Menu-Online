@@ -69,24 +69,28 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 
 
+import { addNumberItems } from './menu/addItemsToCart.js';
+
+
 export function teste() {
     const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
     const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
 
-    const buttonExcluirItem = document.querySelectorAll('.my-cart__button-close');
+    const deleteItemButton = document.querySelectorAll('.my-cart__button-close');
 
+    
 
     buttonsDecreaseItems.forEach(button => {
 
         button.addEventListener('click', ({target}) => {
             
-            const valorDoContainerClicado = target.parentNode.parentNode.querySelector('.my-cart__food-count');
+            const clickedItemCounter = target.parentNode.parentNode.querySelector('.my-cart__food-count');
 
-            let contador = Number(valorDoContainerClicado.textContent);
+            let itemCounter = Number(clickedItemCounter.textContent);
 
-            if (contador > 0) contador--;
+            if (itemCounter > 0) itemCounter--;
 
-            valorDoContainerClicado.textContent = contador;
+            clickedItemCounter.textContent = itemCounter;
 
         })
 
@@ -97,13 +101,13 @@ export function teste() {
 
         button.addEventListener('click', ({target}) => {
             
-            const valorDoContainerClicado = target.parentNode.parentNode.querySelector('.my-cart__food-count');
+            const clickedItemCounter = target.parentNode.parentNode.querySelector('.my-cart__food-count');
 
-            let contador = Number(valorDoContainerClicado.textContent);
+            let itemCounter = Number(clickedItemCounter.textContent);
 
-            contador++
+            itemCounter++
 
-            valorDoContainerClicado.textContent = contador;
+            clickedItemCounter.textContent = itemCounter;
 
         })
 
@@ -111,13 +115,13 @@ export function teste() {
 
 
 
-    buttonExcluirItem.forEach(button => {
+    deleteItemButton.forEach(currentButton => {
 
-        button.addEventListener('click', ({target}) => {
+        currentButton.addEventListener('click', ({target}) => {
 
-            let elementoPai = target.parentNode.parentNode.parentNode;
-
-            elementoPai.remove()
+            let parentClickedButton = target.closest('.my-cart__item');
+        
+            parentClickedButton.remove();
 
         })
 

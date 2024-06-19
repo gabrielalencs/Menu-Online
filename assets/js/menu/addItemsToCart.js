@@ -2,7 +2,7 @@ export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-c
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
-import {teste} from '../app.js';
+import { teste } from '../app.js';
 
 
 
@@ -100,9 +100,10 @@ export const addItemInCart = (currentButtonArgument) => {
 };
 
 
+
 // ? shows the number of current items in the cart on the cart button in the corner of the screen
 
-function addNumberItems(quantityProductItemsArgument) {
+export function addNumberItems(quantityProductItemsArgument) {
 
     const cartButtonValue = document.querySelector('.button-cart span');
 
@@ -116,7 +117,7 @@ function addNumberItems(quantityProductItemsArgument) {
 // ? adds up the value of the items and shows them in the first step of the cart
 
 function sumValueItems(productPriceArgument) {
-    
+
     const purchaseValue = document.querySelector('.footer__subtotal span');
     const TotalPurchaseValue = document.querySelector('.footer__total span span');
 
