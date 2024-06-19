@@ -97,14 +97,14 @@ export const addItemInCart = (currentButtonArgument) => {
 
     sumValueItems(productPrice);
 
-};
 
+};
 
 
 // ? shows the number of current items in the cart on the cart button in the corner of the screen
 
 export function addNumberItems(quantityProductItemsArgument) {
-
+    
     const cartButtonValue = document.querySelector('.button-cart span');
 
     numberItemsAdded += Number(quantityProductItemsArgument);
