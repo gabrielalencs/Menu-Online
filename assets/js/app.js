@@ -33,6 +33,13 @@ import {
 
 
 
+
+
+
+
+
+
+
 // * header
 
 mobileMenuBtn.addEventListener("change", toggleMenuMobile); // ? open or close mobile menu
@@ -44,11 +51,41 @@ mobileMenuBtn.addEventListener("change", toggleMenuMobile); // ? open or close m
 markBtnClicked(); // ? marks which food button the user clicked on
 
 
+
+
+let soma = 0
+
+const cartButtonValue = document.querySelector('.button-cart span');
+
+
 // ? add items to cart
 
 buttonAddToCart.forEach(currentButton =>
-    currentButton.addEventListener("click", () => addItemInCart(currentButton))
+    currentButton.addEventListener("click", () => {
+
+        addItemInCart(currentButton)
+
+        const productContainer = currentButton.closest('.menu__food');
+        const quantityProductItems = productContainer.querySelector(".menu__food-count").textContent;
+
+
+        let cartButtonValueNumber = Number(cartButtonValue.textContent);
+        let quantityProductItemsNumber = Number(quantityProductItems);
+
+
+    
+        soma = cartButtonValueNumber + quantityProductItemsNumber;
+
+        cartButtonValue.textContent = soma;
+
+    })
 );
+
+
+
+
+
+
 
 
 initializeFoodMenu(); // ? initializes the menu logic, calling all functions for correct operation
@@ -70,6 +107,15 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 
 
+
+
+
+
+
+
+
+
+
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
 
@@ -85,19 +131,31 @@ export function teste() {
 
         button.addEventListener('click', ({ target }) => {
 
-            const clickedItemCounter = target.parentNode.parentNode.querySelector('.my-cart__food-count');
-            let parentClickedButton = target.closest('.my-cart__item');
-
+            
+            const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
+        
 
             let itemCounter = Number(clickedItemCounter.textContent);
+            console.log(itemCounter);
+
 
             if (itemCounter > 0) {
                 itemCounter--
-            } else {
-                parentClickedButton.remove()
+
+                soma--
+
+                cartButtonValue.textContent = soma            
             }
 
+            console.log(itemCounter);
+
+            if (itemCounter == 0) target.closest('.my-cart__item').remove();
+
+
+
+
             clickedItemCounter.textContent = itemCounter;
+
 
         })
 
@@ -130,8 +188,6 @@ export function teste() {
 
             parentClickedButton.remove();
 
-
-            console.log(containerOfCartItems);
             if (!containerOfCartItems.hasChildNodes()) {
                 messageEmptyCart.classList.remove('hidden');
             }

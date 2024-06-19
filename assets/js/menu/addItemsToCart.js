@@ -6,7 +6,7 @@ import { teste } from '../app.js';
 
 
 
-let numberItemsAdded = 0;
+
 let totalPriceSum = 0;
 
 
@@ -93,13 +93,38 @@ export const addItemInCart = (currentButtonArgument) => {
     };
 
 
-    addNumberItems(quantityProductItems);
-
-    sumValueItems(productPrice, quantityProductItems);
-
-
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ? shows the number of current items in the cart on the cart button in the corner of the screen
@@ -112,7 +137,67 @@ export function addNumberItems(quantityProductItemsArgument) {
 
     cartButtonValue.textContent = numberItemsAdded;
 
+
+    // const cartButtonValue = document.querySelector('.button-cart span');
+
+    // const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
+
+
+    // buttonsDecreaseItems.forEach(button => {
+
+    //     button.addEventListener('click', () => {
+            
+    //         numberItemsAdded -= 1
+            
+    //         cartButtonValue.textContent = numberItemsAdded;
+            
+    //     });
+
+    // })
+    
+    // const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
+
+
+    // buttonsAddItems.forEach(button => {
+
+    //     button.addEventListener('click', () => {
+
+           
+    //     })
+
+    // })
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ? adds up the value of the items and shows them in the first step of the cart
@@ -134,6 +219,57 @@ export function sumValueItems(productPriceArgument, quantityProductItemsArgument
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 
 }
+
+
+
+
+
+
+// ? function that displays my popup in the corner of the screen
+
+function toastifyElement(textToastify) {
+    Toastify({
+        text: textToastify,
+        duration: 1000,
+        newWindow: false,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+            background: "#2ecc71",
+            fontSize: '1.8rem',
+            borderRadius: '1.5rem'
+
+        },
+    }).showToast();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -201,25 +337,3 @@ export function sumValueItems(productPriceArgument, quantityProductItemsArgument
 //     })
 // }
 
-
-
-
-// ? function that displays my popup in the corner of the screen
-
-function toastifyElement(textToastify) {
-    Toastify({
-        text: textToastify,
-        duration: 1000,
-        newWindow: false,
-        close: true,
-        gravity: "top",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-            background: "#2ecc71",
-            fontSize: '1.8rem',
-            borderRadius: '1.5rem'
-
-        },
-    }).showToast();
-}
