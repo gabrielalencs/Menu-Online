@@ -10,7 +10,7 @@ import markBtnClicked from "./menu/foodButtons.js";
 import {
     buttonAddToCart,
     addItemInCart,
-    sumValueItems
+    containerOfCartItems
 } from './menu/addItemsToCart.js';
 
 
@@ -70,6 +70,10 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 
 
+const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
+
+
+
 export function teste() {
     const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
     const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
@@ -82,10 +86,16 @@ export function teste() {
         button.addEventListener('click', ({ target }) => {
 
             const clickedItemCounter = target.parentNode.parentNode.querySelector('.my-cart__food-count');
+            let parentClickedButton = target.closest('.my-cart__item');
+
 
             let itemCounter = Number(clickedItemCounter.textContent);
 
-            if (itemCounter > 0) itemCounter--;
+            if (itemCounter > 0) {
+                itemCounter--
+            } else {
+                parentClickedButton.remove()
+            }
 
             clickedItemCounter.textContent = itemCounter;
 
@@ -120,6 +130,11 @@ export function teste() {
 
             parentClickedButton.remove();
 
+
+            console.log(containerOfCartItems);
+            if (!containerOfCartItems.hasChildNodes()) {
+                messageEmptyCart.classList.remove('hidden');
+            }
         })
 
     })

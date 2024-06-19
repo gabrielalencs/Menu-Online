@@ -99,9 +99,6 @@ export const addItemInCart = (currentButtonArgument) => {
 
 
 
-    addValueNewItemsAdded();
-
-
 };
 
 
@@ -141,64 +138,88 @@ export function sumValueItems(productPriceArgument, quantityProductItemsArgument
 
 
 
+// function addValueNewItemsAdded() {
 
-function addValueNewItemsAdded() {
+//     const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
+//     const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
 
-    const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
-    const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
+//     buttonsDecreaseItems.forEach(button => {
 
-    buttonsDecreaseItems.forEach(button => {
+//         button.addEventListener('click', ({ target }) => {
 
-        button.addEventListener('click', ({ target }) => {
+//             let price = target.closest('.my-cart__item').querySelector('.my-cart__texts span').textContent;
 
-            let price = target.closest('.my-cart__item').querySelector('.my-cart__texts span').textContent;
-
-            let quantidade = target.closest('.my-cart__item').querySelector('.my-cart__food-count').textContent;
-
-
-            const purchaseValue = document.querySelector('.footer__subtotal span');
-            const TotalPurchaseValue = document.querySelector('.footer__total span span');
-
-            let priceWithoutR$ = price.replace('R$', '').trim();
-            let priceWithPoint = priceWithoutR$.replace(',', '.');
-            let priceNumber = Number(priceWithPoint);
+//             let quantidade = target.closest('.my-cart__item').querySelector('.my-cart__food-count').textContent;
 
 
-            if (Number(quantidade) > 0) {
-                totalPriceSum -= priceNumber;
+//             const purchaseValue = document.querySelector('.footer__subtotal span');
+//             const TotalPurchaseValue = document.querySelector('.footer__total span span');
 
-                purchaseValue.textContent = totalPriceSum;
+//             let priceWithoutR$ = price.replace('R$', '').trim();
+//             let priceWithPoint = priceWithoutR$.replace(',', '.');
+//             let priceNumber = Number(priceWithPoint);
+
+
+//             if (Number(quantidade) > 0) {
+//                 totalPriceSum -= priceNumber;
+
+//                 purchaseValue.textContent = totalPriceSum;
     
-                TotalPurchaseValue.textContent = totalPriceSum + 5;
-            }
+//                 TotalPurchaseValue.textContent = totalPriceSum + 5;
+//             }
 
-        
-        })
-
-    })
+           
 
 
+//         })
 
-    buttonsAddItems.forEach(button => {
+//     })
 
-        button.addEventListener('click', ({ target }) => {
 
-            let price = target.closest('.my-cart__item').querySelector('.my-cart__texts span').textContent;
 
-            const purchaseValue = document.querySelector('.footer__subtotal span');
-            const TotalPurchaseValue = document.querySelector('.footer__total span span');
+//     buttonsAddItems.forEach(button => {
 
-            let priceWithoutR$ = price.replace('R$', '').trim();
-            let priceWithPoint = priceWithoutR$.replace(',', '.');
-            let priceNumber = Number(priceWithPoint);
+//         button.addEventListener('click', ({ target }) => {
 
-            totalPriceSum += priceNumber;
+//             let price = target.closest('.my-cart__item').querySelector('.my-cart__texts span').textContent;
 
-            purchaseValue.textContent = totalPriceSum;
+//             const purchaseValue = document.querySelector('.footer__subtotal span');
+//             const TotalPurchaseValue = document.querySelector('.footer__total span span');
 
-            TotalPurchaseValue.textContent = totalPriceSum + 5;
+//             let priceWithoutR$ = price.replace('R$', '').trim();
+//             let priceWithPoint = priceWithoutR$.replace(',', '.');
+//             let priceNumber = Number(priceWithPoint);
 
-        })
+//             totalPriceSum += priceNumber;
 
-    })
+//             purchaseValue.textContent = totalPriceSum;
+
+//             TotalPurchaseValue.textContent = totalPriceSum + 5;
+
+//         })
+
+//     })
+// }
+
+
+
+
+// ? function that displays my popup in the corner of the screen
+
+function toastifyElement(textToastify) {
+    Toastify({
+        text: textToastify,
+        duration: 1000,
+        newWindow: false,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+            background: "#2ecc71",
+            fontSize: '1.8rem',
+            borderRadius: '1.5rem'
+
+        },
+    }).showToast();
 }
