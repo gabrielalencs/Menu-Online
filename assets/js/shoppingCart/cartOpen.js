@@ -19,7 +19,7 @@ export const toggleMenu = () => {
         messageEmptyCart.classList.add('hidden');
     }
 
-    teste()
+    teste();
 
 }
 

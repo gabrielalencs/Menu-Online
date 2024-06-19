@@ -9,7 +9,8 @@ import markBtnClicked from "./menu/foodButtons.js";
 
 import {
     buttonAddToCart,
-    addItemInCart
+    addItemInCart,
+    sumValueItems
 } from './menu/addItemsToCart.js';
 
 
@@ -69,21 +70,17 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 
 
-import { addNumberItems } from './menu/addItemsToCart.js';
-
-
 export function teste() {
     const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
     const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
 
     const deleteItemButton = document.querySelectorAll('.my-cart__button-close');
 
-    
 
     buttonsDecreaseItems.forEach(button => {
 
-        button.addEventListener('click', ({target}) => {
-            
+        button.addEventListener('click', ({ target }) => {
+
             const clickedItemCounter = target.parentNode.parentNode.querySelector('.my-cart__food-count');
 
             let itemCounter = Number(clickedItemCounter.textContent);
@@ -99,8 +96,8 @@ export function teste() {
 
     buttonsAddItems.forEach(button => {
 
-        button.addEventListener('click', ({target}) => {
-            
+        button.addEventListener('click', ({ target }) => {
+
             const clickedItemCounter = target.parentNode.parentNode.querySelector('.my-cart__food-count');
 
             let itemCounter = Number(clickedItemCounter.textContent);
@@ -117,39 +114,68 @@ export function teste() {
 
     deleteItemButton.forEach(currentButton => {
 
-        currentButton.addEventListener('click', ({target}) => {
+        currentButton.addEventListener('click', ({ target }) => {
 
             let parentClickedButton = target.closest('.my-cart__item');
-        
+
             parentClickedButton.remove();
 
         })
 
     })
+
 }
 
 
 
-// buttonsDecreaseItems.addEventListener('click', () => {
 
-//     let valorNum = Number(valor.textContent);
-    
 
-//     if (valorNum > 0) valorNum--;
-    
-    
-//     valor.textContent = valorNum;
+
+
+
+// * outra forma do contador do menu caso de b.o
+
+
+// document.addEventListener('click', ({target}) => {
+
+//     let teste = target.closest('.my-cart-btn-minus');
+
+//     let teste2 = target.closest('.my-cart-btn-plus');
+
+
+//     if(teste) {
+
+//         let clicado = teste.parentNode.querySelector('.my-cart__food-count');
+
+//         let itemCounter = Number(clicado.textContent);
+
+//         if (itemCounter > 0) itemCounter--;
+
+//         clicado.textContent = itemCounter
+
+//     }
+
+//     if(teste2) {
+
+//         let clicado = teste2.parentNode.querySelector('.my-cart__food-count');
+
+//         let itemCounter = Number(clicado.textContent);
+
+//         itemCounter++
+
+//         clicado.textContent = itemCounter;
+
+//     }
 
 // })
 
-// buttonsAddItems.addEventListener('click', () => {
 
-//     let valorNum = Number(valor.textContent);
-    
 
-//     valorNum++
 
-    
-//     valor.textContent = valorNum;
 
-// })
+
+
+
+
+
+
