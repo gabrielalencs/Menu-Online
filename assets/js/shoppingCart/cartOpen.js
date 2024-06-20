@@ -1,6 +1,6 @@
 import { containerOfCartItems } from '../menu/addItemsToCart.js'
 
-import { teste, eventListenersAdded } from '../app.js';
+import { teste } from '../app.js';
 
 
 export const cartButtonHeader = document.querySelector('.header__shopping-cart');
@@ -12,18 +12,14 @@ const cartContainer = document.querySelector(".cart");
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
 
-export const toggleMenu = () => {    
+export const toggleMenu = () => {
     cartContainer.classList.toggle('hidden');
 
-    if(containerOfCartItems.hasChildNodes()) {
+    if (containerOfCartItems.hasChildNodes()) {
         messageEmptyCart.classList.add('hidden');
     }
 
-    
-    if (!eventListenersAdded) {
-        console.log('foi');
-        teste(); // Ensure event listeners are only added once
-    }
+    teste();
 
 }
 

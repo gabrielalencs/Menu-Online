@@ -117,137 +117,63 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
-export let eventListenersAdded = false; // Sinalizador para garantir que os ouvintes de eventos sejam adicionados uma vez
-
 
 
 export function teste() {
-
-    if (eventListenersAdded) return;
-
     const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
     const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
-
     const deleteItemButton = document.querySelectorAll('.my-cart__button-close');
 
-
-    console.log(buttonsDecreaseItems);
-
     buttonsDecreaseItems.forEach(button => {
-
-        button.addEventListener('click', ({ target }) => {
-
-
-            const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
-
-
-            let itemCounter = Number(clickedItemCounter.textContent);
-
-
-            if (itemCounter > 0) {
-                itemCounter--;
-
-                clickedItemCounter.textContent = itemCounter;
-
-
-                soma--
-
-                cartButtonValue.textContent = soma
-            }
-
-
-            if (itemCounter == 0) target.closest('.my-cart__item').remove();
-
-
-
-
-        })
-
-    })
-
+        button.removeEventListener('click', handleDecreaseClick);
+        button.addEventListener('click', handleDecreaseClick);
+    });
 
     buttonsAddItems.forEach(button => {
-
-        button.addEventListener('click', ({ target }) => {
-
-            const clickedItemCounter = target.parentNode.parentNode.querySelector('.my-cart__food-count');
-
-            let itemCounter = Number(clickedItemCounter.textContent);
-
-            itemCounter++;
-
-            soma++
-
-            cartButtonValue.textContent = soma
-
-            clickedItemCounter.textContent = itemCounter;
-
-        })
-
-    })
-
-
+        button.removeEventListener('click', handleAddClick);
+        button.addEventListener('click', handleAddClick);
+    });
 
     deleteItemButton.forEach(currentButton => {
+        currentButton.removeEventListener('click', handleDeleteClick);
+        currentButton.addEventListener('click', handleDeleteClick);
+    });
+}
 
-        currentButton.addEventListener('click', ({ target }) => {
+function handleDecreaseClick({ target }) {
+    const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
+    let itemCounter = Number(clickedItemCounter.textContent);
 
-            let parentClickedButton = target.closest('.my-cart__item');
+    if (itemCounter > 0) {
+        itemCounter--;
+        clickedItemCounter.textContent = itemCounter;
+        soma--;
+        cartButtonValue.textContent = soma;
+    }
 
-            parentClickedButton.remove();
+    if (itemCounter === 0) target.closest('.my-cart__item').remove();
+}
 
-            if (!containerOfCartItems.hasChildNodes()) {
-                messageEmptyCart.classList.remove('hidden');
-            }
-        })
+function handleAddClick({ target }) {
+    const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
+    let itemCounter = Number(clickedItemCounter.textContent);
 
-    })
+    itemCounter++;
+    clickedItemCounter.textContent = itemCounter;
+    soma++;
+    cartButtonValue.textContent = soma;
+}
 
-    eventListenersAdded = true; // Mark event listeners as added
+function handleDeleteClick({ target }) {
+    const parentClickedButton = target.closest('.my-cart__item');
+    parentClickedButton.remove();
 
+    if (!containerOfCartItems.hasChildNodes()) {
+        messageEmptyCart.classList.remove('hidden');
+    }
 }
 
 
-
-
-
-
-
-// * outra forma do contador do menu caso de b.o
-
-
-// document.addEventListener('click', ({target}) => {
-
-//     let teste = target.closest('.my-cart-btn-minus');
-
-//     let teste2 = target.closest('.my-cart-btn-plus');
-
-
-//     if(teste) {
-
-//         let clicado = teste.parentNode.querySelector('.my-cart__food-count');
-
-//         let itemCounter = Number(clicado.textContent);
-
-//         if (itemCounter > 0) itemCounter--;
-
-//         clicado.textContent = itemCounter
-
-//     }
-
-//     if(teste2) {
-
-//         let clicado = teste2.parentNode.querySelector('.my-cart__food-count');
-
-//         let itemCounter = Number(clicado.textContent);
-
-//         itemCounter++
-
-//         clicado.textContent = itemCounter;
-
-//     }
-
-// })
 
 
 

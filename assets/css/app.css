@@ -646,7 +646,7 @@ main {
 @media (min-width: 992px) {
   .menu__food-hover {
     left: 5rem;
-    bottom: 2.5rem;
+    bottom: 3rem;
     text-align: center;
   }
 }
