@@ -2,7 +2,7 @@ export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-c
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
-import { teste } from '../app.js';
+// import { teste } from '../app.js';
 
 
 
@@ -93,11 +93,7 @@ export const addItemInCart = (currentButtonArgument) => {
     };
 
 
-
 };
-
-
-
 
 
 

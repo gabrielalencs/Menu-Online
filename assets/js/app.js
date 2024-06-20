@@ -73,7 +73,6 @@ buttonAddToCart.forEach(currentButton =>
         let quantityProductItemsNumber = Number(quantityProductItems);
 
 
-    
         soma = cartButtonValueNumber + quantityProductItemsNumber;
 
         cartButtonValue.textContent = soma;
@@ -118,9 +117,13 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
+export let eventListenersAdded = false;
 
 
 export function teste() {
+
+    if (eventListenersAdded) return;
+
     const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
     const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
 
@@ -131,9 +134,9 @@ export function teste() {
 
         button.addEventListener('click', ({ target }) => {
 
-            
+
             const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
-        
+
 
             let itemCounter = Number(clickedItemCounter.textContent);
             console.log(itemCounter);
@@ -144,7 +147,7 @@ export function teste() {
 
                 soma--
 
-                cartButtonValue.textContent = soma            
+                cartButtonValue.textContent = soma
             }
 
             console.log(itemCounter);
@@ -168,9 +171,15 @@ export function teste() {
 
             const clickedItemCounter = target.parentNode.parentNode.querySelector('.my-cart__food-count');
 
+            console.log(clickedItemCounter);
+
             let itemCounter = Number(clickedItemCounter.textContent);
 
-            itemCounter++
+            itemCounter++;
+
+            soma++
+
+            cartButtonValue.textContent = soma
 
             clickedItemCounter.textContent = itemCounter;
 
@@ -195,8 +204,9 @@ export function teste() {
 
     })
 
-}
+    eventListenersAdded = true;
 
+}
 
 
 
