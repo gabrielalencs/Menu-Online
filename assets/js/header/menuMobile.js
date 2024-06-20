@@ -7,6 +7,14 @@ export const toggleMenuMobile = () => menuContainer.classList.toggle('height');
 
 
 menuLinks.forEach(link => link.addEventListener('click', () => {
-    inputChekboxMenu.checked = false
+    inputChekboxMenu.checked = false;
+    
     toggleMenuMobile();
-}))
+}));
+
+
+window.addEventListener('resize', () => {
+    inputChekboxMenu.checked = false;
+
+    menuContainer.classList.remove('height');
+})
