@@ -112,9 +112,6 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 
 
-
-
-
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
 
