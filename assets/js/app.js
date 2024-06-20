@@ -117,7 +117,8 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // ? calls the func
 
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
-export let eventListenersAdded = false;
+export let eventListenersAdded = false; // Sinalizador para garantir que os ouvintes de eventos sejam adicionados uma vez
+
 
 
 export function teste() {
@@ -204,7 +205,7 @@ export function teste() {
 
     })
 
-    eventListenersAdded = true;
+    eventListenersAdded = true; // Mark event listeners as added
 
 }
 
