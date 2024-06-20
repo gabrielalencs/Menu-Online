@@ -585,7 +585,6 @@ main {
 }
 @media (min-width: 768px) {
   .menu__food {
-    width: 25rem;
     padding: 3rem 2.5rem;
   }
 }
@@ -646,8 +645,8 @@ main {
 }
 @media (min-width: 992px) {
   .menu__food-hover {
-    left: 3.6rem;
-    bottom: 3.8rem;
+    left: 5rem;
+    bottom: 2.5rem;
     text-align: center;
   }
 }

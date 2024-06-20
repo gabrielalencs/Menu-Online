@@ -2,7 +2,7 @@ export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-c
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
-// import { teste } from '../app.js';
+// import { teste, eventListenersAdded } from '../app.js';
 
 
 
@@ -89,6 +89,12 @@ export const addItemInCart = (currentButtonArgument) => {
 
 
         toastifyElement('Item adicionado ao carrinho');
+
+          
+        // if (!eventListenersAdded) {
+        //     console.log('foi');
+        //     teste(); // Ensure event listeners are only added once
+        // }
 
     };
 

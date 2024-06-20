@@ -131,6 +131,8 @@ export function teste() {
     const deleteItemButton = document.querySelectorAll('.my-cart__button-close');
 
 
+    console.log(buttonsDecreaseItems);
+
     buttonsDecreaseItems.forEach(button => {
 
         button.addEventListener('click', ({ target }) => {
@@ -140,25 +142,23 @@ export function teste() {
 
 
             let itemCounter = Number(clickedItemCounter.textContent);
-            console.log(itemCounter);
 
 
             if (itemCounter > 0) {
-                itemCounter--
+                itemCounter--;
+
+                clickedItemCounter.textContent = itemCounter;
+
 
                 soma--
 
                 cartButtonValue.textContent = soma
             }
 
-            console.log(itemCounter);
 
             if (itemCounter == 0) target.closest('.my-cart__item').remove();
 
 
-
-
-            clickedItemCounter.textContent = itemCounter;
 
 
         })
@@ -171,8 +171,6 @@ export function teste() {
         button.addEventListener('click', ({ target }) => {
 
             const clickedItemCounter = target.parentNode.parentNode.querySelector('.my-cart__food-count');
-
-            console.log(clickedItemCounter);
 
             let itemCounter = Number(clickedItemCounter.textContent);
 

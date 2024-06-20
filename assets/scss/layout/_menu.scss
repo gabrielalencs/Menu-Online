@@ -110,7 +110,6 @@
         transition: all .3s;
 
         @include media.smallTablets {
-            width: 25rem;
             padding: 3rem 2.5rem;
         }
     }
@@ -170,10 +169,9 @@
         position: absolute;
         left: 10.5rem;
 
-
         @include media.laptops {
-            left: 3.6rem;
-            bottom: 3.8rem;
+            left: 5rem;
+            bottom: 2.5rem;
             text-align: center;
         }
     }
