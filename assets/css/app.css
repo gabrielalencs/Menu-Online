@@ -8,11 +8,16 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
   background-color: #fffdf7;
+}
+
+a {
+  text-decoration: none;
 }
 
 p {
@@ -49,7 +54,7 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 4.5rem 2rem 2rem;
+  padding: 2rem 4.5rem 0 2rem;
   position: relative;
 }
 @media (min-width: 1200px) {
@@ -120,14 +125,17 @@ main {
   font-size: 1.8rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s;
   position: relative;
   width: max-content;
 }
-.header .header__list-item:hover {
+.header .header__list-item a {
+  color: #212121;
+  transition: all 0.3s;
+}
+.header .header__list-item a:hover {
   color: #caa127;
 }
-.header .header__list-item::after {
+.header .header__list-item a::after {
   content: "";
   display: block;
   width: 0;
@@ -136,7 +144,7 @@ main {
   background-color: #caa127;
   transition: all 0.3s;
 }
-.header .header__list-item:hover::after {
+.header .header__list-item a:hover::after {
   width: 100%;
 }
 .header__shopping-cart {
@@ -225,11 +233,12 @@ main {
 }
 
 .hero {
-  margin-top: 8rem;
+  margin-top: -2rem;
   padding: 0 3rem;
 }
 @media (min-width: 992px) {
   .hero {
+    margin-top: 8rem;
     display: flex;
     flex-direction: row;
     align-items: center;

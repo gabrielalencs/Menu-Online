@@ -3,11 +3,11 @@
 @use '../abstract/mixins' as mixin;
 
 .hero {
-    margin-top: 8rem;
+    margin-top: -2rem;
     padding: 0 3rem;
 
-
     @include media.laptops {
+        margin-top: 8rem;
         @include mixin.flex-horizontal;
         align-items: flex-start;
     }

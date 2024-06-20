@@ -13,11 +13,16 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     background-color: color.$body-color;
+}
+
+a {
+    text-decoration: none;
 }
 
 p {

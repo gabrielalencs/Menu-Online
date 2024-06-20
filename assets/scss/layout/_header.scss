@@ -5,7 +5,7 @@
 .header {
     @include mixin.flex-horizontal;
     justify-content: space-between;
-    padding: 2rem 4.5rem 2rem 2rem;
+    padding: 2rem 4.5rem 0 2rem;
     position: relative;
 
     @include media.desktops {
@@ -67,28 +67,32 @@
         font-size: 1.8rem;
         font-weight: 600;
         cursor: pointer;
-        transition: all .3s;
         position: relative;
         width: max-content;
 
-
-        &:hover {
-            color: color.$primary-color;
-        }
-
-        &::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: .3rem;
-            border-radius: 1rem;
-            background-color: color.$primary-color;
+        a {
+            color: color.$black-primary;
             transition: all .3s;
-        }
 
-        &:hover::after {
-            width: 100%;
+            &:hover {
+                color: color.$primary-color;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: .3rem;
+                border-radius: 1rem;
+                background-color: color.$primary-color;
+                transition: all .3s;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
         }
+       
     }
 
     // ? Button Shopping Cart
