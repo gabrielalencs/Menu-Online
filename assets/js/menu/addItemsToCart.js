@@ -9,20 +9,16 @@ const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
 
 export const addItemInCart = (currentButtonArgument) => {
-
     const productContainer = currentButtonArgument.closest('.menu__food');
     const productImage = productContainer.querySelector(".menu__food-img").src;
     const productTitle = productContainer.querySelector(".menu__food-title").textContent;
     const productPrice = productContainer.querySelector(".menu__food-price").textContent;
     const quantityProductItems = productContainer.querySelector(".menu__food-count").textContent;
 
-
     if (parseInt(quantityProductItems) <= 0) return;
-
 
     const cartItems = containerOfCartItems.querySelectorAll(".my-cart__item");
     let existingItem = null;
-
 
     // ? checks whether or not the item exists in my cart, based on the titles of the items that are already in the cart
 
@@ -34,7 +30,6 @@ export const addItemInCart = (currentButtonArgument) => {
 
 
     if (existingItem) {
-
         // ? if the item I want to add to my cart is already in the cart, i add the number of items i want to add to the number of items previously added
 
         const counterExistingItem = existingItem.querySelector(".my-cart__food-count");
@@ -84,13 +79,11 @@ export const addItemInCart = (currentButtonArgument) => {
 
         containerOfCartItems.appendChild(divTemporary);
 
-
         toastifyElement('Item adicionado ao carrinho');
-
     };
 
-
 };
+
 
 export function showQuantityItemsInCart(currentButtonArgument) {
     const productContainer = currentButtonArgument.closest('.menu__food');
@@ -101,7 +94,6 @@ export function showQuantityItemsInCart(currentButtonArgument) {
     sumTotalCartItems = cartButtonValueNumber + quantityProductItemsNumber;
     cartButtonValue.textContent = sumTotalCartItems;
 }
-
 
 
 export function addOrRemoveItemsInCart() {
@@ -141,6 +133,7 @@ function handleDecreaseClick({ target }) {
     if (itemCounter === 0) target.closest('.my-cart__item').remove();
 }
 
+
 function handleAddClick({ target }) {
     const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
     let itemCounter = Number(clickedItemCounter.textContent);
@@ -152,6 +145,7 @@ function handleAddClick({ target }) {
     cartButtonValue.textContent = sumTotalCartItems;
 }
 
+
 function handleDeleteClick({ target }) {
     const parentClickedButton = target.closest('.my-cart__item');
     parentClickedButton.remove();
@@ -160,6 +154,7 @@ function handleDeleteClick({ target }) {
         messageEmptyCart.classList.remove('hidden');
     }
 }
+
 
 // ? function that displays my popup in the corner of the screen
 
