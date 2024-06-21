@@ -2,7 +2,7 @@
 
 import fetchDatafoods from './getFoodData.js';
 
-import { foodButtons } from './foodButtons.js';
+import { foodButtons } from './clickFoodButtons.js';
 
 import showQuantityEachItem from './showsQuantityItemsChosen.js';
 

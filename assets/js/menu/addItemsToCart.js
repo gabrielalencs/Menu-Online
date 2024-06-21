@@ -2,12 +2,8 @@ export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-c
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
-// import { teste, eventListenersAdded } from '../app.js';
-
-
-
-
-let totalPriceSum = 0;
+let sumTotalCartItems = 0;
+const cartButtonValue = document.querySelector('.button-cart span');
 
 
 
@@ -90,12 +86,6 @@ export const addItemInCart = (currentButtonArgument) => {
 
         toastifyElement('Item adicionado ao carrinho');
 
-          
-        // if (!eventListenersAdded) {
-        //     console.log('foi');
-        //     teste(); // Ensure event listeners are only added once
-        // }
-
     };
 
 
@@ -104,74 +94,77 @@ export const addItemInCart = (currentButtonArgument) => {
 
 
 
+export function showQuantityItemsInCart(currentButtonArgument) {
+    const productContainer = currentButtonArgument.closest('.menu__food');
+    const quantityProductItems = productContainer.querySelector(".menu__food-count").textContent;
+    let cartButtonValueNumber = Number(cartButtonValue.textContent);
+    let quantityProductItemsNumber = Number(quantityProductItems);
+
+    sumTotalCartItems = cartButtonValueNumber + quantityProductItemsNumber;
+    cartButtonValue.textContent = sumTotalCartItems;
+}
+
+
+
+
+export function addOrRemoveItemsInCart() {
+    const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
+    const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
+    const deleteItemButton = document.querySelectorAll('.my-cart__button-close');
+
+    buttonsDecreaseItems.forEach(currentButton => {
+        currentButton.removeEventListener('click', handleDecreaseClick);
+        currentButton.addEventListener('click', handleDecreaseClick);
+    });
+
+    buttonsAddItems.forEach(currentButton => {
+        currentButton.removeEventListener('click', handleAddClick);
+        currentButton.addEventListener('click', handleAddClick);
+    });
+
+    deleteItemButton.forEach(currentButton => {
+        currentButton.removeEventListener('click', handleDeleteClick);
+        currentButton.addEventListener('click', handleDeleteClick);
+    });
+}
 
 
 
 
 
+function handleDecreaseClick({ target }) {
+    const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
+    let itemCounter = Number(clickedItemCounter.textContent);
 
+    if (itemCounter > 0) {
+        itemCounter--;
+        clickedItemCounter.textContent = itemCounter;
 
+        sumTotalCartItems--;
+        cartButtonValue.textContent = sumTotalCartItems;
+    }
 
+    if (itemCounter === 0) target.closest('.my-cart__item').remove();
+}
 
+function handleAddClick({ target }) {
+    const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
+    let itemCounter = Number(clickedItemCounter.textContent);
 
+    itemCounter++;
+    clickedItemCounter.textContent = itemCounter;
 
+    sumTotalCartItems++;
+    cartButtonValue.textContent = sumTotalCartItems;
+}
 
+function handleDeleteClick({ target }) {
+    const parentClickedButton = target.closest('.my-cart__item');
+    parentClickedButton.remove();
 
-
-
-
-
-
-
-
-
-
-
-
-
-// ? shows the number of current items in the cart on the cart button in the corner of the screen
-
-export function addNumberItems(quantityProductItemsArgument) {
-
-    const cartButtonValue = document.querySelector('.button-cart span');
-
-    numberItemsAdded += Number(quantityProductItemsArgument);
-
-    cartButtonValue.textContent = numberItemsAdded;
-
-
-    // const cartButtonValue = document.querySelector('.button-cart span');
-
-    // const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
-
-
-    // buttonsDecreaseItems.forEach(button => {
-
-    //     button.addEventListener('click', () => {
-            
-    //         numberItemsAdded -= 1
-            
-    //         cartButtonValue.textContent = numberItemsAdded;
-            
-    //     });
-
-    // })
-    
-    // const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
-
-
-    // buttonsAddItems.forEach(button => {
-
-    //     button.addEventListener('click', () => {
-
-           
-    //     })
-
-    // })
-
-
-
-
+    if (!containerOfCartItems.hasChildNodes()) {
+        messageEmptyCart.classList.remove('hidden');
+    }
 }
 
 
@@ -202,25 +195,16 @@ export function addNumberItems(quantityProductItemsArgument) {
 
 
 
-// ? adds up the value of the items and shows them in the first step of the cart
-
-export function sumValueItems(productPriceArgument, quantityProductItemsArgument) {
-
-    const purchaseValue = document.querySelector('.footer__subtotal span');
-    const TotalPurchaseValue = document.querySelector('.footer__total span span');
-
-    let priceWithoutR$ = productPriceArgument.replace('R$', '').trim();
-    let priceWithPoint = priceWithoutR$.replace(',', '.');
-    let priceNumber = Number(priceWithPoint);
 
 
-    totalPriceSum += priceNumber * Number(quantityProductItemsArgument);
 
-    purchaseValue.textContent = totalPriceSum;
 
-    TotalPurchaseValue.textContent = totalPriceSum + 5;
 
-}
+
+
+
+
+
 
 
 
@@ -266,76 +250,29 @@ function toastifyElement(textToastify) {
 
 
 
+// ? adds up the value of the items and shows them in the first step of the cart
+
+export function sumValueItems(productPriceArgument, quantityProductItemsArgument) {
+
+    const purchaseValue = document.querySelector('.footer__subtotal span');
+    const TotalPurchaseValue = document.querySelector('.footer__total span span');
+
+    let priceWithoutR$ = productPriceArgument.replace('R$', '').trim();
+    let priceWithPoint = priceWithoutR$.replace(',', '.');
+    let priceNumber = Number(priceWithPoint);
+
+
+    totalPriceSum += priceNumber * Number(quantityProductItemsArgument);
+
+    purchaseValue.textContent = totalPriceSum;
+
+    TotalPurchaseValue.textContent = totalPriceSum + 5;
+
+}
 
 
 
 
 
 
-
-
-
-
-// function addValueNewItemsAdded() {
-
-//     const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
-//     const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
-
-//     buttonsDecreaseItems.forEach(button => {
-
-//         button.addEventListener('click', ({ target }) => {
-
-//             let price = target.closest('.my-cart__item').querySelector('.my-cart__texts span').textContent;
-
-//             let quantidade = target.closest('.my-cart__item').querySelector('.my-cart__food-count').textContent;
-
-
-//             const purchaseValue = document.querySelector('.footer__subtotal span');
-//             const TotalPurchaseValue = document.querySelector('.footer__total span span');
-
-//             let priceWithoutR$ = price.replace('R$', '').trim();
-//             let priceWithPoint = priceWithoutR$.replace(',', '.');
-//             let priceNumber = Number(priceWithPoint);
-
-
-//             if (Number(quantidade) > 0) {
-//                 totalPriceSum -= priceNumber;
-
-//                 purchaseValue.textContent = totalPriceSum;
-    
-//                 TotalPurchaseValue.textContent = totalPriceSum + 5;
-//             }
-
-           
-
-
-//         })
-
-//     })
-
-
-
-//     buttonsAddItems.forEach(button => {
-
-//         button.addEventListener('click', ({ target }) => {
-
-//             let price = target.closest('.my-cart__item').querySelector('.my-cart__texts span').textContent;
-
-//             const purchaseValue = document.querySelector('.footer__subtotal span');
-//             const TotalPurchaseValue = document.querySelector('.footer__total span span');
-
-//             let priceWithoutR$ = price.replace('R$', '').trim();
-//             let priceWithPoint = priceWithoutR$.replace(',', '.');
-//             let priceNumber = Number(priceWithPoint);
-
-//             totalPriceSum += priceNumber;
-
-//             purchaseValue.textContent = totalPriceSum;
-
-//             TotalPurchaseValue.textContent = totalPriceSum + 5;
-
-//         })
-
-//     })
-// }
 
