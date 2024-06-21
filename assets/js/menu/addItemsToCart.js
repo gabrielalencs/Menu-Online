@@ -4,6 +4,7 @@ export const containerOfCartItems = document.querySelector(".cart__container-my-
 
 let sumTotalCartItems = 0;
 const cartButtonValue = document.querySelector('.button-cart span');
+const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
 
 
@@ -106,7 +107,6 @@ export function showQuantityItemsInCart(currentButtonArgument) {
 
 
 
-
 export function addOrRemoveItemsInCart() {
     const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
     const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
@@ -127,9 +127,6 @@ export function addOrRemoveItemsInCart() {
         currentButton.addEventListener('click', handleDeleteClick);
     });
 }
-
-
-
 
 
 function handleDecreaseClick({ target }) {
