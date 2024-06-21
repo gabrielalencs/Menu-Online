@@ -92,9 +92,6 @@ export const addItemInCart = (currentButtonArgument) => {
 
 };
 
-
-
-
 export function showQuantityItemsInCart(currentButtonArgument) {
     const productContainer = currentButtonArgument.closest('.menu__food');
     const quantityProductItems = productContainer.querySelector(".menu__food-count").textContent;
@@ -163,50 +160,6 @@ function handleDeleteClick({ target }) {
         messageEmptyCart.classList.remove('hidden');
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ? function that displays my popup in the corner of the screen
 

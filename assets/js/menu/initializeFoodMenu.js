@@ -58,7 +58,7 @@ const addOrRemoveItems = () => {
             itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
         });
     });
-    
+
     // * resets my element's counter and shows the reset value on the screen after adding the item to the cart
 
     buttonAddToCart.forEach((currentButton, currentIndex) => {
