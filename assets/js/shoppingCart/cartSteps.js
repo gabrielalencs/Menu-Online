@@ -75,35 +75,32 @@ function arrivesFormFilledCorrectly() {
 
         toastifyElement('Passou!', '#2ecc71');
 
-    }  else {
-        
-        if (!numberinput.value) {
-            toastifyElement('Informe o número por favor', '#E74C3C');
-        }
-    
-        if (!zipCodeInput.value) {
-    
-            toastifyElement('Informe o CEP por favor', '#E74C3C');
-    
-        } else {
-    
-            if (!addressInput.value) {
-                toastifyElement('Informe o endereço por favor', '#E74C3C');
-            }
-    
-            if (!neighborhoodInput.value) {
-                toastifyElement('Informe o bairro por favor', '#E74C3C');
-            }
-    
-    
-            if (!cityInput.value) {
-                toastifyElement('Informe a cidade por favor', '#E74C3C');
-            }
-        }
-    
+    } 
+
+    if (!numberinput.value) {
+        toastifyElement('Informe o número por favor', '#E74C3C');
     }
 
-   
+    if (!zipCodeInput.value) {
+
+        toastifyElement('Informe o CEP por favor', '#E74C3C');
+
+    } else {
+
+        if (!addressInput.value) {
+            toastifyElement('Informe o endereço por favor', '#E74C3C');
+        }
+
+        if (!neighborhoodInput.value) {
+            toastifyElement('Informe o bairro por favor', '#E74C3C');
+        }
+
+
+        if (!cityInput.value) {
+            toastifyElement('Informe a cidade por favor', '#E74C3C');
+        }
+    }
+
   
 
 }
