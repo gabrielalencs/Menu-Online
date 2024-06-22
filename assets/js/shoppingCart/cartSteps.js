@@ -1,7 +1,7 @@
 import {
     containerOfCartItems,
     addOrRemoveItemsInCart,
-    toastifyElementError
+    toastifyElement
 } from '../menu/addItemsToCart.js'
 
 
@@ -20,12 +20,15 @@ export const toggleMenu = () => {
         messageEmptyCart.classList.add('hidden');
     }
 
-    buttonNextStage.addEventListener('click', () => {
-        if (!containerOfCartItems.hasChildNodes()) {
-            toastifyElementError('Seu carrinho está vazio');
-        }
-    })
+    buttonNextStage.removeEventListener('click', checkIfCartEmpty);
+    buttonNextStage.addEventListener('click', checkIfCartEmpty);
 
     addOrRemoveItemsInCart(); // ? calls the function whenever the menu is clicked, to get the new items added
 }
 
+
+function checkIfCartEmpty() {
+    if (!containerOfCartItems.hasChildNodes()) {
+        toastifyElement('Seu carrinho está vazio', '#E74C3C');
+    }
+}

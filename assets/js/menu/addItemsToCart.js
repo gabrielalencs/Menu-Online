@@ -164,44 +164,23 @@ function handleDeleteClick({ target }) {
 
 // ? function that displays my popup in the corner of the screen
 
-export function toastifyElement(textToastify) {
+export function toastifyElement(textToastify, colorToastify) {
     Toastify({
         text: textToastify,
-        duration: 1000,
+        duration: 800,
         newWindow: false,
         close: true,
         gravity: "top",
         position: "right",
         stopOnFocus: true,
         style: {
-            background: "#2ecc71",
+            background: colorToastify,
             fontSize: '1.8rem',
             borderRadius: '1.5rem'
 
         },
     }).showToast();
 }
-
-
-export function toastifyElementError(textToastify) {
-    Toastify({
-        text: textToastify,
-        duration: 1000,
-        newWindow: false,
-        close: true,
-        gravity: "top",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-            background: "#E74C3C",
-            fontSize: '1.8rem',
-            borderRadius: '1.5rem'
-
-        },
-    }).showToast();
-}
-
-
 
 
 
