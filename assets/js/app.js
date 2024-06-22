@@ -10,7 +10,8 @@ import markBtnClicked from "./menu/clickFoodButtons.js";
 import {
     buttonAddToCart,
     addItemInCart,
-    showQuantityItemsInCart
+    showQuantityItemsInCart,
+
 } from './menu/addItemsToCart.js';
 
 import initializeFoodMenu from "./menu/initializeFoodMenu.js";
@@ -64,3 +65,5 @@ cartButtonMain.addEventListener('click', toggleMenu); // * opens the cart when t
 buttonCloseCart.addEventListener("click", toggleMenu); // * closes the cart when the close cart button is clicked
 
 btnZipCodeSearch.addEventListener("click", fillInputFields); // * calls the function to fill in the form based on the zip code
+
+
