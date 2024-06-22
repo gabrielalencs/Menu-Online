@@ -29,7 +29,8 @@ const buttonNextStageSummary = document.querySelector('.footer__btn-next-summary
 const containerOrderSummary = document.querySelector('.cart__order-summary');
 
 
-export const toggleMenu = () => {
+
+export function toggleMenu() {
     cartContainer.classList.toggle('hidden');
 
     if (containerOfCartItems.hasChildNodes()) {
@@ -66,20 +67,24 @@ function goToAddressStep() {
 function arrivesFormFilledCorrectly() {
 
     if (addressInput.value && neighborhoodInput.value && numberinput.value && cityInput.value && zipCodeInput.value) {
+
         toastifyElement('Passou!', '#2ecc71');
     }
     
     if (addressInput.value && neighborhoodInput.value && numberinput.value && cityInput.value && !zipCodeInput.value) {
+
         toastifyElement('Passou!', '#2ecc71');
 
-    } else {
-        if (!zipCodeInput.value) {
-
-            toastifyElement('Informe o CEP por favor', '#E74C3C');
-
-        } else if(!numberinput.value) {
+    }  else {
+        
+        if (!numberinput.value) {
             toastifyElement('Informe o número por favor', '#E74C3C');
-
+        }
+    
+        if (!zipCodeInput.value) {
+    
+            toastifyElement('Informe o CEP por favor', '#E74C3C');
+    
         } else {
     
             if (!addressInput.value) {
@@ -90,28 +95,24 @@ function arrivesFormFilledCorrectly() {
                 toastifyElement('Informe o bairro por favor', '#E74C3C');
             }
     
-            if (!numberinput.value) {
-                toastifyElement('Informe o número por favor', '#E74C3C');
-            }
     
             if (!cityInput.value) {
                 toastifyElement('Informe a cidade por favor', '#E74C3C');
             }
         }
+    
     }
 
+   
   
 
 }
 
 
-
 buttonNextStageDelivery.removeEventListener('click', arrivesFormFilledCorrectly);
 buttonNextStageDelivery.addEventListener('click', arrivesFormFilledCorrectly);
 
-
 buttonReturnStage.addEventListener('click', () => {
-
 
     if (containerMyCart.classList.contains('hidden')) {
         containerMyCart.classList.toggle('hidden');
