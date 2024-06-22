@@ -1409,6 +1409,9 @@ main {
   background-color: transparent;
   color: #caa127;
 }
+.cart__footer .footer__btn-return.hidden {
+  display: none;
+}
 .cart__footer .footer__btn-next {
   margin-top: 3rem;
   font-size: 2rem;

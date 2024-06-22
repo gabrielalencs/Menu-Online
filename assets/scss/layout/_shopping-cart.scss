@@ -494,9 +494,14 @@
         box-shadow: 0 1rem 1.5rem -0.3rem rgba(0, 0, 0, 0.1);
         margin-right: 3rem;
     }
+    
+    .footer__btn-return.hidden {
+        display: none;
+    }
 
     .footer__btn-next {
         margin-top: 3rem;
         @include mixin.button;
     }
+
 }

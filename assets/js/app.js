@@ -23,7 +23,7 @@ import {
     cartButtonMain,
     buttonCloseCart,
     toggleMenu
-} from './shoppingCart/cartOpen.js';
+} from './shoppingCart/cartSteps.js';
 
 import {
     btnZipCodeSearch,
