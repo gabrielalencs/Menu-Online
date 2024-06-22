@@ -19,5 +19,4 @@ export const toggleMenu = () => {
     }
 
     addOrRemoveItemsInCart(); // ? calls the function whenever the menu is clicked, to get the new items added
-
 }
