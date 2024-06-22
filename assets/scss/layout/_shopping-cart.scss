@@ -138,7 +138,6 @@
     overflow-y: scroll;
     height: 45vh;
     position: relative;
-    // display: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -266,11 +265,14 @@
     }
 }
 
+.cart__my-cart.hidden {
+    display: none;
+}
+
 
 // ? "Delivery Address" Section
 
 .cart__delivery-address {
-    display: none;
 
     .address__form {
         margin-top: 3rem;
@@ -363,13 +365,15 @@
     }
 }
 
+.cart__delivery-address.hidden {
+    display: none;
+}
 
 // ? "Order Summary" Section
 
 .cart__order-summary {
     overflow-y: scroll;
     height: 45vh;
-    display: none;
 
     &::-webkit-scrollbar {
         display: none;
@@ -450,6 +454,10 @@
 
 }
 
+.cart__order-summary.hidden {
+    display: none;
+}
+
 
 // ? Footer Cart
 
@@ -496,6 +504,12 @@
     }
     
     .footer__btn-return.hidden {
+        display: none;
+    }
+
+    .footer__btn-next-my-cart.hidden,
+    .footer__btn-next-delivery.hidden,
+    .footer__btn-next-summary.hidden {
         display: none;
     }
 

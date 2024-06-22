@@ -1,6 +1,7 @@
 const zipCodeInput = document.getElementById('cep');
 const addressInput = document.getElementById('address');
 const neighborhoodInput = document.getElementById('neighborhood');
+export const numberinput = document.getElementById('number');
 const ufInput = document.getElementById('uf');
 const cityInput = document.getElementById('city');
 export const btnZipCodeSearch = document.getElementById('zip-code-search');

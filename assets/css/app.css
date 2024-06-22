@@ -1219,9 +1219,10 @@ main {
   }
 }
 
-.cart__delivery-address {
+.cart__my-cart.hidden {
   display: none;
 }
+
 .cart__delivery-address .address__form {
   margin-top: 3rem;
   overflow-y: scroll;
@@ -1291,10 +1292,13 @@ main {
   }
 }
 
+.cart__delivery-address.hidden {
+  display: none;
+}
+
 .cart__order-summary {
   overflow-y: scroll;
   height: 45vh;
-  display: none;
 }
 .cart__order-summary::-webkit-scrollbar {
   display: none;
@@ -1363,6 +1367,10 @@ main {
   line-height: 1.5;
 }
 
+.cart__order-summary.hidden {
+  display: none;
+}
+
 .cart__footer {
   max-width: 125rem;
   margin: 3rem auto 0;
@@ -1410,6 +1418,11 @@ main {
   color: #caa127;
 }
 .cart__footer .footer__btn-return.hidden {
+  display: none;
+}
+.cart__footer .footer__btn-next-my-cart.hidden,
+.cart__footer .footer__btn-next-delivery.hidden,
+.cart__footer .footer__btn-next-summary.hidden {
   display: none;
 }
 .cart__footer .footer__btn-next {

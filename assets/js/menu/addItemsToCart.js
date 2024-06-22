@@ -36,7 +36,7 @@ export const addItemInCart = (currentButtonArgument) => {
 
         counterExistingItem.textContent = parseInt(counterExistingItem.textContent) + parseInt(quantityProductItems);
 
-        toastifyElement('Mais itens adicionados desse alimento');
+        toastifyElement('Mais itens adicionados desse alimento', '#2ecc71');
 
     } else {
 
@@ -79,7 +79,7 @@ export const addItemInCart = (currentButtonArgument) => {
 
         containerOfCartItems.appendChild(divTemporary);
 
-        toastifyElement('Item adicionado ao carrinho');
+        toastifyElement('Item adicionado ao carrinho', '#2ecc71');
     };
 
 };
