@@ -148,6 +148,12 @@ function handleAddClick({ target }) {
 
 function handleDeleteClick({ target }) {
     const parentClickedButton = target.closest('.my-cart__item');
+    const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
+    let itemCounter = Number(clickedItemCounter.textContent);
+
+    sumTotalCartItems -= itemCounter;
+    cartButtonValue.textContent = sumTotalCartItems;
+
     parentClickedButton.remove();
 
     if (!containerOfCartItems.hasChildNodes()) {
