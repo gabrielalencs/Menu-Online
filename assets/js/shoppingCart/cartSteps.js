@@ -4,7 +4,11 @@ import {
     toastifyElement
 } from '../menu/addItemsToCart.js';
 
-import { numberinput } from './fillAddress.js';
+import {
+    zipCodeInput, addressInput,
+    neighborhoodInput, numberinput,
+    ufInput, cityInput
+} from './fillAddress.js';
 
 
 export const cartButtonHeader = document.querySelector('.header__shopping-cart');
@@ -21,7 +25,7 @@ const buttonNextStageMyCart = document.querySelector('.footer__btn-next-my-cart'
 const buttonNextStageDelivery = document.querySelector('.footer__btn-next-delivery');
 const containerDeliveryAddress = document.querySelector('.cart__delivery-address');
 
-const buttonNextStageSummary= document.querySelector('.footer__btn-next-summary');
+const buttonNextStageSummary = document.querySelector('.footer__btn-next-summary');
 const containerOrderSummary = document.querySelector('.cart__order-summary');
 
 
@@ -59,28 +63,64 @@ function goToAddressStep() {
 }
 
 
+function arrivesFormFilledCorrectly() {
 
+    if (addressInput.value && neighborhoodInput.value && numberinput.value && cityInput.value && zipCodeInput.value) {
+        toastifyElement('Passou!', '#2ecc71');
+    }
+    
+    if (addressInput.value && neighborhoodInput.value && numberinput.value && cityInput.value && !zipCodeInput.value) {
+        toastifyElement('Passou!', '#2ecc71');
 
-buttonNextStageDelivery.addEventListener('click', () => {
+    } else {
+        if (!zipCodeInput.value) {
 
-    if(!numberinput.value) {
-        toastifyElement('Informe o número por favor', '#E74C3C');
+            toastifyElement('Informe o CEP por favor', '#E74C3C');
+
+        } else if(!numberinput.value) {
+            toastifyElement('Informe o número por favor', '#E74C3C');
+
+        } else {
+    
+            if (!addressInput.value) {
+                toastifyElement('Informe o endereço por favor', '#E74C3C');
+            }
+    
+            if (!neighborhoodInput.value) {
+                toastifyElement('Informe o bairro por favor', '#E74C3C');
+            }
+    
+            if (!numberinput.value) {
+                toastifyElement('Informe o número por favor', '#E74C3C');
+            }
+    
+            if (!cityInput.value) {
+                toastifyElement('Informe a cidade por favor', '#E74C3C');
+            }
+        }
     }
 
-})
+  
+
+}
+
+
+
+buttonNextStageDelivery.removeEventListener('click', arrivesFormFilledCorrectly);
+buttonNextStageDelivery.addEventListener('click', arrivesFormFilledCorrectly);
 
 
 buttonReturnStage.addEventListener('click', () => {
 
 
-    if(containerMyCart.classList.contains('hidden')) {
+    if (containerMyCart.classList.contains('hidden')) {
         containerMyCart.classList.toggle('hidden');
         buttonNextStageMyCart.classList.toggle('hidden');
 
         buttonNextStageDelivery.classList.toggle('hidden');
         containerDeliveryAddress.classList.toggle('hidden');
 
-        if(!buttonReturnStage.classList.contains('hidden')) {
+        if (!buttonReturnStage.classList.contains('hidden')) {
             buttonReturnStage.classList.toggle('hidden');
         }
     }
