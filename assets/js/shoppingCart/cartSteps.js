@@ -28,6 +28,7 @@ const containerDeliveryAddress = document.querySelector('.cart__delivery-address
 const buttonNextStageSummary = document.querySelector('.footer__btn-next-summary');
 const containerOrderSummary = document.querySelector('.cart__order-summary');
 
+let sectionCounter = 0
 
 
 export function toggleMenu() {
@@ -36,10 +37,6 @@ export function toggleMenu() {
     if (containerOfCartItems.hasChildNodes()) {
         messageEmptyCart.classList.add('hidden');
     }
-
-    buttonNextStageMyCart.removeEventListener('click', checkIfCartEmpty);
-    buttonNextStageMyCart.addEventListener('click', checkIfCartEmpty);
-
 
     addOrRemoveItemsInCart(); // ? calls the function whenever the menu is clicked, to get the new items added
 }
@@ -53,26 +50,39 @@ function checkIfCartEmpty() {
     }
 }
 
+
 function goToAddressStep() {
-    buttonReturnStage.classList.toggle('hidden');
+    sectionCounter = 1;
 
-    buttonNextStageMyCart.classList.toggle('hidden');
-    buttonNextStageDelivery.classList.toggle('hidden');
+    buttonReturnStage.classList.remove('hidden');
 
-    containerMyCart.classList.toggle('hidden');
-    containerDeliveryAddress.classList.toggle('hidden');
+    buttonNextStageMyCart.classList.add('hidden');
+    containerMyCart.classList.add('hidden');
+
+    buttonNextStageDelivery.classList.remove('hidden');
+    containerDeliveryAddress.classList.remove('hidden');
+}
+
+
+function goToRevisionStep() {
+    sectionCounter = 2;
+
+    buttonNextStageDelivery.classList.add('hidden');
+    containerDeliveryAddress.classList.add('hidden');
+
+    buttonNextStageSummary.classList.remove('hidden');
+    containerOrderSummary.classList.remove('hidden');
 }
 
 
 function arrivesFormFilledCorrectly() {
-
     if (addressInput.value &&
         neighborhoodInput.value &&
         numberinput.value &&
         cityInput.value &&
         zipCodeInput.value) {
 
-        toastifyElement('Passou!', '#2ecc71');
+        goToRevisionStep()
 
     } else if (
         addressInput.value &&
@@ -81,7 +91,7 @@ function arrivesFormFilledCorrectly() {
         cityInput.value &&
         !zipCodeInput.value) {
 
-        toastifyElement('Passou!', '#2ecc71');
+        goToRevisionStep()
 
     } else if (!addressInput.value &&
         !neighborhoodInput.value &&
@@ -127,21 +137,34 @@ function arrivesFormFilledCorrectly() {
 }
 
 
+buttonNextStageMyCart.removeEventListener('click', checkIfCartEmpty);
+buttonNextStageMyCart.addEventListener('click', checkIfCartEmpty);
+
 buttonNextStageDelivery.removeEventListener('click', arrivesFormFilledCorrectly);
 buttonNextStageDelivery.addEventListener('click', arrivesFormFilledCorrectly);
 
 buttonReturnStage.addEventListener('click', () => {
 
-    if (containerMyCart.classList.contains('hidden')) {
-        containerMyCart.classList.toggle('hidden');
-        buttonNextStageMyCart.classList.toggle('hidden');
+    if (sectionCounter == 1) {
+        containerMyCart.classList.remove('hidden');
+        buttonNextStageMyCart.classList.remove('hidden');
 
-        buttonNextStageDelivery.classList.toggle('hidden');
-        containerDeliveryAddress.classList.toggle('hidden');
+        buttonNextStageDelivery.classList.add('hidden');
+        containerDeliveryAddress.classList.add('hidden');
 
         if (!buttonReturnStage.classList.contains('hidden')) {
-            buttonReturnStage.classList.toggle('hidden');
+            buttonReturnStage.classList.add('hidden')
         }
+
+    } else if (sectionCounter == 2) {
+
+        containerDeliveryAddress.classList.remove('hidden');
+        buttonNextStageDelivery.classList.remove('hidden');
+
+        buttonNextStageSummary.classList.add('hidden')
+        containerOrderSummary.classList.add('hidden')
+
+        sectionCounter = 1;
     }
 
 })
