@@ -28,7 +28,7 @@ const containerDeliveryAddress = document.querySelector('.cart__delivery-address
 const buttonNextStageSummary = document.querySelector('.footer__btn-next-summary');
 const containerOrderSummary = document.querySelector('.cart__order-summary');
 
-let sectionCounter = 0
+let sectionCounter = 0;
 
 
 export function toggleMenu() {
@@ -41,6 +41,7 @@ export function toggleMenu() {
     addOrRemoveItemsInCart(); // ? calls the function whenever the menu is clicked, to get the new items added
 }
 
+// * checks if the cart is empty or not
 
 function checkIfCartEmpty() {
     if (!containerOfCartItems.hasChildNodes()) {
@@ -50,6 +51,7 @@ function checkIfCartEmpty() {
     }
 }
 
+// * go to the stage of filling out the delivery form
 
 function goToAddressStep() {
     sectionCounter = 1;
@@ -63,6 +65,7 @@ function goToAddressStep() {
     containerDeliveryAddress.classList.remove('hidden');
 }
 
+// * goes to the review stage of the chosen items
 
 function goToRevisionStep() {
     sectionCounter = 2;
@@ -74,6 +77,7 @@ function goToRevisionStep() {
     containerOrderSummary.classList.remove('hidden');
 }
 
+// * checks whether the form has been filled out correctly
 
 function arrivesFormFilledCorrectly() {
     if (addressInput.value &&
@@ -142,6 +146,8 @@ buttonNextStageMyCart.addEventListener('click', checkIfCartEmpty);
 
 buttonNextStageDelivery.removeEventListener('click', arrivesFormFilledCorrectly);
 buttonNextStageDelivery.addEventListener('click', arrivesFormFilledCorrectly);
+
+// * check which section of the cart we are in, to know which step should be shown or hidden when the return button is clicked
 
 buttonReturnStage.addEventListener('click', () => {
 
