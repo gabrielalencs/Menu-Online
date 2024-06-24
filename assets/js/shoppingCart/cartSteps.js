@@ -66,27 +66,48 @@ function goToAddressStep() {
 
 function arrivesFormFilledCorrectly() {
 
-    if (addressInput.value && neighborhoodInput.value && numberinput.value && cityInput.value && zipCodeInput.value) {
+    if (addressInput.value &&
+        neighborhoodInput.value &&
+        numberinput.value &&
+        cityInput.value &&
+        zipCodeInput.value) {
 
         toastifyElement('Passou!', '#2ecc71');
-    }
-    
-    if (addressInput.value && neighborhoodInput.value && numberinput.value && cityInput.value && !zipCodeInput.value) {
+
+    } else if (
+        addressInput.value &&
+        neighborhoodInput.value &&
+        numberinput.value &&
+        cityInput.value &&
+        !zipCodeInput.value) {
 
         toastifyElement('Passou!', '#2ecc71');
 
-    } 
+    } else if (!addressInput.value &&
+        !neighborhoodInput.value &&
+        !numberinput.value &&
+        !cityInput.value &&
+        !zipCodeInput.value) {
 
-    if (!numberinput.value) {
-        toastifyElement('Informe o número por favor', '#E74C3C');
-    }
+        toastifyElement('Informe o CEP!', '#E74C3C');
 
-    if (!zipCodeInput.value) {
+    } else if (addressInput.value &&
+        neighborhoodInput.value &&
+        !numberinput.value &&
+        cityInput.value &&
+        zipCodeInput.value) {
 
-        toastifyElement('Informe o CEP por favor', '#E74C3C');
+        toastifyElement('Informe o número!', '#E74C3C');
+
+    } else if (addressInput.value &&
+        neighborhoodInput.value &&
+        !numberinput.value &&
+        cityInput.value &&
+        !zipCodeInput.value) {
+
+        toastifyElement('Informe o número!', '#E74C3C');
 
     } else {
-
         if (!addressInput.value) {
             toastifyElement('Informe o endereço por favor', '#E74C3C');
         }
@@ -95,14 +116,14 @@ function arrivesFormFilledCorrectly() {
             toastifyElement('Informe o bairro por favor', '#E74C3C');
         }
 
-
         if (!cityInput.value) {
             toastifyElement('Informe a cidade por favor', '#E74C3C');
         }
+
+        if (!ufInput.value) {
+            toastifyElement('Informe a UF por favor', '#E74C3C');
+        }
     }
-
-  
-
 }
 
 
