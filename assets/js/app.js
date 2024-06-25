@@ -32,10 +32,6 @@ import {
 } from "./shoppingCart/fillAddress.js";
 
 
-
-
-
-
 // ? header
 
 mobileMenuBtn.addEventListener("change", toggleMenuMobile); // * open or close mobile menu
@@ -58,16 +54,10 @@ initializeFoodMenu(); // * initializes the menu logic, calling all functions for
 
 // ? shopping cart
 
-
 cartButtonHeader.addEventListener('click', toggleMenu); // * opens the cart when the header button is clicked
 
-
-
 cartButtonMain.addEventListener('click', toggleMenu); // * opens the cart when the main button is clicked
-
 
 buttonCloseCart.addEventListener("click", toggleMenu); // * closes the cart when the close cart button is clicked
 
 btnZipCodeSearch.addEventListener("click", fillInputFields); // * calls the function to fill in the form based on the zip code
-
-
