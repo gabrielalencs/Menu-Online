@@ -28,17 +28,37 @@ const containerDeliveryAddress = document.querySelector('.cart__delivery-address
 const buttonNextStageSummary = document.querySelector('.footer__btn-next-summary');
 const containerOrderSummary = document.querySelector('.cart__order-summary');
 
+const containerChosenItems = document.querySelector('.cart__container-my-itens');
+const containerOrderSummaryItens = document.querySelector('.order-summary__container-itens');
+
+
+
+
+
 let sectionCounter = 0;
 
 
 export function toggleMenu() {
     cartContainer.classList.toggle('hidden');
 
+    containerMyCart.classList.remove('hidden');
+    buttonNextStageMyCart.classList.remove('hidden')
+
+    containerDeliveryAddress.classList.add('hidden');
+    buttonNextStageDelivery.classList.add('hidden')
+
+    containerOrderSummary.classList.add('hidden');
+    buttonNextStageSummary.classList.add('hidden');
+    
+
     if (containerOfCartItems.hasChildNodes()) {
         messageEmptyCart.classList.add('hidden');
     }
 
     addOrRemoveItemsInCart(); // ? calls the function whenever the menu is clicked, to get the new items added
+
+
+    
 }
 
 // * checks if the cart is empty or not
@@ -63,11 +83,40 @@ function goToAddressStep() {
 
     buttonNextStageDelivery.classList.remove('hidden');
     containerDeliveryAddress.classList.remove('hidden');
+
+
+
+    // mostra intens da seção de revisão
+
+    containerOrderSummaryItens.innerHTML = ''
+
+    const elementoClone = containerChosenItems.cloneNode(true)
+
+    const filhos = Array.from(elementoClone.children);
+    
+    filhos.forEach(child => {
+
+        child.querySelector('.my-cart__quantity-items').classList.remove('hidden');
+        child.querySelector('.my-cart__button-count').classList.add('hidden');
+        child.querySelector('.my-cart__button-close').classList.add('hidden');
+
+        
+        let numberItemsChosen = child.querySelector('.my-cart__food-count').textContent;
+        
+        child.querySelector('.my-cart__quantity-items span').textContent = 'x' + numberItemsChosen
+        
+        const clonedChild = child.cloneNode(true);
+        
+        containerOrderSummaryItens.appendChild(clonedChild);
+
+    })
 }
 
 // * goes to the review stage of the chosen items
 
 function goToRevisionStep() {
+
+
     sectionCounter = 2;
 
     buttonNextStageDelivery.classList.add('hidden');
@@ -75,6 +124,8 @@ function goToRevisionStep() {
 
     buttonNextStageSummary.classList.remove('hidden');
     containerOrderSummary.classList.remove('hidden');
+
+
 }
 
 // * checks whether the form has been filled out correctly

@@ -8,6 +8,16 @@ const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
 
 
+
+const containerChosenItems = document.querySelector('.cart__container-my-itens');
+const containerOrderSummaryItens = document.querySelector('.order-summary__container-itens');
+
+const containerQuantityItem = document.querySelector('.my-cart__quantity-items');
+const buttonDeleteItem = document.querySelector('.my-cart__button-close');
+
+
+
+
 export const addItemInCart = (currentButtonArgument) => {
     const productContainer = currentButtonArgument.closest('.menu__food');
     const productImage = productContainer.querySelector(".menu__food-img").src;
@@ -43,40 +53,43 @@ export const addItemInCart = (currentButtonArgument) => {
         // ? if the item I want to add doesn't exist, i create a new element with the item information
 
         const htmlDoItemAdded = `
-                 <div class="my-cart__content">
-                     <div class="my-cart-image">
-                         <img src="${productImage}" alt="icon">
-                     </div>
-
-                     <div class="my-cart__texts">
-                         <p>${productTitle}</p>
-                         <span>${productPrice}</span>
-                     </div>
-                 </div>
-
-                 <div class="my-cart__buttons-container">
-                     <button class="my-cart__button-count">
-                         <span class="my-cart__food-icon my-cart-btn-minus">
-                             <i class="fa-solid fa-minus"></i>
+                <div class="my-cart__content">
+                    <div class="my-cart-image">
+                        <img src="${productImage}" alt="icon">
+                    </div>
+       
+                    <div class="my-cart__texts">
+                        <p>${productTitle}</p>
+                        <span>${productPrice}</span>
+                    </div>
+                </div>
+       
+                <div class="my-cart__buttons-container">
+                    <button class="my-cart__button-count">
+                        <span class="my-cart__food-icon my-cart-btn-minus">
+                            <i class="fa-solid fa-minus"></i>
                          </span>
-
-                         <span class="my-cart__food-count">${quantityProductItems}</span>
-
-                         <span class="my-cart__food-icon my-cart-btn-plus">
-                             <i class="fa-solid fa-plus"></i>
-                         </span>
-                     </button>
-                     
-                     <div class="my-cart__button-close">
-                         <i class="fa-solid fa-xmark"></i>
+       
+                        <span class="my-cart__food-count">${quantityProductItems}</span>
+       
+                        <span class="my-cart__food-icon my-cart-btn-plus">
+                            <i class="fa-solid fa-plus"></i>
+                        </span>
+                    </button>
+                            
+                    <div class="my-cart__button-close">
+                        <i class="fa-solid fa-xmark"></i>
                      </div>
-                 </div>
+
+                    <div class="my-cart__quantity-items hidden">
+                        <span></span>
+                    </div>
+                </div>
          `;
 
         const divTemporary = document.createElement('div');
         divTemporary.classList.add('my-cart__item');
         divTemporary.innerHTML = htmlDoItemAdded;
-
         containerOfCartItems.appendChild(divTemporary);
 
         toastifyElement('Item adicionado ao carrinho', '#2ecc71');
