@@ -14,6 +14,7 @@ import {
 export const cartButtonHeader = document.querySelector('.header__shopping-cart');
 export const cartButtonMain = document.querySelector(".button-cart");
 export const buttonCloseCart = document.querySelector(".cart__close-button");
+
 const cartContainer = document.querySelector(".cart");
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
@@ -31,16 +32,11 @@ const containerOrderSummary = document.querySelector('.cart__order-summary');
 const containerChosenItems = document.querySelector('.cart__container-my-itens');
 const containerOrderSummaryItens = document.querySelector('.order-summary__container-itens');
 
-
-
-
-
 let sectionCounter = 0;
 
 
 export function toggleMenu() {
     cartContainer.classList.toggle('hidden');
-
 
     if (containerOfCartItems.hasChildNodes()) {
         messageEmptyCart.classList.add('hidden');
@@ -49,7 +45,6 @@ export function toggleMenu() {
     addOrRemoveItemsInCart(); // ? calls the function whenever the menu is clicked, to get the new items added
 
     cartInitialState();
-
 }
 
 // * checks if the cart is empty or not
@@ -60,31 +55,6 @@ function checkIfCartEmpty() {
     } else {
         goToAddressStep();
     }
-}
-
-function showChosenItemsReviewSection() {
-    containerOrderSummaryItens.innerHTML = '';
-
-    const containerChosenItemsClone = containerChosenItems.cloneNode(true)
-
-    const containerChosenItemsArray = Array.from(containerChosenItemsClone.children);
-
-    containerChosenItemsArray.forEach(chosenItem => {
-
-        chosenItem.querySelector('.my-cart__quantity-items').classList.remove('hidden');
-        chosenItem.querySelector('.my-cart__button-count').classList.add('hidden');
-        chosenItem.querySelector('.my-cart__button-close').classList.add('hidden');
-
-
-        let numberItemsChosen = chosenItem.querySelector('.my-cart__food-count').textContent;
-
-        chosenItem.querySelector('.my-cart__quantity-items span').textContent = 'x' + numberItemsChosen;
-
-        const clonedChild = chosenItem.cloneNode(true);
-
-        containerOrderSummaryItens.appendChild(clonedChild);
-
-    });
 }
 
 // * go to the stage of filling out the delivery form
@@ -193,8 +163,27 @@ function cartInitialState() {
     buttonNextStageSummary.classList.add('hidden');
 }
 
+// * shows items in cart summary section
 
+function showChosenItemsReviewSection() {
+    containerOrderSummaryItens.innerHTML = '';
 
+    const containerChosenItemsClone = containerChosenItems.cloneNode(true)
+    const containerChosenItemsArray = Array.from(containerChosenItemsClone.children);
+
+    containerChosenItemsArray.forEach(chosenItem => {
+        chosenItem.querySelector('.my-cart__quantity-items').classList.remove('hidden');
+        chosenItem.querySelector('.my-cart__button-count').classList.add('hidden');
+        chosenItem.querySelector('.my-cart__button-close').classList.add('hidden');
+
+        let numberItemsChosen = chosenItem.querySelector('.my-cart__food-count').textContent;
+
+        chosenItem.querySelector('.my-cart__quantity-items span').textContent = 'x' + numberItemsChosen;
+
+        const clonedChild = chosenItem.cloneNode(true);
+        containerOrderSummaryItens.appendChild(clonedChild);
+    });
+}
 
 
 buttonNextStageMyCart.removeEventListener('click', checkIfCartEmpty);
@@ -206,7 +195,6 @@ buttonNextStageDelivery.addEventListener('click', arrivesFormFilledCorrectly);
 // * check which section of the cart we are in, to know which step should be shown or hidden when the return button is clicked
 
 buttonReturnStage.addEventListener('click', () => {
-
     if (sectionCounter == 1) {
         containerMyCart.classList.remove('hidden');
         buttonNextStageMyCart.classList.remove('hidden');
@@ -219,7 +207,6 @@ buttonReturnStage.addEventListener('click', () => {
         }
 
     } else if (sectionCounter == 2) {
-
         containerDeliveryAddress.classList.remove('hidden');
         buttonNextStageDelivery.classList.remove('hidden');
 
@@ -228,5 +215,4 @@ buttonReturnStage.addEventListener('click', () => {
 
         sectionCounter = 1;
     }
-
-})
+});
