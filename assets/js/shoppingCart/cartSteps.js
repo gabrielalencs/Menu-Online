@@ -2,12 +2,7 @@ import { addOrRemoveItemsInCart } from './addOrRemoveItems.js';
 
 import toastifyElement from '../menu/toastifyElement.js';
 
-import {
-    zipCodeInput, addressInput,
-    neighborhoodInput, numberinput,
-    ufInput, cityInput
-} from './fillAddress.js';
-
+import arrivesFormFilledCorrectly from './formChecks.js';
 
 const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
@@ -75,7 +70,7 @@ function goToAddressStep() {
 
 // * goes to the review stage of the chosen items
 
-function goToRevisionStep() {
+export function goToRevisionStep() {
     sectionCounter = 2;
 
     buttonNextStageDelivery.classList.add('hidden');
@@ -85,68 +80,6 @@ function goToRevisionStep() {
     containerOrderSummary.classList.remove('hidden');
 }
 
-// * checks whether the form has been filled out correctly
-
-function arrivesFormFilledCorrectly() {
-    if (addressInput.value &&
-        neighborhoodInput.value &&
-        numberinput.value &&
-        cityInput.value &&
-        zipCodeInput.value) {
-
-        goToRevisionStep()
-
-    } else if (
-        addressInput.value &&
-        neighborhoodInput.value &&
-        numberinput.value &&
-        cityInput.value &&
-        !zipCodeInput.value) {
-
-        goToRevisionStep()
-
-    } else if (!addressInput.value &&
-        !neighborhoodInput.value &&
-        !numberinput.value &&
-        !cityInput.value &&
-        !zipCodeInput.value) {
-
-        toastifyElement('Informe o CEP!', '#E74C3C');
-
-    } else if (addressInput.value &&
-        neighborhoodInput.value &&
-        !numberinput.value &&
-        cityInput.value &&
-        zipCodeInput.value) {
-
-        toastifyElement('Informe o número!', '#E74C3C');
-
-    } else if (addressInput.value &&
-        neighborhoodInput.value &&
-        !numberinput.value &&
-        cityInput.value &&
-        !zipCodeInput.value) {
-
-        toastifyElement('Informe o número!', '#E74C3C');
-
-    } else {
-        if (!addressInput.value) {
-            toastifyElement('Informe o endereço por favor', '#E74C3C');
-        }
-
-        if (!neighborhoodInput.value) {
-            toastifyElement('Informe o bairro por favor', '#E74C3C');
-        }
-
-        if (!cityInput.value) {
-            toastifyElement('Informe a cidade por favor', '#E74C3C');
-        }
-
-        if (!ufInput.value) {
-            toastifyElement('Informe a UF por favor', '#E74C3C');
-        }
-    }
-}
 
 // * return the cart to step one of the cart
 
