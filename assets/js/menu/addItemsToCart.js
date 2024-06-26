@@ -8,6 +8,8 @@ import {
     handleDeleteClick
 } from './showsNumberItemsInCart.js';
 
+a
+
 
 export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
