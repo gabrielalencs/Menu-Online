@@ -1,3 +1,10 @@
+import {
+    addValueItemsWhenAddingToCart,
+    subtractTotalValueItemsTwo,
+    sumValueItemsTwo
+} from './sumValorOfItems.js';
+
+
 export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
@@ -5,17 +12,6 @@ export const containerOfCartItems = document.querySelector(".cart__container-my-
 let sumTotalCartItems = 0;
 const cartButtonValue = document.querySelector('.button-cart span');
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
-
-
-
-
-const containerChosenItems = document.querySelector('.cart__container-my-itens');
-const containerOrderSummaryItens = document.querySelector('.order-summary__container-itens');
-
-const containerQuantityItem = document.querySelector('.my-cart__quantity-items');
-const buttonDeleteItem = document.querySelector('.my-cart__button-close');
-
-
 
 
 export const addItemInCart = (currentButtonArgument) => {
@@ -95,6 +91,9 @@ export const addItemInCart = (currentButtonArgument) => {
         toastifyElement('Item adicionado ao carrinho', '#2ecc71');
     };
 
+
+    addValueItemsWhenAddingToCart(productPrice, quantityProductItems); // ? adds the value of the items and shows the total in the cart when we add them to the cart
+
 };
 
 
@@ -133,6 +132,7 @@ export function addOrRemoveItemsInCart() {
 
 function handleDecreaseClick({ target }) {
     const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
+    const clickedItemPrice = target.closest('.my-cart__item').querySelector('.my-cart__texts span').textContent;
     let itemCounter = Number(clickedItemCounter.textContent);
 
     if (itemCounter > 0) {
@@ -144,11 +144,16 @@ function handleDecreaseClick({ target }) {
     }
 
     if (itemCounter === 0) target.closest('.my-cart__item').remove();
+
+
+    subtractTotalValueItemsTwo(clickedItemPrice);
 }
+
 
 
 function handleAddClick({ target }) {
     const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
+    const clickedItemPrice = target.closest('.my-cart__item').querySelector('.my-cart__texts span').textContent;
     let itemCounter = Number(clickedItemCounter.textContent);
 
     itemCounter++;
@@ -156,6 +161,9 @@ function handleAddClick({ target }) {
 
     sumTotalCartItems++;
     cartButtonValue.textContent = sumTotalCartItems;
+
+
+    sumValueItemsTwo(clickedItemPrice)
 }
 
 
@@ -193,42 +201,6 @@ export function toastifyElement(textToastify, colorToastify) {
 
         },
     }).showToast();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ? adds up the value of the items and shows them in the first step of the cart
-
-export function sumValueItems(productPriceArgument, quantityProductItemsArgument) {
-
-    const purchaseValue = document.querySelector('.footer__subtotal span');
-    const TotalPurchaseValue = document.querySelector('.footer__total span span');
-
-    let priceWithoutR$ = productPriceArgument.replace('R$', '').trim();
-    let priceWithPoint = priceWithoutR$.replace(',', '.');
-    let priceNumber = Number(priceWithPoint);
-
-
-    totalPriceSum += priceNumber * Number(quantityProductItemsArgument);
-
-    purchaseValue.textContent = totalPriceSum;
-
-    TotalPurchaseValue.textContent = totalPriceSum + 5;
-
 }
 
 
