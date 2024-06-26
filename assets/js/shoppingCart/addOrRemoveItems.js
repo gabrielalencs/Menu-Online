@@ -9,6 +9,9 @@ const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
 let sumTotalCartItems = 0;
 
+
+// ? shows the current number of items in the cart
+
 export function showQuantityItemsInCart(currentButtonArgument) {
     const productContainer = currentButtonArgument.closest('.menu__food');
     const quantityProductItems = productContainer.querySelector(".menu__food-count").textContent;
@@ -68,6 +71,7 @@ export function handleDeleteClick({ target }) {
         messageEmptyCart.classList.remove('hidden');
     }
 }
+
 
 export function addOrRemoveItemsInCart() {
     const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');

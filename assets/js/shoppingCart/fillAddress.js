@@ -8,7 +8,6 @@ export const btnZipCodeSearch = document.getElementById('zip-code-search');
 
 
 const callsApiViaCep = async (cep) => {
-
     if (!/^\d{8}$/.test(cep)) {
         alert("CEP inválido. Deve conter 8 dígitos numéricos.");
         return null;
@@ -25,8 +24,6 @@ const callsApiViaCep = async (cep) => {
 
     return responseJson;
 }
-
-
 
 export const fillInputFields = async () => {
     const valueInputCep = zipCodeInput.value.trim();

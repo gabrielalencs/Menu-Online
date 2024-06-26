@@ -1,11 +1,8 @@
-import {
-    addValueItemsWhenAddingToCart,
-} from '../shoppingCart/sumValorOfItems.js';
+import { addValueItemsWhenAddingToCart } from '../shoppingCart/sumValorOfItems.js';
 
 import toastifyElement from './toastifyElement.js';
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
-
 
 export const addItemInCart = (currentButtonArgument) => {
     const productContainer = currentButtonArgument.closest('.menu__food');
@@ -84,8 +81,8 @@ export const addItemInCart = (currentButtonArgument) => {
         toastifyElement('Item adicionado ao carrinho', '#2ecc71');
     };
 
-
-    addValueItemsWhenAddingToCart(productPrice, quantityProductItems); // ? Adds the value of the items and shows the total in the cart
+    
+    addValueItemsWhenAddingToCart(productPrice, quantityProductItems); // ? When we add the items to the cart, it adds up and shows the total in the cart
 
 };
 

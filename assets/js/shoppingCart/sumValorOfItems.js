@@ -16,7 +16,6 @@ export function addValueItemsWhenAddingToCart(productPriceArgument, quantityProd
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 }
 
-
 export function sumTotalValueItems (productPriceArgument) {
     const purchaseValue = document.querySelector('.footer__subtotal span');
     const TotalPurchaseValue = document.querySelector('.footer__total span span');
@@ -31,7 +30,6 @@ export function sumTotalValueItems (productPriceArgument) {
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 }
 
-
 export function subtractTotalValueItems(productPriceArgument) {
     const purchaseValue = document.querySelector('.footer__subtotal span');
     const TotalPurchaseValue = document.querySelector('.footer__total span span');
@@ -45,4 +43,3 @@ export function subtractTotalValueItems(productPriceArgument) {
     purchaseValue.textContent = totalPriceSum;
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 }
-
