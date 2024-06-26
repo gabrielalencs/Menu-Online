@@ -12,7 +12,7 @@ import {
     addItemInCart
 } from './menu/addItemsToCart.js';
 
-import { showQuantityItemsInCart } from './menu/showsNumberItemsInCart.js';
+import { showQuantityItemsInCart } from './shoppingCart/addOrRemoveItems.js';
 
 import initializeFoodMenu from "./menu/initializeFoodMenu.js";
 

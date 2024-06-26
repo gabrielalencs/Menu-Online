@@ -1,6 +1,7 @@
+import { addOrRemoveItemsInCart } from './addOrRemoveItems.js';
+
 import {
     containerOfCartItems,
-    addOrRemoveItemsInCart,
     toastifyElement
 } from '../menu/addItemsToCart.js';
 

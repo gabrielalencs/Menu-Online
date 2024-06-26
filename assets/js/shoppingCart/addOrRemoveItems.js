@@ -1,13 +1,13 @@
 import {
-    sumTotalValueItems, 
+    sumTotalValueItems,
     subtractTotalValueItems
 } from './sumValorOfItems.js';
+
 
 const cartButtonValue = document.querySelector('.button-cart span');
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
 let sumTotalCartItems = 0;
-
 
 export function showQuantityItemsInCart(currentButtonArgument) {
     const productContainer = currentButtonArgument.closest('.menu__food');
@@ -31,7 +31,6 @@ export function handleAddClick({ target }) {
     sumTotalCartItems++;
     cartButtonValue.textContent = sumTotalCartItems;
 
-    
     sumTotalValueItems(clickedItemPrice); // ? adds the value when we add more items to the cart itself
 }
 
@@ -49,11 +48,7 @@ export function handleDecreaseClick({ target }) {
         cartButtonValue.textContent = sumTotalCartItems;
     }
 
-    if (itemCounter === 0) {
-        target.closest('.my-cart__item').remove();
-        messageEmptyCart.classList.remove('hidden');
-    }
-
+    if (itemCounter === 0) target.closest('.my-cart__item').remove()
 
     subtractTotalValueItems(clickedItemPrice); // ? subtracts the value when we remove items from the cart itself
 }
@@ -72,4 +67,25 @@ export function handleDeleteClick({ target }) {
     if (!containerOfCartItems.hasChildNodes()) {
         messageEmptyCart.classList.remove('hidden');
     }
+}
+
+export function addOrRemoveItemsInCart() {
+    const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
+    const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
+    const deleteItemButton = document.querySelectorAll('.my-cart__button-close');
+
+    buttonsDecreaseItems.forEach(currentButton => {
+        currentButton.removeEventListener('click', handleDecreaseClick);
+        currentButton.addEventListener('click', handleDecreaseClick);
+    });
+
+    buttonsAddItems.forEach(currentButton => {
+        currentButton.removeEventListener('click', handleAddClick);
+        currentButton.addEventListener('click', handleAddClick);
+    });
+
+    deleteItemButton.forEach(currentButton => {
+        currentButton.removeEventListener('click', handleDeleteClick);
+        currentButton.addEventListener('click', handleDeleteClick);
+    });
 }

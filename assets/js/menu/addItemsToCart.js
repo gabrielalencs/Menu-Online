@@ -1,12 +1,8 @@
 import {
     addValueItemsWhenAddingToCart,
-} from './sumValorOfItems.js';
+} from '../shoppingCart/sumValorOfItems.js';
 
-import { 
-    handleDecreaseClick,
-    handleAddClick,
-    handleDeleteClick
-} from './showsNumberItemsInCart.js';
+
 
 
 export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
@@ -95,27 +91,6 @@ export const addItemInCart = (currentButtonArgument) => {
 
 };
 
-
-export function addOrRemoveItemsInCart() {
-    const buttonsDecreaseItems = document.querySelectorAll('.my-cart-btn-minus');
-    const buttonsAddItems = document.querySelectorAll('.my-cart-btn-plus');
-    const deleteItemButton = document.querySelectorAll('.my-cart__button-close');
-
-    buttonsDecreaseItems.forEach(currentButton => {
-        currentButton.removeEventListener('click', handleDecreaseClick);
-        currentButton.addEventListener('click', handleDecreaseClick);
-    });
-
-    buttonsAddItems.forEach(currentButton => {
-        currentButton.removeEventListener('click', handleAddClick);
-        currentButton.addEventListener('click', handleAddClick);
-    });
-
-    deleteItemButton.forEach(currentButton => {
-        currentButton.removeEventListener('click', handleDeleteClick);
-        currentButton.addEventListener('click', handleDeleteClick);
-    });
-}
 
 
 
