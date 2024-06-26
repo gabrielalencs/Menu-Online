@@ -16,12 +16,7 @@ import initializeFoodMenu from "./menu/initializeFoodMenu.js";
 
 // * shopping cart
 
-import {
-    cartButtonHeader,
-    cartButtonMain,
-    buttonCloseCart,
-    toggleMenu
-} from './shoppingCart/cartSteps.js';
+import { toggleMenu } from './shoppingCart/cartSteps.js';
 
 import {
     btnZipCodeSearch,
@@ -52,6 +47,11 @@ initializeFoodMenu(); // * initializes the menu logic, calling all functions for
 
 
 // ? shopping cart
+
+
+const cartButtonHeader = document.querySelector('.header__shopping-cart');
+const cartButtonMain = document.querySelector(".button-cart");
+const buttonCloseCart = document.querySelector(".cart__close-button");
 
 cartButtonHeader.addEventListener('click', toggleMenu); // * opens the cart when the header button is clicked
 

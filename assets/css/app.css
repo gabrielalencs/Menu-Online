@@ -1389,7 +1389,7 @@ main {
 .cart__order-summary .order-summary__location-container .location-texts {
   font-size: 1.6rem;
 }
-.cart__order-summary .order-summary__location-container .location-address {
+.cart__order-summary .order-summary__location-container .location-address-container {
   font-weight: 600;
   line-height: 1.5;
 }

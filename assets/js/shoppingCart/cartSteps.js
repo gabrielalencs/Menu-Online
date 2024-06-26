@@ -1,14 +1,14 @@
 import { addOrRemoveItemsInCart } from './addOrRemoveItems.js';
 
+import showSubmittedAddressDataReviewSection from './showsAddressDataReviewSection.js'
+
 import toastifyElement from '../menu/toastifyElement.js';
 
 import arrivesFormFilledCorrectly from './formChecks.js';
 
-const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
-export const cartButtonHeader = document.querySelector('.header__shopping-cart');
-export const cartButtonMain = document.querySelector(".button-cart");
-export const buttonCloseCart = document.querySelector(".cart__close-button");
+
+const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
 const cartContainer = document.querySelector(".cart");
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
@@ -78,6 +78,8 @@ export function goToRevisionStep() {
 
     buttonNextStageSummary.classList.remove('hidden');
     containerOrderSummary.classList.remove('hidden');
+
+    showSubmittedAddressDataReviewSection();
 }
 
 
@@ -117,6 +119,7 @@ function showChosenItemsReviewSection() {
         containerOrderSummaryItens.appendChild(clonedChild);
     });
 }
+
 
 
 buttonNextStageMyCart.removeEventListener('click', checkIfCartEmpty);
