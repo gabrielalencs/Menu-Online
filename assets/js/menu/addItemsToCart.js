@@ -2,10 +2,8 @@ import {
     addValueItemsWhenAddingToCart,
 } from '../shoppingCart/sumValorOfItems.js';
 
+import toastifyElement from './toastifyElement.js';
 
-
-
-export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
 
@@ -92,31 +90,4 @@ export const addItemInCart = (currentButtonArgument) => {
 };
 
 
-
-
-// ? function that displays my popup in the corner of the screen
-
-export function toastifyElement(textToastify, colorToastify) {
-    Toastify({
-        text: textToastify,
-        duration: 800,
-        newWindow: false,
-        close: true,
-        gravity: "top",
-        position: "right",
-        stopOnFocus: true,
-        style: {
-            background: colorToastify,
-            fontSize: '1.8rem',
-            borderRadius: '1.5rem'
-
-        },
-    }).showToast();
-}
-
-
-
-
-
-
-
+export default addItemInCart;

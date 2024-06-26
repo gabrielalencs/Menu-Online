@@ -7,10 +7,7 @@ import { mobileMenuBtn, toggleMenuMobile } from "./header/menuMobile.js";
 
 import markBtnClicked from "./menu/clickFoodButtons.js";
 
-import {
-    buttonAddToCart,
-    addItemInCart
-} from './menu/addItemsToCart.js';
+import addItemInCart from './menu/addItemsToCart.js';
 
 import { showQuantityItemsInCart } from './shoppingCart/addOrRemoveItems.js';
 
@@ -40,6 +37,8 @@ mobileMenuBtn.addEventListener("change", toggleMenuMobile); // * open or close m
 // ? menu
 
 markBtnClicked(); // * marks which food button the user clicked on
+
+const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 
 buttonAddToCart.forEach(currentButton =>
     currentButton.addEventListener("click", () => {

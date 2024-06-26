@@ -1,9 +1,6 @@
 import { addOrRemoveItemsInCart } from './addOrRemoveItems.js';
 
-import {
-    containerOfCartItems,
-    toastifyElement
-} from '../menu/addItemsToCart.js';
+import toastifyElement from '../menu/toastifyElement.js';
 
 import {
     zipCodeInput, addressInput,
@@ -11,6 +8,8 @@ import {
     ufInput, cityInput
 } from './fillAddress.js';
 
+
+const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
 export const cartButtonHeader = document.querySelector('.header__shopping-cart');
 export const cartButtonMain = document.querySelector(".button-cart");
