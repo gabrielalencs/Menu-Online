@@ -16,7 +16,23 @@ export function addValueItemsWhenAddingToCart(productPriceArgument, quantityProd
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 }
 
-export function subtractTotalValueItemsTwo(productPriceArgument) {
+
+export function sumTotalValueItems (productPriceArgument) {
+    const purchaseValue = document.querySelector('.footer__subtotal span');
+    const TotalPurchaseValue = document.querySelector('.footer__total span span');
+
+    let priceWithoutR$ = productPriceArgument.replace('R$', '').trim();
+    let priceWithPoint = priceWithoutR$.replace(',', '.');
+    let priceNumber = Number(priceWithPoint);
+
+    totalPriceSum += priceNumber;
+
+    purchaseValue.textContent = totalPriceSum;
+    TotalPurchaseValue.textContent = totalPriceSum + 5;
+}
+
+
+export function subtractTotalValueItems(productPriceArgument) {
     const purchaseValue = document.querySelector('.footer__subtotal span');
     const TotalPurchaseValue = document.querySelector('.footer__total span span');
 
@@ -30,16 +46,3 @@ export function subtractTotalValueItemsTwo(productPriceArgument) {
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 }
 
-export function sumValueItemsTwo(productPriceArgument) {
-    const purchaseValue = document.querySelector('.footer__subtotal span');
-    const TotalPurchaseValue = document.querySelector('.footer__total span span');
-
-    let priceWithoutR$ = productPriceArgument.replace('R$', '').trim();
-    let priceWithPoint = priceWithoutR$.replace(',', '.');
-    let priceNumber = Number(priceWithPoint);
-
-    totalPriceSum += priceNumber;
-
-    purchaseValue.textContent = totalPriceSum;
-    TotalPurchaseValue.textContent = totalPriceSum + 5;
-}

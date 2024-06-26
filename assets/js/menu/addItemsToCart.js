@@ -8,8 +8,6 @@ import {
     handleDeleteClick
 } from './showsNumberItemsInCart.js';
 
-a
-
 
 export const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
@@ -93,7 +91,7 @@ export const addItemInCart = (currentButtonArgument) => {
     };
 
 
-    addValueItemsWhenAddingToCart(productPrice, quantityProductItems); // ? adds the value of the items and shows the total in the cart when we add them to the cart
+    addValueItemsWhenAddingToCart(productPrice, quantityProductItems); // ? Adds the value of the items and shows the total in the cart
 
 };
 
@@ -118,7 +116,6 @@ export function addOrRemoveItemsInCart() {
         currentButton.addEventListener('click', handleDeleteClick);
     });
 }
-
 
 
 
