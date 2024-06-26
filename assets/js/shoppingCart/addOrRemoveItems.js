@@ -1,11 +1,14 @@
 import {
     sumTotalValueItems,
-    subtractTotalValueItems
+    subtractTotalValueItems,
+    subtractValuFromSumAllItems
 } from './sumValorOfItems.js';
 
 
 const cartButtonValue = document.querySelector('.button-cart span');
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
+
+const containerOfCartItems = document.querySelector(".cart__container-my-itens")
 
 let sumTotalCartItems = 0;
 
@@ -51,7 +54,13 @@ export function handleDecreaseClick({ target }) {
         cartButtonValue.textContent = sumTotalCartItems;
     }
 
-    if (itemCounter === 0) target.closest('.my-cart__item').remove()
+    if (itemCounter === 0) {
+        target.closest('.my-cart__item').remove();
+
+        if (!containerOfCartItems.hasChildNodes()) {
+            messageEmptyCart.classList.remove('hidden');
+        }
+    }
 
     subtractTotalValueItems(clickedItemPrice); // ? subtracts the value when we remove items from the cart itself
 }
@@ -60,6 +69,8 @@ export function handleDecreaseClick({ target }) {
 export function handleDeleteClick({ target }) {
     const parentClickedButton = target.closest('.my-cart__item');
     const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
+    const clickedItemPrice = target.closest('.my-cart__item').querySelector('.my-cart__texts span').textContent;
+
     let itemCounter = Number(clickedItemCounter.textContent);
 
     sumTotalCartItems -= itemCounter;
@@ -70,6 +81,8 @@ export function handleDeleteClick({ target }) {
     if (!containerOfCartItems.hasChildNodes()) {
         messageEmptyCart.classList.remove('hidden');
     }
+
+    subtractValuFromSumAllItems(clickedItemPrice, clickedItemCounter)
 }
 
 

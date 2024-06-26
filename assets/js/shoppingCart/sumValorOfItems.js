@@ -43,3 +43,17 @@ export function subtractTotalValueItems(productPriceArgument) {
     purchaseValue.textContent = totalPriceSum;
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 }
+
+export function subtractValuFromSumAllItems(productPriceArgument, quantityProductArgument) {
+    const purchaseValue = document.querySelector('.footer__subtotal span');
+    const TotalPurchaseValue = document.querySelector('.footer__total span span');
+
+    let priceWithoutR$ = productPriceArgument.replace('R$', '').trim();
+    let priceWithPoint = priceWithoutR$.replace(',', '.');
+    let priceNumber = Number(priceWithPoint);
+
+    totalPriceSum -= priceNumber * Number(quantityProductArgument.textContent);
+
+    purchaseValue.textContent = totalPriceSum;
+    TotalPurchaseValue.textContent = totalPriceSum + 5;
+}
