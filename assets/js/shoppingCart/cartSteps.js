@@ -44,7 +44,7 @@ export function toggleMenu() {
 
     addOrRemoveItemsInCart(); // ? calls the function whenever the menu is clicked, to get the new items added
 
-    cartInitialState();
+    cartInitialState(); // ? returns the menu to the first step
 }
 
 // * checks if the cart is empty or not

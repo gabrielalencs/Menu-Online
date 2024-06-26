@@ -9,10 +9,10 @@ import markBtnClicked from "./menu/clickFoodButtons.js";
 
 import {
     buttonAddToCart,
-    addItemInCart,
-    showQuantityItemsInCart,
-
+    addItemInCart
 } from './menu/addItemsToCart.js';
+
+import { showQuantityItemsInCart } from './menu/showsNumberItemsInCart.js';
 
 import initializeFoodMenu from "./menu/initializeFoodMenu.js";
 
