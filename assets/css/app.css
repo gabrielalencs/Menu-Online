@@ -1056,7 +1056,20 @@ main {
   height: 2px;
   position: absolute;
   background-color: #F3F4F6;
-  z-index: -1;
+  z-index: 1;
+}
+.cart__header .cart__phases-container::before {
+  content: "";
+  height: 2px;
+  position: absolute;
+  background-color: #caa127;
+  z-index: 5;
+}
+.cart__header .cart__phases-container.dash-40::before {
+  width: 40%;
+}
+.cart__header .cart__phases-container.dash-80::before {
+  width: 80%;
 }
 .cart__header .cart__phases-container div {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -1071,6 +1084,7 @@ main {
   font-size: 1.5rem;
   font-weight: 500;
   background-color: #ffffff;
+  z-index: 10;
 }
 .cart__header .cart__phases-container .phase-marked {
   background-color: #caa127;

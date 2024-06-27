@@ -86,7 +86,27 @@
             height: 2px;
             position: absolute;
             background-color: color.$gray-terciary;
-            z-index: -1;
+            z-index: 1;
+        }
+
+        &::before {
+            content: '';
+            height: 2px;
+            position: absolute;
+            background-color: color.$primary-color;
+            z-index: 5;
+        }
+
+        &.dash-40   {
+            &::before {
+                width: 40%;
+            }
+        }
+
+        &.dash-80   {
+            &::before {
+                width: 80%;
+            }
         }
 
         div {
@@ -98,11 +118,13 @@
             font-size: 1.5rem;
             font-weight: 500;
             background-color: color.$white-primary;
+            z-index: 10;
         }
 
         .phase-marked {
             background-color: color.$primary-color;
         }
+
     }
 
     .cart__close-button {

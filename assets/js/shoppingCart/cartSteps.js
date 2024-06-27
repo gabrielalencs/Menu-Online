@@ -6,6 +6,10 @@ import toastifyElement from '../menu/toastifyElement.js';
 
 import arrivesFormFilledCorrectly from './formChecks.js';
 
+import {
+    markIconStepTwo, removeMarkupIconStepTwo,
+    markIconStepThree, removeMarkupIconStepThree
+} from './markStageForm.js';
 
 
 const containerOfCartItems = document.querySelector(".cart__container-my-itens");
@@ -55,22 +59,27 @@ function checkIfCartEmpty() {
 // * go to the stage of filling out the delivery form
 
 function goToAddressStep() {
-    sectionCounter = 1;
+    markIconStepTwo(); // ? Mark that we are in step two in the cart header icons
 
+    sectionCounter = 1;
+    
     buttonReturnStage.classList.remove('hidden');
 
     buttonNextStageMyCart.classList.add('hidden');
     containerMyCart.classList.add('hidden');
-
+    
     buttonNextStageDelivery.classList.remove('hidden');
     containerDeliveryAddress.classList.remove('hidden');
-
+    
     showChosenItemsReviewSection();
 }
 
 // * goes to the review stage of the chosen items
 
 export function goToRevisionStep() {
+
+    markIconStepThree(); // ? Mark that we are in step three in the cart header icons
+
     sectionCounter = 2;
 
     buttonNextStageDelivery.classList.add('hidden');
@@ -132,6 +141,9 @@ buttonNextStageDelivery.addEventListener('click', arrivesFormFilledCorrectly);
 
 buttonReturnStage.addEventListener('click', () => {
     if (sectionCounter == 1) {
+        
+        removeMarkupIconStepTwo();
+
         containerMyCart.classList.remove('hidden');
         buttonNextStageMyCart.classList.remove('hidden');
 
@@ -143,6 +155,8 @@ buttonReturnStage.addEventListener('click', () => {
         }
 
     } else if (sectionCounter == 2) {
+        removeMarkupIconStepThree();
+
         containerDeliveryAddress.classList.remove('hidden');
         buttonNextStageDelivery.classList.remove('hidden');
 
