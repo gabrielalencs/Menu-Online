@@ -77,7 +77,7 @@
     }
 
     &__foods-container {
-        margin-top: 5rem;
+        margin-top: 3rem;
         display: grid;
         gap: 3rem;
 
@@ -96,6 +96,22 @@
         @include media.desktops {
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(2, 1fr);
+        }
+    }
+
+    .fade-in-up {
+        animation: fadeInUp .5s  linear forwards;
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translate3d(0, 30rem, 0);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
         }
     }
 
