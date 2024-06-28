@@ -159,7 +159,7 @@
 
 .cart__my-cart {
     overflow-y: scroll;
-    height: 45vh;
+    height: 40vh;
     position: relative;
 
     &::-webkit-scrollbar {
@@ -181,7 +181,6 @@
     .cart__empty-cart-message.hidden {
         display: none;
     }
-
 
 }
 

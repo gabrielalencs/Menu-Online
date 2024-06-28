@@ -598,14 +598,15 @@ main {
 }
 @media (min-width: 768px) {
   .menu__food {
-    padding: 3rem 2.5rem;
+    padding: 1.5rem 2.5rem;
   }
 }
 .menu__food-main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
+  z-index: 10;
 }
 @media (min-width: 992px) {
   .menu__food-main {
@@ -616,8 +617,16 @@ main {
   }
 }
 .menu__food-image img {
-  width: 6rem;
+  width: 7rem;
+  position: relative;
+  top: 0.5rem;
   border-radius: 1rem;
+}
+@media (min-width: 768px) {
+  .menu__food-image img {
+    width: 8rem;
+    position: static;
+  }
 }
 @media (min-width: 992px) {
   .menu__food-image img {
@@ -631,7 +640,7 @@ main {
   }
 }
 .menu__food-texts p {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 700;
   line-height: 1.3;
 }
@@ -641,7 +650,7 @@ main {
   }
 }
 .menu__food-texts span {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   color: #caa127;
   font-weight: 700;
 }
@@ -654,7 +663,13 @@ main {
   opacity: 0;
   transition: all 0.3s;
   position: absolute;
-  left: 10.5rem;
+  left: 11.5rem;
+  z-index: 5;
+}
+@media (min-width: 768px) {
+  .menu__food-hover {
+    left: 13rem;
+  }
 }
 @media (min-width: 992px) {
   .menu__food-hover {
@@ -675,11 +690,11 @@ main {
 }
 .menu__hover-title {
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
 }
 @media (min-width: 768px) {
   .menu__hover-title {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
 }
 .menu__food-buttons {
@@ -687,19 +702,19 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 .menu__food-count-container {
   border: 2px solid #212121;
-  padding: 0.5rem 0.3rem;
+  padding: 0.5rem 0.1rem;
   border-radius: 1rem;
 }
 .menu__food-count {
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   border: 2px solid #212121;
   border-top: none;
   border-bottom: none;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: 600;
 }
 @media (min-width: 768px) {
@@ -709,21 +724,21 @@ main {
   }
 }
 .menu__food-icon {
-  padding: 0 0.5rem;
+  padding: 0 0.9rem;
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 @media (min-width: 768px) {
   .menu__food-icon {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
 .menu__food-shopping-cart {
   background-color: #212121;
   color: #ffffff;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem;
   border-radius: 1rem;
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 @media (min-width: 768px) {
   .menu__food-shopping-cart {
@@ -1124,7 +1139,7 @@ main {
 
 .cart__my-cart {
   overflow-y: scroll;
-  height: 45vh;
+  height: 40vh;
   position: relative;
 }
 .cart__my-cart::-webkit-scrollbar {
