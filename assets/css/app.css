@@ -601,6 +601,16 @@ main {
     padding: 1.5rem 2.5rem;
   }
 }
+@media (min-width: 992px) {
+  .menu__food {
+    padding: 2.8rem 2rem;
+  }
+}
+@media (min-width: 1175px) {
+  .menu__food {
+    padding: 2.5rem 2.8rem;
+  }
+}
 .menu__food-main {
   display: flex;
   flex-direction: row;
@@ -610,6 +620,7 @@ main {
 }
 @media (min-width: 992px) {
   .menu__food-main {
+    gap: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -629,6 +640,11 @@ main {
   }
 }
 @media (min-width: 992px) {
+  .menu__food-image img {
+    width: 90%;
+  }
+}
+@media (min-width: 1175px) {
   .menu__food-image img {
     width: 100%;
   }
@@ -674,7 +690,7 @@ main {
 @media (min-width: 992px) {
   .menu__food-hover {
     left: 5rem;
-    bottom: 3rem;
+    bottom: 2rem;
     text-align: center;
   }
 }
@@ -694,7 +710,7 @@ main {
 }
 @media (min-width: 768px) {
   .menu__hover-title {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 }
 .menu__food-buttons {
@@ -703,6 +719,11 @@ main {
   flex-direction: row;
   align-items: center;
   gap: 2.5rem;
+}
+@media (min-width: 768px) {
+  .menu__food-buttons {
+    gap: 1.5rem;
+  }
 }
 .menu__food-count-container {
   border: 2px solid #212121;
@@ -719,7 +740,6 @@ main {
 }
 @media (min-width: 768px) {
   .menu__food-count {
-    padding: 0 1.5rem;
     font-size: 1.8rem;
   }
 }
@@ -730,7 +750,8 @@ main {
 }
 @media (min-width: 768px) {
   .menu__food-icon {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
+    padding: 0 1rem;
   }
 }
 .menu__food-shopping-cart {
@@ -1050,7 +1071,7 @@ main {
   width: 100%;
   height: 100%;
   z-index: 10;
-  padding: 5rem 4rem;
+  padding: 5rem 3rem;
   overflow: scroll;
 }
 .cart::-webkit-scrollbar {
@@ -1328,8 +1349,12 @@ main {
   border-radius: 1.5rem;
 }
 .cart__delivery-address .address__form .address-cep {
-  width: max-content;
   opacity: 1;
+}
+@media (min-width: 768px) {
+  .cart__delivery-address .address__form .address-cep {
+    width: max-content;
+  }
 }
 .cart__delivery-address .address__form .address-cep .address__input-cep {
   display: flex;
@@ -1346,7 +1371,7 @@ main {
 .cart__delivery-address .address__form .address-cep .address__input-cep div i {
   font-size: 1.8rem;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .cart__delivery-address .address__form .address__row {
     display: flex;
     gap: 3rem;

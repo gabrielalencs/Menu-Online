@@ -128,6 +128,14 @@
         @include media.smallTablets {
             padding: 1.5rem 2.5rem;
         }
+
+        @include media.laptops {
+            padding: 2.8rem 2rem;
+        }
+
+        @include media.laptopsLarge {
+            padding: 2.5rem 2.8rem
+        }
     }
 
     &__food-main {
@@ -137,6 +145,7 @@
         z-index: 10;
 
         @include media.laptops {
+            gap: 1.5rem;
             @include mixin.flex-vertical;
             text-align: center;
         }
@@ -154,6 +163,10 @@
         }
 
         @include media.laptops {
+            width: 90%;
+        }
+
+        @include media.laptopsLarge {
             width: 100%;
         }
     }
@@ -200,7 +213,7 @@
 
         @include media.laptops {
             left: 5rem;
-            bottom: 3rem;
+            bottom: 2rem;
             text-align: center;
         }
     }
@@ -223,7 +236,7 @@
         font-size: 1.9rem;
 
         @include media.smallTablets {
-            font-size: 2rem;
+            font-size: 2.1rem;
         }
     }
 
@@ -231,6 +244,10 @@
         margin-top: .3rem;
         @include mixin.flex-horizontal;
         gap: 2.5rem;
+
+        @include media.smallTablets {
+            gap: 1.5rem;
+        }
     }
 
     &__food-count-container {
@@ -248,7 +265,6 @@
         font-weight: 600;
 
         @include media.smallTablets {
-            padding: 0 1.5rem;
             font-size: 1.8rem;
         }
     }
@@ -259,7 +275,8 @@
         font-size: 1.6rem;
 
         @include media.smallTablets {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
+            padding: 0 1rem;
         }
     }
 

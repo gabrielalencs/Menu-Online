@@ -49,7 +49,7 @@
     width: 100%;
     height: 100%;
     z-index: 10;
-    padding: 5rem 4rem;
+    padding: 5rem 3rem;
     overflow: scroll;
 
     &::-webkit-scrollbar {
@@ -328,7 +328,6 @@
         .address__container-element {
             border: none;
             margin-top: 3rem;
-            // opacity: .6;
 
             // ? general styles for form fields
 
@@ -362,8 +361,11 @@
         // ? cep container
 
         .address-cep {
-            width: max-content;
             opacity: 1;
+
+            @include media.smallTablets {
+                width: max-content;
+            }
 
             .address__input-cep {
                 display: flex;
@@ -385,7 +387,7 @@
         }
 
 
-        @include media.laptops {
+        @include media.smallTablets {
             .address__row {
                 display: flex;
                 // justify-content: space-between;
