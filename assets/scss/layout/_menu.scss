@@ -89,7 +89,7 @@
         @include media.laptops {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
-            place-items: stretch;
+            // place-items: stretch;
             row-gap: 5rem;
         }
 
@@ -133,8 +133,9 @@
             padding: 2.8rem 2rem;
         }
 
-        @include media.laptopsLarge {
-            padding: 2.5rem 2.8rem
+        @include media.desktops {
+            height: 37rem;
+            padding: 2rem 2.8rem 2.5rem 2.8rem;
         }
     }
 
@@ -166,8 +167,9 @@
             width: 90%;
         }
 
-        @include media.laptopsLarge {
+        @include media.desktops {
             width: 100%;
+            max-width: 100%;
         }
     }
 
@@ -212,9 +214,15 @@
         }
 
         @include media.laptops {
-            left: 5rem;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
             bottom: 2rem;
             text-align: center;
+        }
+
+        @include media.desktops {
+            bottom: 2.5rem;
         }
     }
 
@@ -247,6 +255,10 @@
 
         @include media.smallTablets {
             gap: 1.5rem;
+        }
+
+        @include media.laptops {
+            justify-content: center;
         }
     }
 

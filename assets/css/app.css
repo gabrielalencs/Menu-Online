@@ -561,7 +561,6 @@ main {
   .menu__foods-container {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    place-items: stretch;
     row-gap: 5rem;
   }
 }
@@ -606,9 +605,10 @@ main {
     padding: 2.8rem 2rem;
   }
 }
-@media (min-width: 1175px) {
+@media (min-width: 1200px) {
   .menu__food {
-    padding: 2.5rem 2.8rem;
+    height: 37rem;
+    padding: 2rem 2.8rem 2.5rem 2.8rem;
   }
 }
 .menu__food-main {
@@ -644,9 +644,10 @@ main {
     width: 90%;
   }
 }
-@media (min-width: 1175px) {
+@media (min-width: 1200px) {
   .menu__food-image img {
     width: 100%;
+    max-width: 100%;
   }
 }
 @media (min-width: 992px) {
@@ -689,9 +690,16 @@ main {
 }
 @media (min-width: 992px) {
   .menu__food-hover {
-    left: 5rem;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 2rem;
     text-align: center;
+  }
+}
+@media (min-width: 1200px) {
+  .menu__food-hover {
+    bottom: 2.5rem;
   }
 }
 .menu__food:hover .menu__food-hover {
@@ -723,6 +731,11 @@ main {
 @media (min-width: 768px) {
   .menu__food-buttons {
     gap: 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  .menu__food-buttons {
+    justify-content: center;
   }
 }
 .menu__food-count-container {
