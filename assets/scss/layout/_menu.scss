@@ -251,7 +251,11 @@
     &__food-buttons {
         margin-top: .3rem;
         @include mixin.flex-horizontal;
-        gap: 2.5rem;
+        gap: .5rem;
+     
+        @include media.mobileDevices {
+            gap: 2.5rem;
+        }
 
         @include media.smallTablets {
             gap: 1.5rem;
@@ -269,12 +273,17 @@
     }
 
     &__food-count {
-        padding: 0 1.5rem;
+        padding: 0 1rem;
         border: 2px solid color.$black-primary;
         border-top: none;
         border-bottom: none;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-weight: 600;
+
+        @include media.mobileDevices {
+            font-size: 1.7rem;
+            padding: 0 1.2rem;
+        }
 
         @include media.smallTablets {
             font-size: 1.8rem;
@@ -282,9 +291,14 @@
     }
 
     &__food-icon {
-        padding: 0 .9rem;
+        padding: 0 .7rem;
         display: inline-block;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+
+        @include media.mobileDevices {
+            font-size: 1.6rem;
+            padding: 0 .9rem;
+        }
 
         @include media.smallTablets {
             font-size: 1.7rem;

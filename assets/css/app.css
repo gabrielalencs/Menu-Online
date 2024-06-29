@@ -726,7 +726,12 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2.5rem;
+  gap: 0.5rem;
+}
+@media (min-width: 361px) {
+  .menu__food-buttons {
+    gap: 2.5rem;
+  }
 }
 @media (min-width: 768px) {
   .menu__food-buttons {
@@ -744,12 +749,18 @@ main {
   border-radius: 1rem;
 }
 .menu__food-count {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   border: 2px solid #212121;
   border-top: none;
   border-bottom: none;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 600;
+}
+@media (min-width: 361px) {
+  .menu__food-count {
+    font-size: 1.7rem;
+    padding: 0 1.2rem;
+  }
 }
 @media (min-width: 768px) {
   .menu__food-count {
@@ -757,9 +768,15 @@ main {
   }
 }
 .menu__food-icon {
-  padding: 0 0.9rem;
+  padding: 0 0.7rem;
   display: inline-block;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+}
+@media (min-width: 361px) {
+  .menu__food-icon {
+    font-size: 1.6rem;
+    padding: 0 0.9rem;
+  }
 }
 @media (min-width: 768px) {
   .menu__food-icon {
@@ -1235,7 +1252,7 @@ main {
     font-size: 2.2rem;
   }
 }
-@media (max-width: 481px) {
+@media (min-width: 361px) {
   .my-cart__texts p {
     line-height: 2.4rem;
   }
