@@ -859,10 +859,10 @@ main {
   }
 }
 .depositions__comment-container {
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
-.depositions .fade-in-up {
-  animation: fadeInUp 0.5s linear forwards;
+.depositions .fade-in {
+  animation: fadeInUp 0.3s linear forwards;
 }
 @keyframes fadeInUp {
   0% {
@@ -900,18 +900,8 @@ main {
   height: 6rem;
   border-radius: 50%;
 }
-.depositions__image-one {
+.depositions__image {
   background-image: url("../images/alex-image.jpg");
-  background-position: center;
-  background-size: cover;
-}
-.depositions__image-two {
-  background-image: url("../images/jane-image.jpg");
-  background-position: center;
-  background-size: cover;
-}
-.depositions__image-three {
-  background-image: url("../images/michael-image.jpg");
   background-position: center;
   background-size: cover;
 }

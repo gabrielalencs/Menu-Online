@@ -48,11 +48,11 @@
 
 
     &__comment-container {
-        transition: all .2s;
+        transition: all .3s;
     }
 
-    .fade-in-up {
-        animation: fadeInUp .5s linear forwards;
+    .fade-in {
+        animation: fadeInUp .3s linear forwards;
     }
 
     @keyframes fadeInUp {
@@ -96,20 +96,8 @@
         border-radius: 50%;
     }
 
-    &__image-one {
+    &__image {
         background-image: url('../images/alex-image.jpg');
-        background-position: center;
-        background-size: cover;
-    }
-
-    &__image-two {
-        background-image: url('../images/jane-image.jpg');
-        background-position: center;
-        background-size: cover;
-    }
-
-    &__image-three {
-        background-image: url('../images/michael-image.jpg');
         background-position: center;
         background-size: cover;
     }

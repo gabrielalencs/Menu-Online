@@ -26,7 +26,7 @@ import {
 
 // * Depositions
 
-import { teste } from './depositions/showTestimonials.js';
+import switchTestimonials from './depositions/showTestimonials.js';
 
 
 // ? header
@@ -73,5 +73,5 @@ const buttonsTestimonial = document.querySelectorAll('.depositions__button');
 
 
 buttonsTestimonial.forEach(item => {
-    item.addEventListener('click', teste);
+    item.addEventListener('click', switchTestimonials);
 })
