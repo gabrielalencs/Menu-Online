@@ -8,7 +8,7 @@ import {
 const cartButtonValue = document.querySelector('.button-cart span');
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
 
-const containerOfCartItems = document.querySelector(".cart__container-my-itens")
+const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
 let sumTotalCartItems = 0;
 
@@ -111,3 +111,5 @@ export function addOrRemoveItemsInCart() {
         currentButton.addEventListener('click', handleDeleteClick);
     });
 }
+
+const buttonNextStageSummary = document.querySelector('.footer__btn-next-summary');

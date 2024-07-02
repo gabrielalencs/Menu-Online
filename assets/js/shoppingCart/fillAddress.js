@@ -7,6 +7,7 @@ export const numberinput = document.getElementById('number');
 export const ufInput = document.getElementById('uf');
 export const cityInput = document.getElementById('city');
 export const btnZipCodeSearch = document.getElementById('zip-code-search');
+export const complementInput = document.getElementById('complement');
 
 
 const callsApiViaCep = async (cep) => {

@@ -11,6 +11,11 @@ import {
     markIconStepThree, removeMarkupIconStepThree
 } from './markStageForm.js';
 
+import {
+    zipCodeInput, addressInput,
+    neighborhoodInput, numberinput, cityInput, ufInput
+} from './fillAddress.js';
+
 
 const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
@@ -68,15 +73,15 @@ function goToAddressStep() {
     markIconStepTwo(); // ? Mark that we are in step two in the cart header icons
 
     sectionCounter = 1;
-    
+
     buttonReturnStage.classList.remove('hidden');
 
     buttonNextStageMyCart.classList.add('hidden');
     containerMyCart.classList.add('hidden');
-    
+
     buttonNextStageDelivery.classList.remove('hidden');
     containerDeliveryAddress.classList.remove('hidden');
-    
+
     showChosenItemsReviewSection();
 }
 
@@ -143,11 +148,40 @@ buttonNextStageMyCart.addEventListener('click', checkIfCartEmpty);
 buttonNextStageDelivery.removeEventListener('click', arrivesFormFilledCorrectly);
 buttonNextStageDelivery.addEventListener('click', arrivesFormFilledCorrectly);
 
+buttonNextStageSummary.addEventListener('click', () => {
+    const itens = document.querySelectorAll('.my-cart__item');
+    const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
+    const buttonCart = document.querySelector('.button-cart');
+    const cartButtonValue = document.querySelector('.button-cart span');
+
+
+    toastifyElement('Pedido enviado com sucesso!', '#2ecc71');
+    toggleMenu();
+    
+
+    itens.forEach(item => {
+        item.remove();
+
+        if (!containerOfCartItems.hasChildNodes()) {
+            messageEmptyCart.classList.remove('hidden');
+            buttonCart.classList.remove('animation-jump');
+            cartButtonValue.textContent = 0;
+
+            zipCodeInput.value = '';
+            addressInput.value = '';
+            neighborhoodInput.value = '';
+            numberinput.value = '';
+            cityInput.value = ''
+            ufInput.value = '';
+        }
+    })
+})
+
 // * check which section of the cart we are in, to know which step should be shown or hidden when the return button is clicked
 
 buttonReturnStage.addEventListener('click', () => {
     if (sectionCounter == 1) {
-        
+
         removeMarkupIconStepTwo();
 
         containerMyCart.classList.remove('hidden');
