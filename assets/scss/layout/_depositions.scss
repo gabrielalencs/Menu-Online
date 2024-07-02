@@ -46,6 +46,10 @@
         }
     }
 
+    &__comment-container.hidden {
+        display: none;
+    }
+
     @include media.laptops {
 
         &__comment-container {
@@ -73,10 +77,26 @@
 
     &__image {
         width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+    }
 
-        img {
-            border-radius: 50%;
-        }
+    &__image-one {
+        background-image: url('../images/alex-image.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__image-two {
+        background-image: url('../images/jane-image.jpg');
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__image-three {
+        background-image: url('../images/michael-image.jpg');
+        background-position: center;
+        background-size: cover;
     }
 
     &__infos span {
