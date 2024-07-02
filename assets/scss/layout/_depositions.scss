@@ -52,10 +52,10 @@
     }
 
     .fade-in {
-        animation: fadeInUp .3s linear forwards;
+        animation: fadeIn .3s linear forwards;
     }
 
-    @keyframes fadeInUp {
+    @keyframes fadeIn {
         0% {
             opacity: 0;
         }

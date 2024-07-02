@@ -571,12 +571,12 @@ main {
   }
 }
 .menu .fade-in-up {
-  animation: fadeInUp 0.5s linear forwards;
+  animation: fadeInUp 0.4s linear forwards;
 }
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translate3d(0, 30rem, 0);
+    transform: translate3d(0, 25rem, 0);
   }
   100% {
     opacity: 1;
@@ -862,9 +862,9 @@ main {
   transition: all 0.3s;
 }
 .depositions .fade-in {
-  animation: fadeInUp 0.3s linear forwards;
+  animation: fadeIn 0.3s linear forwards;
 }
-@keyframes fadeInUp {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -1225,8 +1225,13 @@ main {
   gap: 0;
 }
 .cart__my-cart .cart__empty-cart-message p {
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: #4f4f4f;
+}
+@media (min-width: 481px) {
+  .cart__my-cart .cart__empty-cart-message p {
+    font-size: 2rem;
+  }
 }
 .cart__my-cart .cart__empty-cart-message.hidden {
   display: none;
@@ -1249,30 +1254,41 @@ main {
   flex: 1;
 }
 
-.my-cart-image {
-  width: 8rem;
+.my-cart-image img {
+  width: 6rem;
+  border-radius: 1.5rem;
 }
-@media (min-width: 768px) {
-  .my-cart-image {
-    width: 10rem;
+@media (min-width: 481px) {
+  .my-cart-image img {
+    width: 8rem;
   }
 }
-.my-cart-image img {
-  border-radius: 1.5rem;
+@media (min-width: 768px) {
+  .my-cart-image img {
+    width: 10rem;
+  }
 }
 
 .my-cart__texts {
   font-weight: 600;
-  font-size: 1.9rem;
+  font-size: 1.6rem;
+}
+@media (min-width: 481px) {
+  .my-cart__texts {
+    font-size: 2rem;
+  }
 }
 @media (min-width: 768px) {
   .my-cart__texts {
     font-size: 2.2rem;
   }
 }
-@media (min-width: 361px) {
+.my-cart__texts p {
+  line-height: 2.5rem;
+}
+@media (min-width: 481px) {
   .my-cart__texts p {
-    line-height: 2.4rem;
+    line-height: 2.7rem;
   }
 }
 .my-cart__texts span {
@@ -1291,12 +1307,16 @@ main {
   border: 2px solid #212121;
   border-radius: 0.8rem;
   padding: 0.3rem 0.1rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   flex: 2;
+}
+@media (min-width: 481px) {
+  .my-cart__button-count {
+    font-size: 1.7rem;
+  }
 }
 @media (min-width: 768px) {
   .my-cart__button-count {
-    padding: 0.3rem 1rem;
     font-size: 1.9rem;
   }
 }
@@ -1306,11 +1326,11 @@ main {
 }
 
 .my-cart__food-icon {
-  padding: 0 0.5rem;
+  padding: 0 0.3rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 481px) {
   .my-cart__food-icon {
-    padding: 0 0.5rem;
+    padding: 0 0.7rem;
   }
 }
 
@@ -1318,13 +1338,13 @@ main {
   border: 2px solid #212121;
   border-top: none;
   border-bottom: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   padding: 0 1rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 481px) {
   .my-cart__food-count {
-    padding: 0 1.5rem;
     font-size: 1.8rem;
+    padding: 0 1.3rem;
   }
 }
 
@@ -1533,7 +1553,7 @@ main {
   opacity: 0.5;
 }
 .cart__footer .footer__total {
-  font-size: 2.4em;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 .cart__footer .footer__total span {
@@ -1568,10 +1588,10 @@ main {
   display: none;
 }
 .cart__footer .footer__btn-next {
-  margin-top: 3rem;
-  font-size: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  padding: 1.3rem 2.3rem;
+  padding: 1rem 2rem;
   border-radius: 1.5rem;
   background-color: #caa127;
   color: #ffffff;

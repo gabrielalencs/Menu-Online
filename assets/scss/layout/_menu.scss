@@ -100,13 +100,13 @@
     }
 
     .fade-in-up {
-        animation: fadeInUp .5s linear forwards;
+        animation: fadeInUp .4s linear forwards;
     }
 
     @keyframes fadeInUp {
         0% {
             opacity: 0;
-            transform: translate3d(0, 30rem, 0);
+            transform: translate3d(0, 25rem, 0);
         }
 
         100% {
