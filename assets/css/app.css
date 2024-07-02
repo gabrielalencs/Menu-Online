@@ -858,8 +858,19 @@ main {
     flex: 1;
   }
 }
-.depositions__comment-container.hidden {
-  display: none;
+.depositions__comment-container {
+  transition: all 0.2s;
+}
+.depositions .fade-in-up {
+  animation: fadeInUp 0.5s linear forwards;
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @media (min-width: 992px) {
   .depositions__comment-container {

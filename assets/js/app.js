@@ -24,6 +24,11 @@ import {
 } from "./shoppingCart/fillAddress.js";
 
 
+// * Depositions
+
+import { teste } from './depositions/showTestimonials.js';
+
+
 // ? header
 
 mobileMenuBtn.addEventListener("change", toggleMenuMobile); // * open or close mobile menu
@@ -64,3 +69,9 @@ btnZipCodeSearch.addEventListener("click", fillInputFields); // * calls the func
 
 
 
+const buttonsTestimonial = document.querySelectorAll('.depositions__button');
+
+
+buttonsTestimonial.forEach(item => {
+    item.addEventListener('click', teste);
+})

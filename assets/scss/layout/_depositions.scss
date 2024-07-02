@@ -46,8 +46,23 @@
         }
     }
 
-    &__comment-container.hidden {
-        display: none;
+
+    &__comment-container {
+        transition: all .2s;
+    }
+
+    .fade-in-up {
+        animation: fadeInUp .5s linear forwards;
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
     }
 
     @include media.laptops {
