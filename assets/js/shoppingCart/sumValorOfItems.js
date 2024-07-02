@@ -1,4 +1,6 @@
 let totalPriceSum = 0;
+const containerOfCartItems = document.querySelector(".cart__container-my-itens")
+
 
 // ? adds up the value of the items and shows them in the first step of the cart
 
@@ -33,6 +35,7 @@ export function sumTotalValueItems (productPriceArgument) {
 export function subtractTotalValueItems(productPriceArgument) {
     const purchaseValue = document.querySelector('.footer__subtotal span');
     const TotalPurchaseValue = document.querySelector('.footer__total span span');
+    const buttonCount = document.querySelector('.my-cart__food-count');
 
     let priceWithoutR$ = productPriceArgument.replace('R$', '').trim();
     let priceWithPoint = priceWithoutR$.replace(',', '.');
@@ -42,6 +45,11 @@ export function subtractTotalValueItems(productPriceArgument) {
 
     purchaseValue.textContent = totalPriceSum;
     TotalPurchaseValue.textContent = totalPriceSum + 5;
+
+    if (!containerOfCartItems.hasChildNodes()) {
+        totalPriceSum = 0
+        TotalPurchaseValue.textContent = totalPriceSum;
+    }
 }
 
 export function subtractValuFromSumAllItems(productPriceArgument, quantityProductArgument) {
@@ -56,4 +64,9 @@ export function subtractValuFromSumAllItems(productPriceArgument, quantityProduc
 
     purchaseValue.textContent = totalPriceSum;
     TotalPurchaseValue.textContent = totalPriceSum + 5;
+
+    if (!containerOfCartItems.hasChildNodes()) {
+        totalPriceSum = 0
+        TotalPurchaseValue.textContent = totalPriceSum;
+    }
 }

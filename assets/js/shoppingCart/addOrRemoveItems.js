@@ -12,6 +12,9 @@ const containerOfCartItems = document.querySelector(".cart__container-my-itens")
 
 let sumTotalCartItems = 0;
 
+const buttonCart = document.querySelector('.button-cart');
+
+
 
 // ? shows the current number of items in the cart
 
@@ -59,6 +62,7 @@ export function handleDecreaseClick({ target }) {
 
         if (!containerOfCartItems.hasChildNodes()) {
             messageEmptyCart.classList.remove('hidden');
+            buttonCart.classList.remove('animation-jump');
         }
     }
 
@@ -80,6 +84,7 @@ export function handleDeleteClick({ target }) {
 
     if (!containerOfCartItems.hasChildNodes()) {
         messageEmptyCart.classList.remove('hidden');
+        buttonCart.classList.remove('animation-jump');
     }
 
     subtractValuFromSumAllItems(clickedItemPrice, clickedItemCounter)

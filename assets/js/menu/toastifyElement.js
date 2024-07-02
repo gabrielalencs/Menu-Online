@@ -11,7 +11,7 @@ function toastifyElement(textToastify, colorToastify) {
         stopOnFocus: true,
         style: {
             background: colorToastify,
-            fontSize: '1.7rem',
+            fontSize: '1.5rem',
             borderRadius: '1.5rem'
 
         },

@@ -8,13 +8,13 @@
     background-color: color.$primary-color;
     width: 5rem;
     height: 5rem;
-    @include mixin.flex-horizontal;
     justify-content: center;
     border-radius: 50%;
     position: fixed;
     bottom: 3rem;
     right: 3rem;
     cursor: pointer;
+    display: none;
 
     span {
         // display: none;
@@ -34,6 +34,41 @@
     }
 }
 
+.animation-jump {
+    animation: jumpOnscreen 1s linear forwards;
+    @include mixin.flex-horizontal;
+}
+
+@keyframes jumpOnscreen {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    
+    20% {
+        -webkit-transform: scale3d(1.1, 1.1, 1.1);
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        -webkit-transform: scale3d(0.9, 0.9, 0.9);
+        transform: scale3d(0.9, 0.9, 0.9);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: scale3d(1.03, 1.03, 1.03);
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        -webkit-transform: scale3d(0.97, 0.97, 0.97);
+        transform: scale3d(0.97, 0.97, 0.97);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+    }
+}
 
 // ? Shopping Cart
 
@@ -49,7 +84,7 @@
     width: 100%;
     height: 100%;
     z-index: 10;
-    padding: 5rem 3rem;
+    padding: 5rem 2rem;
     overflow: scroll;
 
     &::-webkit-scrollbar {
@@ -186,6 +221,10 @@
         display: none;
     }
 
+    .cart__container-my-itens .my-cart__item:last-child {
+        border-bottom: none;
+    }
+
 }
 
 .my-cart__item {
@@ -199,8 +238,12 @@
 
 .my-cart__content {
     @include mixin.flex-horizontal;
-    gap: 2.5rem;
+    gap: 1.5rem;
     flex: 1;
+
+    @include media.extraSmallDevices {
+        gap: 2.5rem;
+    }
 }
 
 .my-cart-image {
@@ -208,6 +251,10 @@
     img {
         width: 6rem;
         border-radius: 1.5rem;
+
+        @include media.mobileDevices {
+            width: 7rem;
+        }
 
         @include media.extraSmallDevices {
             width: 8rem;
@@ -223,8 +270,8 @@
     font-weight: 600;
     font-size: 1.6rem;
 
-    @include media.extraSmallDevices {
-        font-size: 2rem;
+    @include media.mobileDevices {
+        font-size: 1.7rem;
     }
 
     @include media.smallTablets {
@@ -259,9 +306,10 @@
     font-size: 1.5rem;
     flex: 2;
 
-    @include media.extraSmallDevices {
+    @include media.mobileDevices {
         font-size: 1.7rem;
     }
+
 
     @include media.smallTablets {
         font-size: 1.9rem;
@@ -275,8 +323,12 @@
 .my-cart__food-icon {
     padding: 0 .3rem;
 
-    @include media.extraSmallDevices {
-        padding: 0 .7rem;
+    @include media.mobileDevices {
+        padding: 0 .5rem;
+    }
+
+    @include media.smallTablets {
+        padding: 0 1rem;
     }
 }
 
@@ -287,9 +339,13 @@
     font-size: 1.5rem;
     padding: 0 1rem;
 
-    @include media.extraSmallDevices {
+    @include media.mobileDevices {
         font-size: 1.8rem;
         padding: 0 1.3rem;
+    }
+
+    @include media.smallTablets {
+        padding: 0 1.5rem;
     }
 }
 
@@ -587,6 +643,12 @@
         &:hover {
             background-color: transparent;
             color: color.$primary-color;
+        }
+
+        @include media.extraSmallDevices {
+            margin-top: 2.5rem;
+            font-size: 1.9rem;
+            padding: 1rem 2.5rem;
         }
     }
 

@@ -36,6 +36,7 @@ let sectionCounter = 0;
 
 export function toggleMenu() {
     cartContainer.classList.toggle('hidden');
+    document.querySelector('body').classList.toggle('scroll')
 
     if (containerOfCartItems.hasChildNodes()) {
         messageEmptyCart.classList.add('hidden');

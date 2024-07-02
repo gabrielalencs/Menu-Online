@@ -4,6 +4,8 @@ import toastifyElement from './toastifyElement.js';
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
+const buttonCart = document.querySelector('.button-cart');
+
 export const addItemInCart = (currentButtonArgument) => {
     const productContainer = currentButtonArgument.closest('.menu__food');
     const productImage = productContainer.querySelector(".menu__food-img").src;
@@ -81,7 +83,8 @@ export const addItemInCart = (currentButtonArgument) => {
         toastifyElement('Item adicionado ao carrinho', '#2ecc71');
     };
 
-    
+    buttonCart.classList.add('animation-jump');
+
     addValueItemsWhenAddingToCart(productPrice, quantityProductItems); // ? When we add the items to the cart, it adds up and shows the total in the cart
 
 };
