@@ -111,5 +111,3 @@ export function addOrRemoveItemsInCart() {
         currentButton.addEventListener('click', handleDeleteClick);
     });
 }
-
-const buttonNextStageSummary = document.querySelector('.footer__btn-next-summary');
