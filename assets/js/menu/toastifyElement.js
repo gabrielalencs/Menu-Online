@@ -3,7 +3,7 @@
 function toastifyElement(textToastify, colorToastify) {
     Toastify({
         text: textToastify,
-        duration: 800,
+        duration: 900,
         newWindow: false,
         close: true,
         gravity: "top",

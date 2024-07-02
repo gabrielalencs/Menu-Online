@@ -1,3 +1,5 @@
+import toastifyElement from '../menu/toastifyElement.js';
+
 export const zipCodeInput = document.getElementById('cep');
 export const addressInput = document.getElementById('address');
 export const neighborhoodInput = document.getElementById('neighborhood');
@@ -8,8 +10,8 @@ export const btnZipCodeSearch = document.getElementById('zip-code-search');
 
 
 const callsApiViaCep = async (cep) => {
-    if (!/^\d{8}$/.test(cep)) {
-        alert("CEP inválido. Deve conter 8 dígitos numéricos.");
+    if (!/^\d{5}-?\d{3}$/.test(cep)) {
+        toastifyElement('CEP inválido. Deve conter 8 dígitos numéricos.', '#E74C3C');
         return null;
     }
 
@@ -17,8 +19,7 @@ const callsApiViaCep = async (cep) => {
     const responseJson = await responseApi.json();
 
     if (responseJson.erro) {
-        alert("CEP não encontrado. Digite as informações manualmente.");
-
+        toastifyElement('CEP não encontrado. Digite as informações manualmente.', '#E74C3C');
         return;
     }
 

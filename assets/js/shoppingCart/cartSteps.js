@@ -44,6 +44,11 @@ export function toggleMenu() {
     addOrRemoveItemsInCart(); // ? calls the function whenever the menu is clicked, to get the new items added
 
     cartInitialState(); // ? returns the menu to the first step
+
+    // ? removes marking styles from icons marking bottles
+    removeMarkupIconStepTwo();
+    removeMarkupIconStepThree();
+
 }
 
 // * checks if the cart is empty or not
