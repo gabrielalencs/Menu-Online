@@ -1,56 +1,19 @@
-Features a serem desenvolvidas:
+<div align="center">
+	<h1>Menu On-line 🍔</h1>
+	<p align="center">
+	  <a href="#about">Sobre o Projeto</a> • 
+	  <a href="#started">Getting Started</a> • 
+	  <a href="#colab">Collaborators</a> •
+	  <a href="#contribute">Contribute</a>
+	</p>
+</div>
 
-- Cabeçalho
-	- Menu mobile
-	
-- Home
-	- Links para redes sociais
+<div>
+	<img src="./assets/images/print-tela-inicial.PNG" width="500" height="315">
+	<img src="./assets/images/print-tela-cardapio.PNG" width="500">
+</div>
 
-- Serviços
-	
-- Cardápio
-	- Mostrar alimentos de acordo com o botão clicado
-	- Escolher a quantidade (aumentar ou diminuir)
-	- Adicionar ao carrinho
-	- Mostrar que o item foi adicionado ao carrinho
-		- mostrar o botão de carrinho no canto da tela mostrando quantos itens estão nele
-	
-- Depoimentos
-	- Botões para alternar entre os comentários (três comentários)
-	
-- Reserva
-	- Link para o whatsapp
-	
-- Rodapé
-	- Link para redes sociais
-	
-- Carrinho
-	- Botão para fechar o carrinho
-	
-		1º Etapa:
-		        - Mostrar mensagem se o carrinho estiver vazio
-		            - Aparecer mensagem de erro caso eu tente prosseguir para próxima etapa
-		        - Mostrar todos itens adicionados
-		            - Botão para adicionar itens ou remover
-		            - Botão para remover o item do carrinho
-		        - Mostrar valor atual do carrinho
-		            - Alterar o valor a cada mudança no carrinho
-	        
-		2º Etapa:
-		        - Botão para voltar para etapa anterior
-		        - Botão para revisar pedido (avançar para ultima etapa)
-		        - Aparecer mensagem de erro caso tente prosseguir sem preencher o cep
-		        - Formulário para entrega
-		            - Botão para verificar cep
-		                - Preenchimento automático por meio do cep
-		                    - Liberar os campos caso tenha algum erro do preenchimento automático
-					
-		3º Etapa:
-		        - Botão para voltar para etapa anterior
-		        - Botão para enviar o pedido
-		            - Mostrar que o pedido foi enviado
-		        - Mosrar todos itens escolhidos com seu valor e quantidade
-		        - Mostrar local da entrega
-		        - Mostrar valor total
-	        
-	
+<h2 id="about">Sobre o projeto</h2>
+<p>
+	O projeto $\color{orange}{\textsf{Menu On-line}}$ é uma plataforma digital que permite aos clientes <b>selecionar e encomendar</b> refeições para entrega, focando em <b>praticidade e eficiência</b> no serviço de pedidos online.
+</p>
