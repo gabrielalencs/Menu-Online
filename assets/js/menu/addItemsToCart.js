@@ -17,7 +17,7 @@ export const addItemInCart = (currentButtonArgument) => {
     const cartItems = containerOfCartItems.querySelectorAll(".my-cart__item");
     let existingItem = null;
 
-    // ? checks whether or not the item exists in my cart, based on the titles of the items that are already in the cart
+    // ?    checks whether or not the item exists in my cart, based on the titles of the items that are already in the cart
 
     cartItems.forEach(currentcartItem => {
         const cartItemTitles = currentcartItem.querySelector(".my-cart__texts p").textContent;
@@ -27,7 +27,7 @@ export const addItemInCart = (currentButtonArgument) => {
 
 
     if (existingItem) {
-        // ? if the item I want to add to my cart is already in the cart, i add the number of items i want to add to the number of items previously added
+        // ?    if the item I want to add to my cart is already in the cart, i add the number of items i want to add to the number of items previously added
         
         const counterExistingItem = existingItem.querySelector(".my-cart__food-count");
         counterExistingItem.textContent = parseInt(counterExistingItem.textContent) + parseInt(quantityProductItems);
@@ -36,7 +36,7 @@ export const addItemInCart = (currentButtonArgument) => {
 
     } else {
 
-        // ? if the item I want to add doesn't exist, i create a new element with the item information
+        // ?    if the item I want to add doesn't exist, i create a new element with the item information
 
         const htmlDoItemAdded = `
                 <div class="my-cart__content">
@@ -83,7 +83,7 @@ export const addItemInCart = (currentButtonArgument) => {
 
     buttonCart.classList.add('animation-jump');
 
-    addValueItemsWhenAddingToCart(productPrice, quantityProductItems); // ? When we add the items to the cart, it adds up and shows the total in the cart
+    addValueItemsWhenAddingToCart(productPrice, quantityProductItems); // ?     When we add the items to the cart, it adds up and shows the total in the cart
 
 };
 

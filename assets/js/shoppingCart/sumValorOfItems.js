@@ -1,8 +1,8 @@
 let totalPriceSum = 0;
-const containerOfCartItems = document.querySelector(".cart__container-my-itens")
+const containerOfCartItems = document.querySelector(".cart__container-my-itens");
 
 
-// ? adds up the value of the items and shows them in the first step of the cart
+// ?    adds up the value of the items and shows them in the first step of the cart
 
 export function addValueItemsWhenAddingToCart(productPriceArgument, quantityProductItemsArgument) {
     const purchaseValue = document.querySelector('.footer__subtotal span');
@@ -18,6 +18,8 @@ export function addValueItemsWhenAddingToCart(productPriceArgument, quantityProd
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 }
 
+// ?    adds the value of the new added item
+
 export function sumTotalValueItems (productPriceArgument) {
     const purchaseValue = document.querySelector('.footer__subtotal span');
     const TotalPurchaseValue = document.querySelector('.footer__total span span');
@@ -32,10 +34,11 @@ export function sumTotalValueItems (productPriceArgument) {
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 }
 
+// ?    subtract the value of the item removed
+
 export function subtractTotalValueItems(productPriceArgument) {
     const purchaseValue = document.querySelector('.footer__subtotal span');
     const TotalPurchaseValue = document.querySelector('.footer__total span span');
-    const buttonCount = document.querySelector('.my-cart__food-count');
 
     let priceWithoutR$ = productPriceArgument.replace('R$', '').trim();
     let priceWithPoint = priceWithoutR$.replace(',', '.');
@@ -52,6 +55,8 @@ export function subtractTotalValueItems(productPriceArgument) {
     }
 }
 
+// ?    subtracts the total value from the number of items that were deleted from that clicked item
+
 export function subtractValuFromSumAllItems(productPriceArgument, quantityProductArgument) {
     const purchaseValue = document.querySelector('.footer__subtotal span');
     const TotalPurchaseValue = document.querySelector('.footer__total span span');
@@ -66,7 +71,7 @@ export function subtractValuFromSumAllItems(productPriceArgument, quantityProduc
     TotalPurchaseValue.textContent = totalPriceSum + 5;
 
     if (!containerOfCartItems.hasChildNodes()) {
-        totalPriceSum = 0
+        totalPriceSum = 0;
         TotalPurchaseValue.textContent = totalPriceSum;
     }
 }

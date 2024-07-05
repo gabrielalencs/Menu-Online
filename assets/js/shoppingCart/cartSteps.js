@@ -41,11 +41,11 @@ export function toggleMenu() {
         messageEmptyCart.classList.add('hidden');
     }
 
-    addOrRemoveItemsInCart(); // ? calls the function whenever the menu is clicked, to get the new items added
+    addOrRemoveItemsInCart(); // ?  calls the function whenever the menu is clicked, to get the new items added
 
-    cartInitialState(); // ? returns the menu to the first step
+    cartInitialState(); // ?    returns the menu to the first step
 
-    // ? removes marking styles from icons marking bottles
+    // ?    removes marking styles from icons marking bottles
     removeMarkupIconStepTwo();
     removeMarkupIconStepThree();
 
@@ -61,10 +61,10 @@ function checkIfCartEmpty() {
     }
 }
 
-// * go to the stage of filling out the delivery form
+// *    go to the stage of filling out the delivery form
 
 function goToAddressStep() {
-    markIconStepTwo(); // ? Mark that we are in step two in the cart header icons
+    markIconStepTwo(); // ?     Mark that we are in step two in the cart header icons
 
     sectionCounter = 1;
 
@@ -79,10 +79,10 @@ function goToAddressStep() {
     showChosenItemsReviewSection();
 }
 
-// * goes to the review stage of the chosen items
+// *    goes to the review stage of the chosen items
 
 export function goToRevisionStep() {
-    markIconStepThree(); // ? Mark that we are in step three in the cart header icons
+    markIconStepThree(); // ?   Mark that we are in step three in the cart header icons
 
     sectionCounter = 2;
 
@@ -103,7 +103,7 @@ export function goToRevisionStep() {
 }
 
 
-// * return the cart to step one of the cart
+// *    return the cart to step one of the cart
 
 function cartInitialState() {
     containerMyCart.classList.remove('hidden');
@@ -118,7 +118,7 @@ function cartInitialState() {
     buttonNextStageSummary.classList.add('hidden');
 }
 
-// * shows items in cart summary section
+// *    shows items in cart summary section
 
 function showChosenItemsReviewSection() {
     containerOrderSummaryItens.innerHTML = '';
@@ -156,7 +156,7 @@ buttonNextStageSummary.addEventListener('click', () => {
     toastifyElement('Pedido enviado com sucesso!', '#2ecc71');
     toggleMenu();
     
-    // ? returns the cart to default when I complete the purchase
+    // ?    returns the cart to default when I complete the purchase
 
     itemFromCart.forEach(item => {
         item.remove();
@@ -176,7 +176,7 @@ buttonNextStageSummary.addEventListener('click', () => {
     });
 });
 
-// * check which section of the cart we are in, to know which step should be shown or hidden when the return button is clicked
+// *    check which section of the cart we are in, to know which step should be shown or hidden when the return button is clicked
 
 buttonReturnStage.addEventListener('click', () => {
     if (sectionCounter == 1) {

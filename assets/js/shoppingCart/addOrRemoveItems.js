@@ -13,7 +13,7 @@ const buttonCart = document.querySelector('.button-cart');
 
 let sumTotalCartItems = 0;
 
-// ? shows the current number of items in the cart
+// ?    shows the current number of items in the cart
 
 export function showQuantityItemsInCart(currentButtonArgument) {
     const productContainer = currentButtonArgument.closest('.menu__food');
@@ -25,7 +25,7 @@ export function showQuantityItemsInCart(currentButtonArgument) {
     cartButtonValue.textContent = sumTotalCartItems;
 }
 
-// ? add more items and count total items in cart
+// ?     add more items and count total items in cart
 
 export function handleAddClick({ target }) {
     const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
@@ -38,10 +38,10 @@ export function handleAddClick({ target }) {
     sumTotalCartItems++;
     cartButtonValue.textContent = sumTotalCartItems;
 
-    sumTotalValueItems(clickedItemPrice); // ? adds the value when we add more items to the cart itself
+    sumTotalValueItems(clickedItemPrice); // ?  adds the value when we add more items to the cart itself
 }
 
-// ? reduces the number of items and counts the current items
+// ?    reduces the number of items and counts the current items
 
 export function handleDecreaseClick({ target }) {
     const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
@@ -65,7 +65,7 @@ export function handleDecreaseClick({ target }) {
         }
     }
 
-    subtractTotalValueItems(clickedItemPrice); // ? subtracts the value when we remove items from the cart itself
+    subtractTotalValueItems(clickedItemPrice); // ?     subtracts the value when we remove items from the cart itself
 }
 
 

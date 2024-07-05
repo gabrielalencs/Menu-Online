@@ -2,7 +2,6 @@ const phasesContainer = document.querySelector('.cart__phases-container');
 const iconStageTwo = document.querySelector('.stage-two');
 const iconStageThree = document.querySelector('.stage-three');
 
-
 export function markIconStepTwo() {
     iconStageTwo.classList.add('phase-marked');
 

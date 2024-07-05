@@ -1,6 +1,5 @@
 import toastifyElement from '../menu/toastifyElement.js';
 
-
 import {
     zipCodeInput, addressInput,
     neighborhoodInput, numberinput,

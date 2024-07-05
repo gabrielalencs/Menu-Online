@@ -1,4 +1,4 @@
-// ? function that displays my popup in the corner of the screen
+// ?    function that displays my popup in the corner of the screen
 
 function toastifyElement(textToastify, colorToastify) {
     Toastify({

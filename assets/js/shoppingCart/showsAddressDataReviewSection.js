@@ -12,7 +12,7 @@ const locationComplement = document.querySelector('.location-complement');
 const locationZipCode = document.querySelector('.location-cep');
 
 function showSubmittedAddressDataReviewSection() {
-    locationZipCode.textContent = ''
+    locationZipCode.textContent = '';
 
     locationAddress.textContent = addressInput.value;
     locationNumber.textContent = numberinput.value;
@@ -25,7 +25,7 @@ function showSubmittedAddressDataReviewSection() {
     }
 
     if (complementInput.value) {
-        locationNumber.textContent = numberinput.value + ', ' 
+        locationNumber.textContent = numberinput.value + ', ' ;
         locationComplement.textContent = complementInput.value;
     }
 }
