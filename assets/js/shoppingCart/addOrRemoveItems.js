@@ -7,14 +7,11 @@ import {
 
 const cartButtonValue = document.querySelector('.button-cart span');
 const messageEmptyCart = document.querySelector('.cart__empty-cart-message');
-
 const containerOfCartItems = document.querySelector(".cart__container-my-itens");
-
-let sumTotalCartItems = 0;
-
 const buttonCart = document.querySelector('.button-cart');
 
 
+let sumTotalCartItems = 0;
 
 // ? shows the current number of items in the cart
 
@@ -28,6 +25,7 @@ export function showQuantityItemsInCart(currentButtonArgument) {
     cartButtonValue.textContent = sumTotalCartItems;
 }
 
+// ? add more items and count total items in cart
 
 export function handleAddClick({ target }) {
     const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
@@ -43,6 +41,7 @@ export function handleAddClick({ target }) {
     sumTotalValueItems(clickedItemPrice); // ? adds the value when we add more items to the cart itself
 }
 
+// ? reduces the number of items and counts the current items
 
 export function handleDecreaseClick({ target }) {
     const clickedItemCounter = target.closest('.my-cart__item').querySelector('.my-cart__food-count');
@@ -87,7 +86,7 @@ export function handleDeleteClick({ target }) {
         buttonCart.classList.remove('animation-jump');
     }
 
-    subtractValuFromSumAllItems(clickedItemPrice, clickedItemCounter)
+    subtractValuFromSumAllItems(clickedItemPrice, clickedItemCounter);
 }
 
 

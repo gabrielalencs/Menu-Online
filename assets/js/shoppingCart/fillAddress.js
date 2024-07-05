@@ -6,8 +6,8 @@ export const neighborhoodInput = document.getElementById('neighborhood');
 export const numberinput = document.getElementById('number');
 export const ufInput = document.getElementById('uf');
 export const cityInput = document.getElementById('city');
-export const btnZipCodeSearch = document.getElementById('zip-code-search');
 export const complementInput = document.getElementById('complement');
+export const btnZipCodeSearch = document.getElementById('zip-code-search');
 
 
 const callsApiViaCep = async (cep) => {
@@ -25,7 +25,7 @@ const callsApiViaCep = async (cep) => {
     }
 
     return responseJson;
-}
+};
 
 export const fillInputFields = async () => {
     const valueInputCep = zipCodeInput.value.trim();
@@ -34,12 +34,8 @@ export const fillInputFields = async () => {
 
     if (zipCodeData) {
         addressInput.value = zipCodeData.logradouro;
-
         neighborhoodInput.value = zipCodeData.bairro;
-
         cityInput.value = zipCodeData.localidade;
-
         ufInput.value = zipCodeData.uf;
     }
-}
-
+};

@@ -40,7 +40,7 @@ function switchTestimonials({ target }) {
     restartAnimation();
 
     containerTestimonialImage.style.backgroundImage = `url('${imagePath}')`;
-    containerTestimonialName.textContent = namePeople
+    containerTestimonialName.textContent = namePeople;
     containerTestimonialText.textContent = textTestimonial;
 }
 

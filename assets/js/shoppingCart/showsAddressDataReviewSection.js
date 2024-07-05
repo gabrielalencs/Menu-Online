@@ -1,12 +1,14 @@
 import {
     zipCodeInput, addressInput,
-    neighborhoodInput, numberinput, cityInput
+    neighborhoodInput, numberinput, 
+    cityInput, complementInput
 } from './fillAddress.js';
 
 const locationAddress = document.querySelector('.location-address');
 const locationNumber = document.querySelector('.location-number');
 const locationNeighborhood = document.querySelector('.location-neighborhood');
 const locationCity = document.querySelector('.location-city');
+const locationComplement = document.querySelector('.location-complement');
 const locationZipCode = document.querySelector('.location-cep');
 
 function showSubmittedAddressDataReviewSection() {
@@ -20,6 +22,11 @@ function showSubmittedAddressDataReviewSection() {
     if (zipCodeInput.value) {
         locationCity.textContent = cityInput.value + ' /';
         locationZipCode.textContent = zipCodeInput.value;
+    }
+
+    if (complementInput.value) {
+        locationNumber.textContent = numberinput.value + ', ' 
+        locationComplement.textContent = complementInput.value;
     }
 }
 

@@ -1,11 +1,14 @@
-// * imports
-
 import fetchDatafoods from './getFoodData.js';
 import { foodButtons } from './clickFoodButtons.js';
 import showQuantityEachItem from './showsQuantityItemsChosen.js';
-import showFoodInformation from './showsFoodInformation.js'
+import showFoodInformation from './showsFoodInformation.js';
 
 const itemCountersElement = document.querySelectorAll('.menu__food-count');
+const buttonsDecreaseItems = document.querySelectorAll('.btn-menu-minus');
+const buttonsAddItems = document.querySelectorAll('.btn-menu-plus');
+const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
+
+let currentButtonIndex = 0;
 
 // ? arrays that will be used for the counts of the items in each section
 
@@ -16,11 +19,6 @@ let itemCountersArraySteaks = Array(itemCountersElement.length).fill(0);
 let itemCountersArrayDrinks = Array(itemCountersElement.length).fill(0);
 let itemCountersArrayDesserts = Array(itemCountersElement.length).fill(0);
 
-const buttonsDecreaseItems = document.querySelectorAll('.btn-menu-minus');
-const buttonsAddItems = document.querySelectorAll('.btn-menu-plus');
-
-let currentButtonIndex = 0;
-
 export let arrayFoodCounters = [
     itemCountersArrayBurgers,
     itemCountersArrayPizzas,
@@ -29,8 +27,6 @@ export let arrayFoodCounters = [
     itemCountersArrayDrinks,
     itemCountersArrayDesserts
 ];
-
-const buttonAddToCart = document.querySelectorAll(".menu__food-shopping-cart");
 
 
 // * detects which food section we are in and uses its specific array to count the items
@@ -43,8 +39,7 @@ const addOrRemoveItems = () => {
 
             if (selectedItemCountersArray[currentIndex] > 0) {
                 selectedItemCountersArray[currentIndex]--;
-
-                itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex]
+                itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
             }
         });
     });
@@ -54,7 +49,6 @@ const addOrRemoveItems = () => {
             let selectedItemCountersArray = arrayFoodCounters[currentButtonIndex];
 
             selectedItemCountersArray[currentIndex]++;
-
             itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
         });
     });
@@ -66,10 +60,9 @@ const addOrRemoveItems = () => {
             let selectedItemCountersArray = arrayFoodCounters[currentButtonIndex];
 
             selectedItemCountersArray[currentIndex] = 0;
-
             itemCountersElement[currentIndex].textContent = selectedItemCountersArray[currentIndex];
-        })
-    })
+        });
+    });
 
 };
 
@@ -95,9 +88,8 @@ const initializeFoodMenu = async () => {
             currentButtonIndex = indexButton;
 
             showQuantityEachItem(currentButtonIndex, arrFood); // ? shows the number of items added to the array according to the section the user is in
-
             showFoodInformation(arrFood[indexButton]); // ? goes through the array of the clicked food section and shows its data on each card
-        })
+        });
     });
 
 };

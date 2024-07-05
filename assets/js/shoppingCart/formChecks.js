@@ -1,5 +1,6 @@
 import toastifyElement from '../menu/toastifyElement.js';
 
+
 import {
     zipCodeInput, addressInput,
     neighborhoodInput, numberinput,
@@ -10,61 +11,39 @@ import { goToRevisionStep } from './cartSteps.js'
 
 
 function arrivesFormFilledCorrectly() {
-    if (addressInput.value &&
-        neighborhoodInput.value &&
-        numberinput.value &&
-        cityInput.value &&
-        zipCodeInput.value) {
+    const address = addressInput.value;
+    const neighborhood = neighborhoodInput.value;
+    const number = numberinput.value;
+    const city = cityInput.value;
+    const zipCode = zipCodeInput.value;
+    const uf = ufInput.value;
 
-        goToRevisionStep()
+    if (address && neighborhood && city && uf !== '-1') {
+        if (number) {
+            goToRevisionStep();
 
-    } else if (
-        addressInput.value &&
-        neighborhoodInput.value &&
-        numberinput.value &&
-        cityInput.value &&
-        !zipCodeInput.value) {
+        } else {
+            toastifyElement('Informe o número!', '#E74C3C');
+        }
 
-        goToRevisionStep()
-
-    } else if (!addressInput.value &&
-        !neighborhoodInput.value &&
-        !numberinput.value &&
-        !cityInput.value &&
-        !zipCodeInput.value) {
+    } else if (!address && !neighborhood && !number && !city && !zipCode && uf == '-1') {
 
         toastifyElement('Informe o CEP!', '#E74C3C');
 
-    } else if (addressInput.value &&
-        neighborhoodInput.value &&
-        !numberinput.value &&
-        cityInput.value &&
-        zipCodeInput.value) {
-
-        toastifyElement('Informe o número!', '#E74C3C');
-
-    } else if (addressInput.value &&
-        neighborhoodInput.value &&
-        !numberinput.value &&
-        cityInput.value &&
-        !zipCodeInput.value) {
-
-        toastifyElement('Informe o número!', '#E74C3C');
-
     } else {
-        if (!addressInput.value) {
+        if (!address) {
             toastifyElement('Informe o endereço por favor', '#E74C3C');
         }
 
-        if (!neighborhoodInput.value) {
+        if (!neighborhood) {
             toastifyElement('Informe o bairro por favor', '#E74C3C');
         }
 
-        if (!cityInput.value) {
+        if (!city) {
             toastifyElement('Informe a cidade por favor', '#E74C3C');
         }
 
-        if (!ufInput.value) {
+        if (uf == '-1') {
             toastifyElement('Informe a UF por favor', '#E74C3C');
         }
     }

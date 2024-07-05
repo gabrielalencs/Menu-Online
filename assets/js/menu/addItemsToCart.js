@@ -3,7 +3,6 @@ import { addValueItemsWhenAddingToCart } from '../shoppingCart/sumValorOfItems.j
 import toastifyElement from './toastifyElement.js';
 
 export const containerOfCartItems = document.querySelector(".cart__container-my-itens");
-
 const buttonCart = document.querySelector('.button-cart');
 
 export const addItemInCart = (currentButtonArgument) => {
@@ -29,9 +28,8 @@ export const addItemInCart = (currentButtonArgument) => {
 
     if (existingItem) {
         // ? if the item I want to add to my cart is already in the cart, i add the number of items i want to add to the number of items previously added
-
+        
         const counterExistingItem = existingItem.querySelector(".my-cart__food-count");
-
         counterExistingItem.textContent = parseInt(counterExistingItem.textContent) + parseInt(quantityProductItems);
 
         toastifyElement('Mais itens adicionados desse alimento', '#2ecc71');
