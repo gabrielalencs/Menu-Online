@@ -3,7 +3,10 @@
 	<p align="center">
 	  <a href="#about">Sobre o Projeto</a> • 
 	  <a href="#functionalities">Funcionalidades</a> • 
+	  <a href="#tech">Tecnologias</a> • 
+	  <a href="#autor">Autor</a>
 	</p>
+	<p><a href="" target="_blank">📱 Acessar Projeto</a></p>
 </div>
 
 <div align="center">
@@ -47,7 +50,31 @@
     - **3º Etapa**
       	- [x] Visualizar <b>informações de todos os itens escolhidos</b>.
       	- [x] Visualizar <b>endereço cadastrado</b>.
-      	- [x] Mensagem de <b>confirmação caso o pedido seja concluído</b>. 
+      	- [x] Mensagem de <b>confirmação caso o pedido seja concluído</b>.
+     
+<h2 id="tech">🛠 Tecnologias</h1>
+<ul>
+	<li>HTML</li>
+	<li>CSS</li>
+	<li>JavaScript</li>
+	<li>SASS/SCSS</li>
+</ul>
 
+<p>Utilizei também a biblioteca <b>Toastify JS</b> para as mensagens de aviso. E para organização dos arquivos JavaScript utilizei os módulos, que é um recurso nativo da linguagem introduzido na versão ES6 que consiste em separar seu código em difersos arquivos diferentes.</p>
+
+<h2 id="autor">👨🏻‍💻 Autor</h2>
+<table>
+
+  <tr>
+    <td align="center">
+      <a href="https://github.com/gabrielalencs" title="Minha foto">
+        <img src="https://github.com/gabrielalencs/Menu-Online/assets/127636935/8054eb2b-3225-4f73-9aff-a9a66bbacc6d" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <sub>
+          <b>Gabriel de Alencar</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 	
 
