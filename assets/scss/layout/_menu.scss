@@ -89,7 +89,6 @@
         @include media.laptops {
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(3, 1fr);
-            // place-items: stretch;
             row-gap: 5rem;
         }
 
@@ -142,7 +141,6 @@
     &__food-main {
         @include mixin.flex-horizontal;
         gap: 2.5rem;
-        // opacity: 0;
         z-index: 10;
 
         @include media.laptops {

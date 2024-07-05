@@ -108,15 +108,12 @@
         right: -2rem;
         z-index: -1;
 
-
-
         @include media.desktops {
             height: 45rem;
             width: 45rem;
             right: -2rem;
         }
     }
-
 
     &__quote {
         box-shadow: 0 1rem 1.5rem -.3rem rgba(0, 0, 0, 0.1);
