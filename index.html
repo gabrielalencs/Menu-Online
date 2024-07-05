@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,10 +15,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Toastify JS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-
     <title>Menu Online</title>
 </head>
-
 <body>
     <header class="header">
         <div class="header__brand">
@@ -570,8 +567,8 @@
             </button>
         </header>
 
-        <div class="cart__body">
-            <div class="cart__my-cart">
+        <main class="cart__body">
+            <section class="cart__my-cart">
                 <h2>Seu carrinho:</h2>
 
                 <div class="cart__empty-cart-message">
@@ -579,9 +576,9 @@
                 </div>
 
                 <div class="cart__container-my-itens"></div>
-            </div>
+            </section>
 
-            <div class="cart__delivery-address hidden">
+            <section class="cart__delivery-address hidden">
                 <h2>Endereço de entrega:</h2>
 
                 <form class="address__form">
@@ -678,9 +675,9 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            </section>
 
-            <div class="cart__order-summary hidden">
+            <section class="cart__order-summary hidden">
                 <h2>Resumo do pedido:</h2>
 
                 <div class="order-summary__content">
@@ -712,8 +709,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
         <footer class="cart__footer">
             <div class="footer__content">
@@ -759,5 +756,4 @@
     <!-- Toastify JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
-
 </html>
