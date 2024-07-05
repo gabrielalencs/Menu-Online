@@ -6,9 +6,9 @@
 	</p>
 </div>
 
-<div>
-	<img src="./assets/images/print-tela-inicial.PNG" width="500" height="315">
-	<img src="./assets/images/print-tela-cardapio.PNG" width="500">
+<div align="center">
+	<img src="./assets/images/print-tela-inicial.PNG" width="400" height="252">
+	<img src="./assets/images/print-tela-cardapio.PNG" width="400">
 </div>
 
 <h2 id="about">📃 Sobre o projeto</h2>
