@@ -6,9 +6,10 @@
 	  <a href="#tech">Tecnologias</a> • 
 	  <a href="#autor">Autor</a>
 	</p>
-	<p><a href="" target="_blank">📱 Acessar Projeto</a></p>
+	<p><a href="https://menu-on-line.vercel.app/" target="_blank">📱 Acessar Projeto</a></p>
 </div>
 
+<h2>🎨 Layout</h2>
 <div align="center">
 	<img src="./assets/images/print-tela-inicial.PNG" width="400" height="252">
 	<img src="./assets/images/print-tela-cardapio.PNG" width="400">
