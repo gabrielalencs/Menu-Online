@@ -75,3 +75,17 @@ export function subtractValuFromSumAllItems(productPriceArgument, quantityProduc
         TotalPurchaseValue.textContent = totalPriceSum;
     }
 }
+
+
+const buttonNextStageSummary = document.querySelector('.footer__btn-next-summary');
+
+buttonNextStageSummary.addEventListener('click', () => {
+    const purchaseValue = document.querySelector('.footer__subtotal span');
+    const TotalPurchaseValue = document.querySelector('.footer__total span span');
+
+    totalPriceSum = 0
+
+    purchaseValue.textContent = totalPriceSum
+    TotalPurchaseValue.textContent = totalPriceSum
+
+});

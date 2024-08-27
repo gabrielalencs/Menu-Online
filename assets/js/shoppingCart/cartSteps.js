@@ -9,7 +9,7 @@ import {
 import {
     zipCodeInput, addressInput,
     neighborhoodInput, numberinput, 
-    cityInput, ufInput
+    cityInput, ufInput, complementInput
 } from './fillAddress.js';
 
 
@@ -153,6 +153,9 @@ buttonNextStageSummary.addEventListener('click', () => {
     const buttonCart = document.querySelector('.button-cart');
     const cartButtonValue = document.querySelector('.button-cart span');
 
+    const purchaseValue = document.querySelector('.footer__subtotal span');
+    const TotalPurchaseValue = document.querySelector('.footer__total span span');
+
     toastifyElement('Pedido enviado com sucesso!', '#2ecc71');
     toggleMenu();
     
@@ -172,6 +175,10 @@ buttonNextStageSummary.addEventListener('click', () => {
             numberinput.value = '';
             cityInput.value = ''
             ufInput.value = '';
+            complementInput.value = '';
+
+            purchaseValue.textContent = 'R$ 0,00';
+            TotalPurchaseValue.textContent = 'R$ 0,00';
         }
     });
 });
